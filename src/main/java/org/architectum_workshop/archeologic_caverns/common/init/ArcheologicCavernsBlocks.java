@@ -9,10 +9,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
-import org.architectum_workshop.archeologic_caverns.common.block.CalciteLanternBlock;
-import org.architectum_workshop.archeologic_caverns.common.block.DeepslateLanternBlock;
+import org.architectum_workshop.archeologic_caverns.common.block.ConnectingPillarBlock;
+import org.architectum_workshop.archeologic_caverns.common.block.lanterns.CalciteLanternBlock;
+import org.architectum_workshop.archeologic_caverns.common.block.lanterns.DeepslateLanternBlock;
+import org.architectum_workshop.archeologic_caverns.common.block.lanterns.DripstoneLanternBlock;
 
-import java.util.List;
 import java.util.function.Function;
 
 public interface ArcheologicCavernsBlocks {
@@ -63,6 +64,9 @@ public interface ArcheologicCavernsBlocks {
 
     Block CALCITE_LANTERN = register("calcite_lantern", CalciteLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), true);
     Block DEEPSLATE_LANTERN = register("deepslate_lantern", DeepslateLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), true);
+    Block DRIPSTONE_LANTERN = register("dripstone_lantern", DripstoneLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), true);
+
+    Block CALCITE_PILLAR = register("calcite_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE), true);
 
     /* registry methods */
 

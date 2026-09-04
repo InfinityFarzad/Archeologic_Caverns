@@ -34,6 +34,7 @@ public class ArcheologicCavernsModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
         itemModelGenerators.createFlatItemModel(ArcheologicCavernsBlocks.CALCITE_LANTERN.asItem(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.createFlatItemModel(ArcheologicCavernsBlocks.DEEPSLATE_LANTERN.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.createFlatItemModel(ArcheologicCavernsBlocks.DRIPSTONE_LANTERN.asItem(), ModelTemplates.FLAT_ITEM);
 
     }
 }

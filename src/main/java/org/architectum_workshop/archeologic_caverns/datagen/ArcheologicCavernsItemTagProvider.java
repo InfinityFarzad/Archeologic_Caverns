@@ -17,6 +17,6 @@ public class ArcheologicCavernsItemTagProvider extends FabricTagsProvider.ItemTa
 
     @Override
     protected void addTags(HolderLookup.Provider registries) {
-        valueLookupBuilder(ItemTags.LANTERNS).add(ArcheologicCavernsBlocks.DEEPSLATE_LANTERN.asItem(), ArcheologicCavernsBlocks.CALCITE_LANTERN.asItem());
+        valueLookupBuilder(ItemTags.LANTERNS).add(ArcheologicCavernsBlocks.DEEPSLATE_LANTERN.asItem(), ArcheologicCavernsBlocks.CALCITE_LANTERN.asItem(), ArcheologicCavernsBlocks.DRIPSTONE_LANTERN.asItem());
     }
 }

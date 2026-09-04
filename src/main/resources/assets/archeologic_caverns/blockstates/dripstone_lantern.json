@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "archeologic_caverns:block/dripstone_lantern"
+    },
+    "hanging=true": {
+      "model": "archeologic_caverns:block/dripstone_lantern_hanging"
+    }
+  }
+}

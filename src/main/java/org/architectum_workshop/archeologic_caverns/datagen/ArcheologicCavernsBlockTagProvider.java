@@ -87,9 +87,13 @@ public class ArcheologicCavernsBlockTagProvider extends FabricTagsProvider.Block
                         ArcheologicCavernsBlocks.CHISELED_CALCITE
                 )
                 .add(
+                        ArcheologicCavernsBlocks.CALCITE_PILLAR
+                )
+                .add(
                     ArcheologicCavernsBlocks.DEEPSLATE_LANTERN,
-                    ArcheologicCavernsBlocks.CALCITE_LANTERN
+                    ArcheologicCavernsBlocks.CALCITE_LANTERN,
+                    ArcheologicCavernsBlocks.DRIPSTONE_LANTERN
                 );
-        valueLookupBuilder(BlockTags.LANTERNS).add(ArcheologicCavernsBlocks.DEEPSLATE_LANTERN, ArcheologicCavernsBlocks.CALCITE_LANTERN);
+        valueLookupBuilder(BlockTags.LANTERNS).add(ArcheologicCavernsBlocks.DEEPSLATE_LANTERN, ArcheologicCavernsBlocks.CALCITE_LANTERN, ArcheologicCavernsBlocks.DRIPSTONE_LANTERN);
     }
 }

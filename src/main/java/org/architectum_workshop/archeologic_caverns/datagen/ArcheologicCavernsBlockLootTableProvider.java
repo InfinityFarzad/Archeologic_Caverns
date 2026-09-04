@@ -19,7 +19,7 @@ public class ArcheologicCavernsBlockLootTableProvider extends FabricBlockLootSub
         add(ArcheologicCavernsBlocks.CALCITE_BRICK_SLAB, createSlabItemTable(ArcheologicCavernsBlocks.CALCITE_BRICK_SLAB));
         dropSelf(ArcheologicCavernsBlocks.CALCITE_BRICK_STAIRS);
         dropSelf(ArcheologicCavernsBlocks.CALCITE_BRICK_WALL);
-
+        dropSelf(ArcheologicCavernsBlocks.CALCITE_PILLAR);
         dropSelf(ArcheologicCavernsBlocks.DRIPSTONE_BRICKS);
         add(ArcheologicCavernsBlocks.DRIPSTONE_BRICK_SLAB, createSlabItemTable(ArcheologicCavernsBlocks.DRIPSTONE_BRICK_SLAB));
         dropSelf(ArcheologicCavernsBlocks.DRIPSTONE_BRICK_STAIRS);
@@ -51,10 +51,10 @@ public class ArcheologicCavernsBlockLootTableProvider extends FabricBlockLootSub
         dropSelf(ArcheologicCavernsBlocks.DRIPSTONE_TILE_STAIRS);
         add(ArcheologicCavernsBlocks.DRIPSTONE_TILE_SLAB, createSlabItemTable(ArcheologicCavernsBlocks.DRIPSTONE_TILE_SLAB));
 
-
         dropSelf(ArcheologicCavernsBlocks.CHISELED_CALCITE);
         dropSelf(ArcheologicCavernsBlocks.CHISELED_DRIPSTONE);
         dropSelf(ArcheologicCavernsBlocks.CALCITE_LANTERN);
         dropSelf(ArcheologicCavernsBlocks.DEEPSLATE_LANTERN);
+        dropSelf(ArcheologicCavernsBlocks.DRIPSTONE_LANTERN);
     }
 }

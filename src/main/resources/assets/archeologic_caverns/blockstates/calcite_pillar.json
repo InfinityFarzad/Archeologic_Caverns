@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "connection_state=bottom": {
+      "model": "archeologic_caverns:block/pillar/calcite_pillar_bottom"
+    },
+    "connection_state=top" : {
+      "model": "archeologic_caverns:block/pillar/calcite_pillar_top"
+    },
+    "connection_state=middle" : {
+      "model": "archeologic_caverns:block/pillar/calcite_pillar_middle"
+    }
+  }
+}

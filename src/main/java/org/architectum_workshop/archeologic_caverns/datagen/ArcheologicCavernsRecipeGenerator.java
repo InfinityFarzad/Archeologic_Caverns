@@ -64,6 +64,13 @@ public class ArcheologicCavernsRecipeGenerator extends FabricRecipeProvider {
                                 .unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE))
                                 .save(output);
 
+                        shaped(RecipeCategory.BUILDING_BLOCKS, ArcheologicCavernsBlocks.CALCITE_PILLAR, 2)
+                                .define('#', ArcheologicCavernsBlocks.POLISHED_CALCITE_SLAB)
+                                .pattern("#")
+                                .pattern("#")
+                                .unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE))
+                                .save(output);
+
                         chiseledBuilder(RecipeCategory.BUILDING_BLOCKS, ArcheologicCavernsBlocks.CHISELED_CALCITE, Ingredient.of(ArcheologicCavernsBlocks.CALCITE_BRICK_SLAB)).unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE)).save(output);
                         chiseledBuilder(RecipeCategory.BUILDING_BLOCKS, ArcheologicCavernsBlocks.CHISELED_DRIPSTONE, Ingredient.of(ArcheologicCavernsBlocks.DRIPSTONE_BRICK_SLAB)).unlockedBy(getHasName(Items.POINTED_DRIPSTONE), has(Items.POINTED_DRIPSTONE)).save(output);
 
