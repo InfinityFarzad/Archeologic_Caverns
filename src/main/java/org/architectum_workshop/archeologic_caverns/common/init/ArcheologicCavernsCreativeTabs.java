@@ -37,6 +37,8 @@ public interface ArcheologicCavernsCreativeTabs {
                     output.accept(ArcheologicCavernsBlocks.DRIPSTONE_TILE_WALL);
 
                     output.accept(ArcheologicCavernsBlocks.CHISELED_DRIPSTONE);
+                    output.accept(ArcheologicCavernsBlocks.DRIPSTONE_PILLAR);
+                    output.accept(ArcheologicCavernsBlocks.DRIPSTONE_LANTERN);
                     output.accept(Blocks.DRIPSTONE_BLOCK);
                     output.accept(Items.POINTED_DRIPSTONE);
 
@@ -60,6 +62,34 @@ public interface ArcheologicCavernsCreativeTabs {
                     output.accept(ArcheologicCavernsBlocks.CALCITE_SHINGLE_SLAB);*/
 
                     output.accept(ArcheologicCavernsBlocks.CHISELED_CALCITE);
+                    output.accept(ArcheologicCavernsBlocks.CALCITE_PILLAR);
+                    output.accept(ArcheologicCavernsBlocks.CALCITE_LANTERN);
+                    output.accept(Blocks.CALCITE);
+
+                    output.accept(Blocks.DEEPSLATE_BRICKS);
+                    output.accept(Blocks.DEEPSLATE_BRICK_STAIRS);
+                    output.accept(Blocks.DEEPSLATE_BRICK_SLAB);
+                    output.accept(Blocks.DEEPSLATE_BRICK_WALL);
+
+                    output.accept(Blocks.POLISHED_DEEPSLATE);
+                    output.accept(Blocks.POLISHED_DEEPSLATE_STAIRS);
+                    output.accept(Blocks.POLISHED_DEEPSLATE_SLAB);
+                    output.accept(Blocks.POLISHED_DEEPSLATE_WALL);
+
+                    output.accept(Blocks.DEEPSLATE_TILES);
+                    output.accept(Blocks.DEEPSLATE_TILE_STAIRS);
+                    output.accept(Blocks.DEEPSLATE_TILE_SLAB);
+                    output.accept(Blocks.DEEPSLATE_TILE_WALL);
+
+                    output.accept(Blocks.COBBLED_DEEPSLATE);
+                    output.accept(Blocks.COBBLED_DEEPSLATE_STAIRS);
+                    output.accept(Blocks.COBBLED_DEEPSLATE_SLAB);
+                    output.accept(Blocks.COBBLED_DEEPSLATE_WALL);
+
+                    output.accept(Blocks.CHISELED_DEEPSLATE);
+                    output.accept(ArcheologicCavernsBlocks.DEEPSLATE_PILLAR);
+                    output.accept(ArcheologicCavernsBlocks.DEEPSLATE_LANTERN);
+                    output.accept(Blocks.DEEPSLATE);
                 }
             })
             .icon(() -> new ItemStack(ArcheologicCavernsBlocks.CHISELED_DRIPSTONE))

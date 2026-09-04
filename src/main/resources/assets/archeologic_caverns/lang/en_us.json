@@ -40,6 +40,9 @@
   "block.archeologic_caverns.dripstone_lantern": "Dripstone Lantern",
 
   "block.archeologic_caverns.calcite_pillar": "Calcite Pillar",
+  "block.archeologic_caverns.dripstone_pillar": "Dripstone Pillar",
+  "block.archeologic_caverns.deepslate_pillar": "Deepslate Pillar",
+
 
   "creative_tab.archeologic_caverns.dripstone_caves": "Dripstone Caves",
   "creative_tab.archeologic_caverns.cave_blocks": "Cave Blocks"

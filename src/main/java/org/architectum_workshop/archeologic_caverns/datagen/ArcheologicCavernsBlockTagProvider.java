@@ -6,6 +6,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.tags.TagAppender;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import org.apache.commons.lang3.arch.Processor;
 import org.architectum_workshop.archeologic_caverns.common.init.ArcheologicCavernsBlocks;
 
 import java.util.concurrent.CompletableFuture;
@@ -87,7 +88,9 @@ public class ArcheologicCavernsBlockTagProvider extends FabricTagsProvider.Block
                         ArcheologicCavernsBlocks.CHISELED_CALCITE
                 )
                 .add(
-                        ArcheologicCavernsBlocks.CALCITE_PILLAR
+                        ArcheologicCavernsBlocks.CALCITE_PILLAR,
+                        ArcheologicCavernsBlocks.DRIPSTONE_PILLAR,
+                        ArcheologicCavernsBlocks.DEEPSLATE_PILLAR
                 )
                 .add(
                     ArcheologicCavernsBlocks.DEEPSLATE_LANTERN,

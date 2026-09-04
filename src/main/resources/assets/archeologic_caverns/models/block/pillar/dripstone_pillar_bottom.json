@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "archeologic_caverns:block/polished_dripstone",
+    "side": "archeologic_caverns:block/dripstone_pillar_bottom"
+  }
+}

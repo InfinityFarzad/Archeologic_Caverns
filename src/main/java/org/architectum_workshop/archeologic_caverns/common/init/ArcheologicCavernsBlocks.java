@@ -67,6 +67,8 @@ public interface ArcheologicCavernsBlocks {
     Block DRIPSTONE_LANTERN = register("dripstone_lantern", DripstoneLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), true);
 
     Block CALCITE_PILLAR = register("calcite_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE), true);
+    Block DRIPSTONE_PILLAR = register("dripstone_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DRIPSTONE_BLOCK), true);
+    Block DEEPSLATE_PILLAR = register("deepslate_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE), true);
 
     /* registry methods */
 

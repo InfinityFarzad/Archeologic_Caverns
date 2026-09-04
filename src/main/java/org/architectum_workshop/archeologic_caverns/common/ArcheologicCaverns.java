@@ -6,6 +6,7 @@ import net.minecraft.resources.Identifier;
 
 import org.architectum_workshop.archeologic_caverns.common.init.ArcheologicCavernsBlocks;
 import org.architectum_workshop.archeologic_caverns.common.init.ArcheologicCavernsCreativeTabs;
+import org.architectum_workshop.archeologic_caverns.common.init.ArcheologicCavernsItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,8 +21,6 @@ public class ArcheologicCaverns implements ModInitializer {
 	public void onInitialize() {
 		ArcheologicCavernsBlocks.init();
 		ArcheologicCavernsCreativeTabs.init();
-
+		ArcheologicCavernsItems.init();
 	}
-
-
 }
