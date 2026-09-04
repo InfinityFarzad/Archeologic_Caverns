@@ -3,15 +3,17 @@
 	"id": "archeologic_caverns",
 	"version": "${version}",
 	"name": "Archeologic Caverns",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A mod expanding upon caves and archeology",
 	"authors": [
-		"Me!"
+		"InfinityFarzad",
+		"Juko_lul",
+		"Mongocat"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/project/archeologic-caverns",
+		"sources": "https://github.com/InfinityFarzad/Archeologic_Caverns"
 	},
-	"license": "CC0-1.0",
+	"license": "ARR",
 	"icon": "assets/archeologic_caverns/icon.png",
 	"environment": "*",
 	"entrypoints": {
