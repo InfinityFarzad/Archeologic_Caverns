@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "archeologic_caverns:block/polished_dripstone",
+    "side": "archeologic_caverns:block/polished_dripstone",
+    "top": "archeologic_caverns:block/polished_dripstone"
+  }
+}

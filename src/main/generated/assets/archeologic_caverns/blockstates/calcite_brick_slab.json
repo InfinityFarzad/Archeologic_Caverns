@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeologic_caverns:block/calcite_brick_slab"
+    },
+    "type=double": {
+      "model": "archeologic_caverns:block/calcite_bricks"
+    },
+    "type=top": {
+      "model": "archeologic_caverns:block/calcite_brick_slab_top"
+    }
+  }
+}

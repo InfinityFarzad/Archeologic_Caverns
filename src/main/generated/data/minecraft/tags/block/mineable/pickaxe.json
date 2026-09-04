@@ -1,0 +1,32 @@
+{
+  "values": [
+    "archeologic_caverns:polished_dripstone_wall",
+    "archeologic_caverns:polished_dripstone",
+    "archeologic_caverns:polished_dripstone_stairs",
+    "archeologic_caverns:polished_dripstone_slab",
+    "archeologic_caverns:polished_calcite_wall",
+    "archeologic_caverns:polished_calcite",
+    "archeologic_caverns:polished_calcite_stairs",
+    "archeologic_caverns:polished_calcite_slab",
+    "archeologic_caverns:dripstone_bricks",
+    "archeologic_caverns:dripstone_brick_wall",
+    "archeologic_caverns:dripstone_brick_slab",
+    "archeologic_caverns:dripstone_brick_stairs",
+    "archeologic_caverns:calcite_bricks",
+    "archeologic_caverns:calcite_brick_wall",
+    "archeologic_caverns:calcite_brick_slab",
+    "archeologic_caverns:calcite_brick_stairs",
+    "archeologic_caverns:dripstone_tiles",
+    "archeologic_caverns:dripstone_tile_wall",
+    "archeologic_caverns:dripstone_tile_slab",
+    "archeologic_caverns:dripstone_tile_stairs",
+    "archeologic_caverns:calcite_tiles",
+    "archeologic_caverns:calcite_tile_wall",
+    "archeologic_caverns:calcite_tile_slab",
+    "archeologic_caverns:calcite_tile_stairs",
+    "archeologic_caverns:chiseled_dripstone",
+    "archeologic_caverns:chiseled_calcite",
+    "archeologic_caverns:deepslate_lantern",
+    "archeologic_caverns:calcite_lantern"
+  ]
+}

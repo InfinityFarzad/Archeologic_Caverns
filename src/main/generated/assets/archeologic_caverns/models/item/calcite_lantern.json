@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "archeologic_caverns:item/calcite_lantern"
+  }
+}

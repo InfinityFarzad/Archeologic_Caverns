@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "archeologic_caverns:block/dripstone_tile_slab"
+    },
+    "type=double": {
+      "model": "archeologic_caverns:block/dripstone_tiles"
+    },
+    "type=top": {
+      "model": "archeologic_caverns:block/dripstone_tile_slab_top"
+    }
+  }
+}
