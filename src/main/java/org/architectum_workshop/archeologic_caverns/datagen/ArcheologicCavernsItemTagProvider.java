@@ -4,7 +4,9 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import org.architectum_workshop.archeologic_caverns.common.init.ArcheologicCavernsBlocks;
+import org.architectum_workshop.archeologic_caverns.common.init.ArcheologicCavernsTags;
 import org.jspecify.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -18,5 +20,6 @@ public class ArcheologicCavernsItemTagProvider extends FabricTagsProvider.ItemTa
     @Override
     protected void addTags(HolderLookup.Provider registries) {
         valueLookupBuilder(ItemTags.LANTERNS).add(ArcheologicCavernsBlocks.DEEPSLATE_LANTERN.asItem(), ArcheologicCavernsBlocks.CALCITE_LANTERN.asItem(), ArcheologicCavernsBlocks.DRIPSTONE_LANTERN.asItem());
+        valueLookupBuilder(ArcheologicCavernsTags.Items.AMETHYST_TOOL_REPAIRABLE).add(Items.AMETHYST_SHARD);
     }
 }
