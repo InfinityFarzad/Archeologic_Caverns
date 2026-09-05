@@ -4,7 +4,7 @@
 	"texture_size": [32, 32],
 	"textures": {
 		"2": "archeologic_caverns:block/dripstone_lantern_hanging",
-		"particle": "archeologic_caverns:block/dripstone_lantern"
+		"particle": "archeologic_caverns:item/dripstone_lantern"
 	},
 	"elements": [
 		{

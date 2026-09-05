@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"1": "archeologic_caverns:block/deepslate_lantern",
-		"particle": "archeologic_caverns:block/deepslate_lantern"
+		"particle": "archeologic_caverns:item/deepslate_lantern"
 	},
 	"elements": [
 		{
