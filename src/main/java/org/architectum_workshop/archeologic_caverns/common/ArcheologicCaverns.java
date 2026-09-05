@@ -2,6 +2,12 @@ package org.architectum_workshop.archeologic_caverns.common;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
+import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
+import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
+import net.fabricmc.fabric.impl.resource.loader.ResourceManagerHelperImpl;
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 
 import org.architectum_workshop.archeologic_caverns.common.init.ArcheologicCavernsBlocks;
@@ -24,5 +30,7 @@ public class ArcheologicCaverns implements ModInitializer {
 		ArcheologicCavernsCreativeTabs.init();
 		ArcheologicCavernsItems.init();
 		ArcheologicCavernsTags.init();
+
+		FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(modContainer -> ResourceLoader.registerBuiltinPack(id("copper_reforged"), modContainer, Component.literal("Copper Reforged"), PackActivationType.DEFAULT_ENABLED));
 	}
 }
