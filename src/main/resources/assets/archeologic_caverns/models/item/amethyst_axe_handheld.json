@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "archeologic_caverns:item/amethyst_axe_held"
+		"layer0": "archeologic_caverns:item/amethyst_axe_handheld"
 	},
 	"display": {
 		"thirdperson_righthand": {

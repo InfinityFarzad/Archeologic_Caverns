@@ -16,6 +16,6 @@ public class AmethystGreataxeItem extends AxeItem implements CustomEffectsItem, 
 
     @Override
     public boolean canDoSweepingAttack(ItemStack stack, boolean cooldownPassed, boolean criticalHit, boolean knockbackAttack) {
-        return true;
+        return !knockbackAttack && !criticalHit && cooldownPassed;
     }
 }
