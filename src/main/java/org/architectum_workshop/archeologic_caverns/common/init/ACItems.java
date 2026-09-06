@@ -18,6 +18,7 @@ public interface ACItems {
     Item AMETHYST_GREATAXE = register("amethyst_axe", properties -> new AmethystGreataxeItem(properties, 9,-3.2f), new Item.Properties().component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xFFb38ef3, true)));
 
     Item DRIPSTONE_DRILL = register("dripstone_drill", DripstoneDrillItem::new, new Item.Properties());
+    Item AMBER = register("amber", Item::new, new Item.Properties());
 
     static <T extends Item> T register(String name, Function<Item.Properties, T> factory, Item.Properties itemProperties) {
         ResourceKey<Item> resourceKey = ResourceKey.create(Registries.ITEM, ArcheologicCaverns.id(name));

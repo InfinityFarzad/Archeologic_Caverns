@@ -99,6 +99,7 @@ public interface ACCreativeTabs {
                     output.accept(ACBlocks.POTENT_SALT);
 
                     output.accept(ACBlocks.AMBER_BLOCK);
+                    output.accept(ACItems.AMBER);
                 }
             })
             .icon(() -> new ItemStack(ACBlocks.CHISELED_DRIPSTONE))

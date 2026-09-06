@@ -13,6 +13,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import org.architectum_workshop.archeologic_caverns.common.init.ACBlocks;
+import org.architectum_workshop.archeologic_caverns.common.init.ACItems;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -65,6 +66,18 @@ public class ACRecipeGenerator extends FabricRecipeProvider {
                                 .unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE))
                                 .save(output);
 
+                        shaped(RecipeCategory.BUILDING_BLOCKS, ACBlocks.AMBER_BLOCK, 1)
+                                .define('#', ACItems.AMBER)
+                                .pattern("##")
+                                .pattern("##")
+                                .unlockedBy(getHasName(ACItems.AMBER), has(ACItems.AMBER))
+                                .save(output);
+                        shaped(RecipeCategory.MISC, ACItems.AMBER, 1)
+                                .define('#', ACBlocks.AMBER_BLOCK)
+                                .pattern("#")
+                                .unlockedBy(getHasName(ACBlocks.AMBER_BLOCK), has(ACBlocks.AMBER_BLOCK))
+                                .save(output);
+
                         shaped(RecipeCategory.BUILDING_BLOCKS, ACBlocks.CALCITE_PILLAR, 2)
                                 .define('#', ACBlocks.POLISHED_CALCITE_SLAB)
                                 .pattern("#")
@@ -99,7 +112,7 @@ public class ACRecipeGenerator extends FabricRecipeProvider {
 
                         shaped(RecipeCategory.DECORATIONS, ACBlocks.DRIPSTONE_LANTERN, 3)
                                 .define('#', Blocks.DRIPSTONE_BLOCK)
-                                .define('a', Items.RESIN_CLUMP)
+                                .define('a', ACItems.AMBER)
                                 .define('c', Items.CHARCOAL)
                                 .define('i', Items.IRON_NUGGET)
                                 .pattern(" i ")
