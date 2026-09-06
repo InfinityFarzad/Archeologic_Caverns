@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "archeologic_caverns:block/salt_pressure_plate"
+    },
+    "powered=true": {
+      "model": "archeologic_caverns:block/salt_pressure_plate_down"
+    }
+  }
+}

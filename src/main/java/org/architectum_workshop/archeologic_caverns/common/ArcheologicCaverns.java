@@ -2,18 +2,16 @@ package org.architectum_workshop.archeologic_caverns.common;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
 import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
-import net.fabricmc.fabric.impl.resource.loader.ResourceManagerHelperImpl;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 
-import org.architectum_workshop.archeologic_caverns.common.init.ArcheologicCavernsBlocks;
-import org.architectum_workshop.archeologic_caverns.common.init.ArcheologicCavernsCreativeTabs;
-import org.architectum_workshop.archeologic_caverns.common.init.ArcheologicCavernsItems;
-import org.architectum_workshop.archeologic_caverns.common.init.ArcheologicCavernsTags;
+import org.architectum_workshop.archeologic_caverns.common.init.ACBlocks;
+import org.architectum_workshop.archeologic_caverns.common.init.ACCreativeTabs;
+import org.architectum_workshop.archeologic_caverns.common.init.ACItems;
+import org.architectum_workshop.archeologic_caverns.common.init.ACTags;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,10 +24,10 @@ public class ArcheologicCaverns implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ArcheologicCavernsBlocks.init();
-		ArcheologicCavernsCreativeTabs.init();
-		ArcheologicCavernsItems.init();
-		ArcheologicCavernsTags.init();
+		ACBlocks.init();
+		ACCreativeTabs.init();
+		ACItems.init();
+		ACTags.init();
 
 		FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(modContainer -> ResourceLoader.registerBuiltinPack(id("copper_reforged"), modContainer, Component.literal("Copper Reforged"), PackActivationType.DEFAULT_ENABLED));
 	}

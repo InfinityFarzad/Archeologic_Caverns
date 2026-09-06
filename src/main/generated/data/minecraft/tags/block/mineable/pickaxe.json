@@ -31,6 +31,12 @@
     "archeologic_caverns:deepslate_pillar",
     "archeologic_caverns:deepslate_lantern",
     "archeologic_caverns:calcite_lantern",
-    "archeologic_caverns:dripstone_lantern"
+    "archeologic_caverns:dripstone_lantern",
+    "archeologic_caverns:salt",
+    "archeologic_caverns:salt_stairs",
+    "archeologic_caverns:salt_slab",
+    "archeologic_caverns:salt_wall",
+    "archeologic_caverns:potent_salt",
+    "archeologic_caverns:salt_pressure_plate"
   ]
 }

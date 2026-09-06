@@ -21,9 +21,10 @@
 			"org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns"
 		],
 		"fabric-datagen": [
-          "org.architectum_workshop.archeologic_caverns.datagen.ArcheologicCavernsDataGenerator"
+			"org.architectum_workshop.archeologic_caverns.datagen.ACDataGenerator"
 		]
 	},
+	"accessWidener": "archeologic_caverns.classtweaker",
 	"mixins": [
 		"archeologic_caverns.mixins.json"
 	],

@@ -10,13 +10,19 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 import org.architectum_workshop.archeologic_caverns.common.block.ConnectingPillarBlock;
+import org.architectum_workshop.archeologic_caverns.common.block.PotentSaltBlock;
+import org.architectum_workshop.archeologic_caverns.common.block.SaltPressurePlateBlock;
 import org.architectum_workshop.archeologic_caverns.common.block.lanterns.CalciteLanternBlock;
 import org.architectum_workshop.archeologic_caverns.common.block.lanterns.DeepslateLanternBlock;
 import org.architectum_workshop.archeologic_caverns.common.block.lanterns.DripstoneLanternBlock;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
-public interface ArcheologicCavernsBlocks {
+public interface ACBlocks {
+
+    List<Block> TRANSLATED_BLOCKS = new ArrayList<>();
 
     // Dripstone
 
@@ -49,7 +55,7 @@ public interface ArcheologicCavernsBlocks {
     Block CALCITE_BRICK_SLAB = createSlabBlock("calcite_brick_slab", CALCITE_BRICKS);
     Block CALCITE_BRICK_WALL = register("calcite_brick_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(CALCITE_BRICKS), true);
 
-    Block CALCITE_TILES = register("calcite_tiles", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE), true);
+    Block CALCITE_TILES = register("calcite_tiles", BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE));
     Block CALCITE_TILE_STAIRS = createStairsBlock("calcite_tile_stairs", CALCITE_TILES);
     Block CALCITE_TILE_SLAB = createSlabBlock("calcite_tile_slab", CALCITE_TILES);
     Block CALCITE_TILE_WALL = register("calcite_tile_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(CALCITE_TILES), true);
@@ -60,29 +66,57 @@ public interface ArcheologicCavernsBlocks {
     Block CALCITE_SHINGLE_SLAB = createSlabBlock("calcite_shingle_slab", CALCITE_SHINGLES);
 */
 
-    Block CHISELED_CALCITE = register("chiseled_calcite", Block::new, BlockBehaviour.Properties.ofFullCopy(CALCITE_BRICKS), true);
+    Block CHISELED_CALCITE = register("chiseled_calcite", BlockBehaviour.Properties.ofFullCopy(CALCITE_BRICKS));
 
-    Block CALCITE_LANTERN = register("calcite_lantern", CalciteLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), true);
-    Block DEEPSLATE_LANTERN = register("deepslate_lantern", DeepslateLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), true);
-    Block DRIPSTONE_LANTERN = register("dripstone_lantern", DripstoneLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), true);
+    Block CALCITE_LANTERN = register("calcite_lantern", CalciteLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
+    Block DEEPSLATE_LANTERN = register("deepslate_lantern", DeepslateLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
+    Block DRIPSTONE_LANTERN = register("dripstone_lantern", DripstoneLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
 
-    Block CALCITE_PILLAR = register("calcite_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE), true);
-    Block DRIPSTONE_PILLAR = register("dripstone_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DRIPSTONE_BLOCK), true);
-    Block DEEPSLATE_PILLAR = register("deepslate_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE), true);
+    Block CALCITE_PILLAR = register("calcite_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE));
+    Block DRIPSTONE_PILLAR = register("dripstone_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DRIPSTONE_BLOCK));
+    Block DEEPSLATE_PILLAR = register("deepslate_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE));
+
+    //Salt
+
+    Block SALT = register("salt", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).sound(SoundType.CALCITE));
+    Block SALT_STAIRS = createStairsBlock("salt_stairs", SALT);
+    Block SALT_SLAB = createSlabBlock("salt_slab", SALT);
+    Block SALT_WALL = createWallBlock("salt_wall", SALT);
+
+    Block POTENT_SALT = register("potent_salt", PotentSaltBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).sound(SoundType.CALCITE));
+
+    Block SALT_PRESSURE_PLATE = register("salt_pressure_plate", SaltPressurePlateBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_PRESSURE_PLATE).sound(SoundType.CALCITE));
 
     /* registry methods */
 
-    static Block createSlabBlock(String name, Block base) {
-        return register(name, SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(base), true);
+    private static Block createWallBlock(String name, Block base) {
+        return register(name, WallBlock::new, BlockBehaviour.Properties.ofFullCopy(base));
     }
 
-    static Block createStairsBlock(String name, Block base) {
-        return register(name, properties -> new StairBlock(base.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(base), true);
+    private static Block createSlabBlock(String name, Block base) {
+        return register(name, SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(base));
     }
 
-    static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties properties, boolean shouldRegisterItem) {
+    private static Block createStairsBlock(String name, Block base) {
+        return register(name, properties -> new StairBlock(base.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(base));
+    }
+
+    private static Block register(String name, BlockBehaviour.Properties properties) {
+        return register(name, Block::new, properties, true);
+    }
+
+    private static Block register(String name, BlockBehaviour.Properties properties, boolean shouldRegisterItem) {
+        return register(name, Block::new, properties, shouldRegisterItem);
+    }
+
+    private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties properties) {
+        return register(name, blockFactory, properties, true);
+    }
+
+    private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties properties, boolean shouldRegisterItem) {
         ResourceKey<Block> blockKey = keyOfBlock(name);
         Block block = blockFactory.apply(properties.setId(blockKey));
+        TRANSLATED_BLOCKS.add(block);
 
         if (shouldRegisterItem) {
             ResourceKey<Item> itemKey = keyOfItem(name);
@@ -93,11 +127,11 @@ public interface ArcheologicCavernsBlocks {
         return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
     }
 
-    static ResourceKey<Block> keyOfBlock(String name) {
+    private static ResourceKey<Block> keyOfBlock(String name) {
         return ResourceKey.create(Registries.BLOCK, ArcheologicCaverns.id(name));
     }
 
-    static ResourceKey<Item> keyOfItem(String name) {
+    private static ResourceKey<Item> keyOfItem(String name) {
         return ResourceKey.create(Registries.ITEM, ArcheologicCaverns.id(name));
     }
 
