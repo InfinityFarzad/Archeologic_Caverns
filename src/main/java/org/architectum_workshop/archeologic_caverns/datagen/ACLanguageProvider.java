@@ -23,7 +23,7 @@ public class ACLanguageProvider extends FabricLanguageProvider {
     @Override
     public void generateTranslations(HolderLookup.Provider registryLookup, TranslationBuilder translationBuilder) {
 
-        List<Item> translatedItems = List.of(ACItems.AMETHYST_GREATAXE, ACItems.DRIPSTONE_DRILL);
+        List<Item> translatedItems = List.of(ACItems.AMETHYST_GREATAXE, ACItems.DRIPSTONE_DRILL, ACItems.AMBER);
 
         ACBlocks.TRANSLATED_BLOCKS.forEach(translatedBlock -> translate(translationBuilder, translatedBlock));
         translatedItems.forEach(translatedBlock -> translate(translationBuilder, translatedBlock));

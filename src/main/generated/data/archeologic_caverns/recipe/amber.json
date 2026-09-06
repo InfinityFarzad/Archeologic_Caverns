@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "archeologic_caverns:amber_block"
+  },
+  "pattern": [
+    "#"
+  ],
+  "result": {
+    "id": "archeologic_caverns:amber"
+  }
+}

@@ -3,7 +3,13 @@ package org.architectum_workshop.archeologic_caverns.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.storage.loot.IntRange;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import org.architectum_workshop.archeologic_caverns.common.init.ACBlocks;
+import org.architectum_workshop.archeologic_caverns.common.init.ACItems;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -56,6 +62,7 @@ public class ACBlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(ACBlocks.DEEPSLATE_LANTERN);
         dropSelf(ACBlocks.DRIPSTONE_LANTERN);
 
+        add(ACBlocks.AMBER_BLOCK, createSingleItemTable(ACItems.AMBER, ConstantValue.exactly(4)));
 
         dropSelf(ACBlocks.SALT_BLOCK);
         dropSelf(ACBlocks.SALT_WALL);

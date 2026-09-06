@@ -6,6 +6,7 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.*;
 import org.architectum_workshop.archeologic_caverns.common.init.ACBlocks;
+import org.architectum_workshop.archeologic_caverns.common.init.ACItems;
 
 public class ACModelProvider extends FabricModelProvider {
     public ACModelProvider(FabricPackOutput output) {
@@ -35,6 +36,7 @@ public class ACModelProvider extends FabricModelProvider {
         itemModelGenerators.createFlatItemModel(ACBlocks.CALCITE_LANTERN.asItem(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.createFlatItemModel(ACBlocks.DEEPSLATE_LANTERN.asItem(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.createFlatItemModel(ACBlocks.DRIPSTONE_LANTERN.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.createFlatItemModel(ACItems.AMBER, ModelTemplates.FLAT_ITEM);
 
     }
 }

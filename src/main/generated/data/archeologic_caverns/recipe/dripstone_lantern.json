@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "#": "minecraft:dripstone_block",
-    "a": "minecraft:resin_clump",
+    "a": "archeologic_caverns:amber",
     "c": "minecraft:charcoal",
     "i": "minecraft:iron_nugget"
   },
