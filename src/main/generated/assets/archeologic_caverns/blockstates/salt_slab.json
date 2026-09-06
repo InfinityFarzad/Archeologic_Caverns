@@ -4,7 +4,7 @@
       "model": "archeologic_caverns:block/salt_slab"
     },
     "type=double": {
-      "model": "archeologic_caverns:block/salt"
+      "model": "archeologic_caverns:block/salt_block"
     },
     "type=top": {
       "model": "archeologic_caverns:block/salt_slab_top"

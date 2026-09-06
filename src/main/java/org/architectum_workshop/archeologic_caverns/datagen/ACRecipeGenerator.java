@@ -120,7 +120,7 @@ public class ACRecipeGenerator extends FabricRecipeProvider {
                         stairBuilder(ACBlocks.POLISHED_DRIPSTONE_STAIRS, Ingredient.of(ACBlocks.POLISHED_DRIPSTONE)).unlockedBy(getHasName(Items.DRIPSTONE_BLOCK), has(Items.POINTED_DRIPSTONE)).save(output);
                         stairBuilder(ACBlocks.DRIPSTONE_BRICK_STAIRS, Ingredient.of(ACBlocks.DRIPSTONE_BRICKS)).unlockedBy(getHasName(Items.DRIPSTONE_BLOCK), has(Items.POINTED_DRIPSTONE)).save(output);
                         stairBuilder(ACBlocks.DRIPSTONE_TILE_STAIRS, Ingredient.of(ACBlocks.DRIPSTONE_TILES)).unlockedBy(getHasName(Items.DRIPSTONE_BLOCK), has(Items.POINTED_DRIPSTONE)).save(output);
-                        stairBuilder(ACBlocks.SALT_STAIRS, Ingredient.of(ACBlocks.SALT)).unlockedBy(getHasName(ACBlocks.SALT), has(ACBlocks.SALT)).save(output);
+                        stairBuilder(ACBlocks.SALT_STAIRS, Ingredient.of(ACBlocks.SALT_BLOCK)).unlockedBy(getHasName(ACBlocks.SALT_BLOCK), has(ACBlocks.SALT_BLOCK)).save(output);
 
                         stairBuilder(ACBlocks.POLISHED_CALCITE_STAIRS, Ingredient.of(ACBlocks.POLISHED_CALCITE)).unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE)).save(output);
                         stairBuilder(ACBlocks.CALCITE_BRICK_STAIRS, Ingredient.of(ACBlocks.CALCITE_BRICKS)).unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE)).save(output);
@@ -136,7 +136,7 @@ public class ACRecipeGenerator extends FabricRecipeProvider {
                         slabBuilder(RecipeCategory.BUILDING_BLOCKS, ACBlocks.POLISHED_CALCITE_SLAB, Ingredient.of(ACBlocks.POLISHED_CALCITE)).unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE)).save(output);
                         slabBuilder(RecipeCategory.BUILDING_BLOCKS, ACBlocks.CALCITE_BRICK_SLAB, Ingredient.of(ACBlocks.CALCITE_BRICKS)).unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE)).save(output);
                         slabBuilder(RecipeCategory.BUILDING_BLOCKS, ACBlocks.CALCITE_TILE_SLAB, Ingredient.of(ACBlocks.CALCITE_TILES)).unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE)).save(output);
-                        slabBuilder(RecipeCategory.BUILDING_BLOCKS, ACBlocks.SALT_SLAB, Ingredient.of(ACBlocks.SALT)).unlockedBy(getHasName(ACBlocks.SALT), has(ACBlocks.SALT)).save(output);
+                        slabBuilder(RecipeCategory.BUILDING_BLOCKS, ACBlocks.SALT_SLAB, Ingredient.of(ACBlocks.SALT_BLOCK)).unlockedBy(getHasName(ACBlocks.SALT_BLOCK), has(ACBlocks.SALT_BLOCK)).save(output);
                         //slabBuilder(RecipeCategory.BUILDING_BLOCKS, ArcheologicCavernsBlocks.CALCITE_SHINGLE_SLAB, Ingredient.of(ArcheologicCavernsBlocks.CALCITE_SHINGLES)).unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE)).save(output);
 
                         // walls
@@ -147,15 +147,15 @@ public class ACRecipeGenerator extends FabricRecipeProvider {
                         wallBuilder(RecipeCategory.BUILDING_BLOCKS, ACBlocks.POLISHED_CALCITE_WALL, Ingredient.of(ACBlocks.POLISHED_CALCITE)).unlockedBy(getHasName(Blocks.CALCITE), has(Blocks.CALCITE)).save(output);
                         wallBuilder(RecipeCategory.BUILDING_BLOCKS, ACBlocks.CALCITE_BRICK_WALL, Ingredient.of(ACBlocks.CALCITE_BRICKS)).unlockedBy(getHasName(Blocks.CALCITE), has(Blocks.CALCITE)).save(output);
                         wallBuilder(RecipeCategory.BUILDING_BLOCKS, ACBlocks.CALCITE_TILE_WALL, Ingredient.of(ACBlocks.CALCITE_TILES)).unlockedBy(getHasName(Blocks.CALCITE), has(Blocks.CALCITE)).save(output);
-                        wallBuilder(RecipeCategory.BUILDING_BLOCKS, ACBlocks.SALT_WALL, Ingredient.of(ACBlocks.SALT)).unlockedBy(getHasName(ACBlocks.SALT), has(ACBlocks.SALT)).save(output);
+                        wallBuilder(RecipeCategory.BUILDING_BLOCKS, ACBlocks.SALT_WALL, Ingredient.of(ACBlocks.SALT_BLOCK)).unlockedBy(getHasName(ACBlocks.SALT_BLOCK), has(ACBlocks.SALT_BLOCK)).save(output);
 
-                        createStonecutterRecipe(ACBlocks.SALT,
+                        createStonecutterRecipe(ACBlocks.SALT_BLOCK,
                                 ACBlocks.SALT_STAIRS,
                                 ACBlocks.SALT_WALL
                         );
-                        createDoubleStonecutterRecipe(ACBlocks.SALT, ACBlocks.SALT_SLAB);
+                        createDoubleStonecutterRecipe(ACBlocks.SALT_BLOCK, ACBlocks.SALT_SLAB);
 
-                        pressurePlate(ACBlocks.SALT_PRESSURE_PLATE, ACBlocks.SALT);
+                        pressurePlate(ACBlocks.SALT_PRESSURE_PLATE, ACBlocks.SALT_BLOCK);
                     }
             public void createStonecutterRecipe(ItemLike base, ItemLike... results) {
                 for (ItemLike result : results) {

@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/slab_top",
   "textures": {
-    "bottom": "archeologic_caverns:block/salt",
-    "side": "archeologic_caverns:block/salt",
-    "top": "archeologic_caverns:block/salt"
+    "bottom": "archeologic_caverns:block/salt_block",
+    "side": "archeologic_caverns:block/salt_block",
+    "top": "archeologic_caverns:block/salt_block"
   }
 }

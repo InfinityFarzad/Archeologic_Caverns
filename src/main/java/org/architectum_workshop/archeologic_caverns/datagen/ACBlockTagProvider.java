@@ -98,7 +98,7 @@ public class ACBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                     ACBlocks.DRIPSTONE_LANTERN
                 )
                 .add(
-                        ACBlocks.SALT,
+                        ACBlocks.SALT_BLOCK,
                         ACBlocks.SALT_STAIRS,
                         ACBlocks.SALT_SLAB,
                         ACBlocks.SALT_WALL,

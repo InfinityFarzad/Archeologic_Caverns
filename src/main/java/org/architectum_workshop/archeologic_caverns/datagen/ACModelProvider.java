@@ -4,14 +4,7 @@ import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.data.models.MultiVariant;
-import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.model.*;
-import net.minecraft.client.resources.model.sprite.Material;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import org.architectum_workshop.archeologic_caverns.common.init.ACBlocks;
 
 public class ACModelProvider extends FabricModelProvider {
@@ -33,7 +26,7 @@ public class ACModelProvider extends FabricModelProvider {
         blockModelGenerators.createTrivialBlock(ACBlocks.CHISELED_DRIPSTONE, TexturedModel.COLUMN);
         blockModelGenerators.createTrivialBlock(ACBlocks.CHISELED_CALCITE, TexturedModel.COLUMN);
 
-        blockModelGenerators.family(ACBlocks.SALT).slab(ACBlocks.SALT_SLAB).stairs(ACBlocks.SALT_STAIRS).wall(ACBlocks.SALT_WALL).pressurePlate(ACBlocks.SALT_PRESSURE_PLATE);
+        blockModelGenerators.family(ACBlocks.SALT_BLOCK).slab(ACBlocks.SALT_SLAB).stairs(ACBlocks.SALT_STAIRS).wall(ACBlocks.SALT_WALL).pressurePlate(ACBlocks.SALT_PRESSURE_PLATE);
         blockModelGenerators.createTrivialCube(ACBlocks.POTENT_SALT);
     }
 

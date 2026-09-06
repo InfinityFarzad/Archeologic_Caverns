@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/pressure_plate_up",
   "textures": {
-    "texture": "archeologic_caverns:block/salt"
+    "texture": "archeologic_caverns:block/salt_block"
   }
 }

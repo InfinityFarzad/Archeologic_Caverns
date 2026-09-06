@@ -57,7 +57,7 @@ public class ACBlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(ACBlocks.DRIPSTONE_LANTERN);
 
 
-        dropSelf(ACBlocks.SALT);
+        dropSelf(ACBlocks.SALT_BLOCK);
         dropSelf(ACBlocks.SALT_WALL);
         dropSelf(ACBlocks.SALT_STAIRS);
         add(ACBlocks.SALT_SLAB, createSlabItemTable(ACBlocks.SALT_SLAB));

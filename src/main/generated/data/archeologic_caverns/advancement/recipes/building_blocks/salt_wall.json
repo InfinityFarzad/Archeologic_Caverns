@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_salt": {
+    "has_salt_block": {
       "conditions": {
         "items": [
           {
-            "items": "archeologic_caverns:salt"
+            "items": "archeologic_caverns:salt_block"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_salt"
+      "has_salt_block"
     ]
   ],
   "rewards": {

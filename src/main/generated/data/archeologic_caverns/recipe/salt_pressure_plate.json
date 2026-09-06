@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "#": "archeologic_caverns:salt"
+    "#": "archeologic_caverns:salt_block"
   },
   "pattern": [
     "##"

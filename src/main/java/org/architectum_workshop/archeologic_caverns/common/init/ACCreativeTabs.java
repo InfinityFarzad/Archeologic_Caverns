@@ -91,7 +91,7 @@ public interface ACCreativeTabs {
                     output.accept(ACBlocks.DEEPSLATE_LANTERN);
                     output.accept(Blocks.DEEPSLATE);
 
-                    output.accept(ACBlocks.SALT);
+                    output.accept(ACBlocks.SALT_BLOCK);
                     output.accept(ACBlocks.SALT_STAIRS);
                     output.accept(ACBlocks.SALT_SLAB);
                     output.accept(ACBlocks.SALT_WALL);

@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "archeologic_caverns:salt"
+          "name": "archeologic_caverns:salt_block"
         }
       ],
       "rolls": 1.0

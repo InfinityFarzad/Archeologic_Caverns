@@ -45,7 +45,7 @@ public interface ACBlocks {
 
 
     Block CHISELED_DRIPSTONE = register("chiseled_dripstone", Block::new, BlockBehaviour.Properties.ofFullCopy(DRIPSTONE_BRICKS), true);
-    Block AMBER_BLOCK = register("amber_block", Block::new, BlockBehaviour.Properties.ofFullCopy(GLASS).lightLevel((state) -> 15), true);
+    Block AMBER_BLOCK = register("amber_block", Block::new, BlockBehaviour.Properties.ofFullCopy(GLASS).lightLevel((state) -> 8), true);
 
     // Calcite
 
@@ -82,10 +82,10 @@ public interface ACBlocks {
 
     //Salt
 
-    Block SALT = register("salt", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).sound(SoundType.CALCITE));
-    Block SALT_STAIRS = createStairsBlock("salt_stairs", SALT);
-    Block SALT_SLAB = createSlabBlock("salt_slab", SALT);
-    Block SALT_WALL = createWallBlock("salt_wall", SALT);
+    Block SALT_BLOCK = register("salt_block", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).sound(SoundType.CALCITE));
+    Block SALT_STAIRS = createStairsBlock("salt_stairs", SALT_BLOCK);
+    Block SALT_SLAB = createSlabBlock("salt_slab", SALT_BLOCK);
+    Block SALT_WALL = createWallBlock("salt_wall", SALT_BLOCK);
 
     Block POTENT_SALT = register("potent_salt", PotentSaltBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).sound(SoundType.CALCITE));
 

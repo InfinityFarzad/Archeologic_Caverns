@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_salt": {
+    "has_salt_block": {
       "conditions": {
         "items": [
           {
-            "items": "archeologic_caverns:salt"
+            "items": "archeologic_caverns:salt_block"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "archeologic_caverns:salt_slab_from_salt_stonecutting"
+        "recipe": "archeologic_caverns:salt_wall_from_salt_block_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_salt"
+      "has_salt_block"
     ]
   ],
   "rewards": {
     "recipes": [
-      "archeologic_caverns:salt_slab_from_salt_stonecutting"
+      "archeologic_caverns:salt_wall_from_salt_block_stonecutting"
     ]
   }
 }
