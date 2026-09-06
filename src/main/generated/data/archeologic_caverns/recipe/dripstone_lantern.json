@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:dripstone_block",
+    "a": "minecraft:resin_clump",
+    "c": "minecraft:charcoal",
+    "i": "minecraft:iron_nugget"
+  },
+  "pattern": [
+    " i ",
+    "aca",
+    "###"
+  ],
+  "result": {
+    "count": 3,
+    "id": "archeologic_caverns:dripstone_lantern"
+  }
+}
