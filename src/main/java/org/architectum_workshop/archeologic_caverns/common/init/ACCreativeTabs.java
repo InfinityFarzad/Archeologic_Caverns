@@ -97,6 +97,8 @@ public interface ACCreativeTabs {
                     output.accept(ACBlocks.SALT_WALL);
                     output.accept(ACBlocks.SALT_PRESSURE_PLATE);
                     output.accept(ACBlocks.POTENT_SALT);
+
+                    output.accept(ACBlocks.AMBER_BLOCK);
                 }
             })
             .icon(() -> new ItemStack(ACBlocks.CHISELED_DRIPSTONE))

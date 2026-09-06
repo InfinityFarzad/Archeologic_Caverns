@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
+import static net.minecraft.world.level.block.Blocks.*;
+
 public interface ACBlocks {
 
     List<Block> TRANSLATED_BLOCKS = new ArrayList<>();
@@ -41,7 +43,9 @@ public interface ACBlocks {
     Block DRIPSTONE_TILE_SLAB = createSlabBlock("dripstone_tile_slab", DRIPSTONE_TILES);
     Block DRIPSTONE_TILE_WALL = register("dripstone_tile_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(DRIPSTONE_TILES), true);
 
+
     Block CHISELED_DRIPSTONE = register("chiseled_dripstone", Block::new, BlockBehaviour.Properties.ofFullCopy(DRIPSTONE_BRICKS), true);
+    Block AMBER_BLOCK = register("amber_block", Block::new, BlockBehaviour.Properties.ofFullCopy(GLASS).lightLevel((state) -> 15), true);
 
     // Calcite
 
