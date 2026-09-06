@@ -85,6 +85,28 @@ public class ArcheologicCavernsRecipeGenerator extends FabricRecipeProvider {
                                 .unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE))
                                 .save(output);
 
+                        shaped(RecipeCategory.DECORATIONS, ArcheologicCavernsBlocks.DEEPSLATE_LANTERN, 3)
+                                .define('#', Blocks.COBBLED_DEEPSLATE)
+                                .define('a', Items.LAPIS_LAZULI)
+                                .define('c', Items.CHARCOAL)
+                                .define('i', Items.IRON_NUGGET)
+                                .pattern(" i ")
+                                .pattern("aca")
+                                .pattern("###")
+                                .unlockedBy(getHasName(Items.COBBLED_DEEPSLATE), has(Items.COBBLED_DEEPSLATE))
+                                .save(output);
+
+                        shaped(RecipeCategory.DECORATIONS, ArcheologicCavernsBlocks.DRIPSTONE_LANTERN, 3)
+                                .define('#', Blocks.DRIPSTONE_BLOCK)
+                                .define('a', Items.RESIN_CLUMP)
+                                .define('c', Items.CHARCOAL)
+                                .define('i', Items.IRON_NUGGET)
+                                .pattern(" i ")
+                                .pattern("aca")
+                                .pattern("###")
+                                .unlockedBy(getHasName(Items.DRIPSTONE_BLOCK), has(Items.DRIPSTONE_BLOCK))
+                                .save(output);
+
 
                         /*                        shaped(RecipeCategory.BUILDING_BLOCKS, ArcheologicCavernsBlocks.CALCITE_SHINGLES, 4)
                                 .define('#', ArcheologicCavernsBlocks.CALCITE_TILES)
