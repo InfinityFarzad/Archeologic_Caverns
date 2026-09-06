@@ -37,20 +37,6 @@ public class ACModelProvider extends FabricModelProvider {
         blockModelGenerators.createTrivialCube(ACBlocks.POTENT_SALT);
     }
 
-    private void createStimulator(BlockModelGenerators blockModelGenerators, Block block) {
-        TextureMapping offTextures = TextureMapping.column(Blocks.OBSERVER)
-                .copyAndUpdate(TextureSlot.FRONT, new Material(BuiltInRegistries.BLOCK.getKey(block).withPrefix("block/").withSuffix("_front")))
-                .copyAndUpdate(TextureSlot.SOUTH, new Material(BuiltInRegistries.BLOCK.getKey(block).withPrefix("block/").withSuffix("_back")))
-                ;
-        TextureMapping onTextures = TextureMapping.column(Blocks.OBSERVER)
-                .copyAndUpdate(TextureSlot.FRONT, new Material(BuiltInRegistries.BLOCK.getKey(block).withPrefix("block/").withSuffix("_front_on")))
-                .copyAndUpdate(TextureSlot.SOUTH, new Material(BuiltInRegistries.BLOCK.getKey(block).withPrefix("block/").withSuffix("_back_on")))
-                ;
-        MultiVariant off = BlockModelGenerators.plainVariant(ModelTemplates.CUBE_ORIENTABLE.create(block, offTextures, blockModelGenerators.modelOutput));
-        MultiVariant on = BlockModelGenerators.plainVariant(ModelTemplates.CUBE_ORIENTABLE.create(BuiltInRegistries.BLOCK.getKey(block).withSuffix("_on"), onTextures, blockModelGenerators.modelOutput));
-        blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(BlockModelGenerators.createBooleanModelDispatch(BlockStateProperties.POWERED, on, off)).with(BlockModelGenerators.ROTATION_FACING));
-    }
-
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
         itemModelGenerators.createFlatItemModel(ACBlocks.CALCITE_LANTERN.asItem(), ModelTemplates.FLAT_ITEM);
