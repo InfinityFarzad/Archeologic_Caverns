@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "archeologic_caverns:block/polished_salt",
+    "side": "archeologic_caverns:block/polished_salt",
+    "top": "archeologic_caverns:block/polished_salt"
+  }
+}

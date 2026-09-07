@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "archeologic_caverns:salt_bricks",
+  "result": {
+    "id": "archeologic_caverns:salt_brick_stairs"
+  }
+}
