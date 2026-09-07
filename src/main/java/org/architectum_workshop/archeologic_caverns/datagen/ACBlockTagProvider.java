@@ -25,8 +25,12 @@ public class ACBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                         ACBlocks.POLISHED_CALCITE_WALL,
                         ACBlocks.CALCITE_BRICK_WALL,
                         ACBlocks.CALCITE_TILE_WALL
-                )
-                .add(ACBlocks.SALT_WALL);
+                ).add(
+                        ACBlocks.POLISHED_SALT_WALL,
+                        ACBlocks.SALT_BRICK_WALL,
+                        ACBlocks.SALT_WALL
+                );
+
 
         valueLookupBuilder(BlockTags.SLABS)
                 .add(
@@ -37,8 +41,10 @@ public class ACBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                         ACBlocks.POLISHED_CALCITE_SLAB,
                         ACBlocks.CALCITE_BRICK_SLAB,
                         ACBlocks.CALCITE_TILE_SLAB
-                )
-                .add(ACBlocks.SALT_SLAB);
+                ).add(
+                        ACBlocks.SALT_SLAB,
+                        ACBlocks.SALT_BRICK_SLAB,
+                        ACBlocks.POLISHED_SALT_SLAB);
 
         valueLookupBuilder(BlockTags.STAIRS)
                 .add(
@@ -51,7 +57,11 @@ public class ACBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                         ACBlocks.CALCITE_BRICK_STAIRS,
                         ACBlocks.CALCITE_TILE_STAIRS
                 )
-                .add(ACBlocks.SALT_STAIRS);
+                .add(
+                        ACBlocks.SALT_SLAB,
+                        ACBlocks.SALT_BRICK_SLAB,
+                        ACBlocks.POLISHED_SALT_SLAB
+                );
 
         valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(
@@ -62,7 +72,12 @@ public class ACBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                         ACBlocks.POLISHED_CALCITE_WALL,
                         ACBlocks.POLISHED_CALCITE,
                         ACBlocks.POLISHED_CALCITE_STAIRS,
-                        ACBlocks.POLISHED_CALCITE_SLAB
+                        ACBlocks.POLISHED_CALCITE_SLAB,
+                        ACBlocks.POLISHED_SALT_WALL,
+                        ACBlocks.POLISHED_SALT,
+                        ACBlocks.POLISHED_SALT_STAIRS,
+                        ACBlocks.POLISHED_SALT_SLAB
+
                 )
                 .add(
                         ACBlocks.DRIPSTONE_BRICKS,
@@ -72,7 +87,11 @@ public class ACBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                         ACBlocks.CALCITE_BRICKS,
                         ACBlocks.CALCITE_BRICK_WALL,
                         ACBlocks.CALCITE_BRICK_SLAB,
-                        ACBlocks.CALCITE_BRICK_STAIRS
+                        ACBlocks.CALCITE_BRICK_STAIRS,
+                        ACBlocks.SALT_BRICKS,
+                        ACBlocks.SALT_BRICK_WALL,
+                        ACBlocks.SALT_BRICK_SLAB,
+                        ACBlocks.SALT_BRICK_STAIRS
                 ).add(
                         ACBlocks.DRIPSTONE_TILES,
                         ACBlocks.DRIPSTONE_TILE_WALL,
@@ -95,7 +114,8 @@ public class ACBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(
                     ACBlocks.DEEPSLATE_LANTERN,
                     ACBlocks.CALCITE_LANTERN,
-                    ACBlocks.DRIPSTONE_LANTERN
+                    ACBlocks.DRIPSTONE_LANTERN,
+                    ACBlocks.SALT_LANTERN
                 )
                 .add(
                         ACBlocks.SALT_BLOCK,
@@ -105,6 +125,6 @@ public class ACBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                         ACBlocks.POTENT_SALT,
                         ACBlocks.SALT_PRESSURE_PLATE
                 );
-        valueLookupBuilder(BlockTags.LANTERNS).add(ACBlocks.DEEPSLATE_LANTERN, ACBlocks.CALCITE_LANTERN, ACBlocks.DRIPSTONE_LANTERN);
+        valueLookupBuilder(BlockTags.LANTERNS).add(ACBlocks.DEEPSLATE_LANTERN, ACBlocks.CALCITE_LANTERN, ACBlocks.DRIPSTONE_LANTERN, ACBlocks.SALT_LANTERN);
     }
 }

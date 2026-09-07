@@ -18,7 +18,7 @@ public class ACItemTagProvider extends FabricTagsProvider.ItemTagsProvider{
 
     @Override
     protected void addTags(HolderLookup.Provider registries) {
-        valueLookupBuilder(ItemTags.LANTERNS).add(ACBlocks.DEEPSLATE_LANTERN.asItem(), ACBlocks.CALCITE_LANTERN.asItem(), ACBlocks.DRIPSTONE_LANTERN.asItem());
+        valueLookupBuilder(ItemTags.LANTERNS).add(ACBlocks.DEEPSLATE_LANTERN.asItem(), ACBlocks.CALCITE_LANTERN.asItem(), ACBlocks.DRIPSTONE_LANTERN.asItem(), ACBlocks.SALT_LANTERN.asItem());
         valueLookupBuilder(ACTags.Items.AMETHYST_TOOL_REPAIRABLE).add(Items.AMETHYST_SHARD);
     }
 }

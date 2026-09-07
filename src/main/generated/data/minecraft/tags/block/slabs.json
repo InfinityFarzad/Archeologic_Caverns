@@ -6,6 +6,8 @@
     "archeologic_caverns:polished_calcite_slab",
     "archeologic_caverns:calcite_brick_slab",
     "archeologic_caverns:calcite_tile_slab",
-    "archeologic_caverns:salt_slab"
+    "archeologic_caverns:salt_slab",
+    "archeologic_caverns:salt_brick_slab",
+    "archeologic_caverns:polished_salt_slab"
   ]
 }
