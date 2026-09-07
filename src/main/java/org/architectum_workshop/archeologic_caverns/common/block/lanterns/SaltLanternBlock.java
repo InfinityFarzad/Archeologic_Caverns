@@ -1,0 +1,23 @@
+package org.architectum_workshop.archeologic_caverns.common.block.lanterns;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LanternBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+public class SaltLanternBlock extends LanternBlock {
+    private static final VoxelShape SHAPE_STANDING = Shapes.or(Block.column(8.0, 0.0, 8.0), Block.column(10.0, 7.0, 11.0));
+    private static final VoxelShape SHAPE_HANGING = SHAPE_STANDING.move(0.0, 0.0625, 0.0).optimize();
+
+    public SaltLanternBlock(Properties properties) {
+        super(properties);
+    }
+    @Override
+    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return state.getValue(HANGING) ? SHAPE_HANGING : SHAPE_STANDING;
+    }
+}

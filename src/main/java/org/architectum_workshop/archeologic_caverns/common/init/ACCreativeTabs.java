@@ -95,6 +95,18 @@ public interface ACCreativeTabs {
                     output.accept(ACBlocks.SALT_STAIRS);
                     output.accept(ACBlocks.SALT_SLAB);
                     output.accept(ACBlocks.SALT_WALL);
+
+                    output.accept(ACBlocks.POLISHED_SALT);
+                    output.accept(ACBlocks.POLISHED_SALT_STAIRS);
+                    output.accept(ACBlocks.POLISHED_SALT_SLAB);
+                    output.accept(ACBlocks.POLISHED_SALT_WALL);
+
+                    output.accept(ACBlocks.SALT_BRICKS);
+                    output.accept(ACBlocks.SALT_BRICK_STAIRS);
+                    output.accept(ACBlocks.SALT_BRICK_SLAB);
+                    output.accept(ACBlocks.SALT_BRICK_WALL);
+                    output.accept(ACBlocks.SALT_LANTERN);
+
                     output.accept(ACBlocks.SALT_PRESSURE_PLATE);
                     output.accept(ACBlocks.POTENT_SALT);
 

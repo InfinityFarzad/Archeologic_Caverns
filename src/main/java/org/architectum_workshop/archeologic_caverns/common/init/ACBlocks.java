@@ -15,6 +15,7 @@ import org.architectum_workshop.archeologic_caverns.common.block.SaltPressurePla
 import org.architectum_workshop.archeologic_caverns.common.block.lanterns.CalciteLanternBlock;
 import org.architectum_workshop.archeologic_caverns.common.block.lanterns.DeepslateLanternBlock;
 import org.architectum_workshop.archeologic_caverns.common.block.lanterns.DripstoneLanternBlock;
+import org.architectum_workshop.archeologic_caverns.common.block.lanterns.SaltLanternBlock;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,6 +76,7 @@ public interface ACBlocks {
     Block CALCITE_LANTERN = register("calcite_lantern", CalciteLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
     Block DEEPSLATE_LANTERN = register("deepslate_lantern", DeepslateLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
     Block DRIPSTONE_LANTERN = register("dripstone_lantern", DripstoneLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
+    Block SALT_LANTERN = register("salt_lantern", SaltLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
 
     Block CALCITE_PILLAR = register("calcite_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE));
     Block DRIPSTONE_PILLAR = register("dripstone_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DRIPSTONE_BLOCK));
@@ -86,6 +88,16 @@ public interface ACBlocks {
     Block SALT_STAIRS = createStairsBlock("salt_stairs", SALT_BLOCK);
     Block SALT_SLAB = createSlabBlock("salt_slab", SALT_BLOCK);
     Block SALT_WALL = createWallBlock("salt_wall", SALT_BLOCK);
+
+    Block SALT_BRICKS = register("salt_bricks", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).sound(SoundType.CALCITE));
+    Block SALT_BRICK_STAIRS = createStairsBlock("salt_brick_stairs", SALT_BLOCK);
+    Block SALT_BRICK_SLAB = createSlabBlock("salt_brick_slab", SALT_BLOCK);
+    Block SALT_BRICK_WALL = createWallBlock("salt_brick_wall", SALT_BLOCK);
+
+    Block POLISHED_SALT = register("polished_salt", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).sound(SoundType.CALCITE));
+    Block POLISHED_SALT_STAIRS = createStairsBlock("polished_salt_stairs", SALT_BLOCK);
+    Block POLISHED_SALT_SLAB = createSlabBlock("polished_salt_slab", SALT_BLOCK);
+    Block POLISHED_SALT_WALL = createWallBlock("polished_salt_wall", SALT_BLOCK);
 
     Block POTENT_SALT = register("potent_salt", PotentSaltBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).sound(SoundType.CALCITE));
 

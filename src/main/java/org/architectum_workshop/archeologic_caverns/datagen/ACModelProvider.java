@@ -28,6 +28,8 @@ public class ACModelProvider extends FabricModelProvider {
         blockModelGenerators.createTrivialBlock(ACBlocks.CHISELED_CALCITE, TexturedModel.COLUMN);
 
         blockModelGenerators.family(ACBlocks.SALT_BLOCK).slab(ACBlocks.SALT_SLAB).stairs(ACBlocks.SALT_STAIRS).wall(ACBlocks.SALT_WALL).pressurePlate(ACBlocks.SALT_PRESSURE_PLATE);
+        blockModelGenerators.family(ACBlocks.SALT_BRICKS).wall(ACBlocks.SALT_BRICK_WALL).slab(ACBlocks.SALT_BRICK_SLAB).stairs(ACBlocks.SALT_BRICK_STAIRS);
+        blockModelGenerators.family(ACBlocks.POLISHED_SALT).wall(ACBlocks.POLISHED_SALT_WALL).slab(ACBlocks.POLISHED_SALT_SLAB).stairs(ACBlocks.POLISHED_SALT_STAIRS);
         blockModelGenerators.createTrivialCube(ACBlocks.POTENT_SALT);
     }
 
@@ -36,6 +38,7 @@ public class ACModelProvider extends FabricModelProvider {
         itemModelGenerators.createFlatItemModel(ACBlocks.CALCITE_LANTERN.asItem(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.createFlatItemModel(ACBlocks.DEEPSLATE_LANTERN.asItem(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.createFlatItemModel(ACBlocks.DRIPSTONE_LANTERN.asItem(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.createFlatItemModel(ACBlocks.SALT_LANTERN.asItem(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.createFlatItemModel(ACItems.AMBER, ModelTemplates.FLAT_ITEM);
 
     }
