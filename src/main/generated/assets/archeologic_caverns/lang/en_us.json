@@ -48,6 +48,7 @@
   "block.archeologic_caverns.salt_stairs": "Salt Stairs",
   "block.archeologic_caverns.salt_wall": "Salt Wall",
   "creative_tab.archeologic_caverns.cave_blocks": "Cave Blocks",
+  "death.attack.inSalt": "%1$s had too much salt in the wounds",
   "item.archeologic_caverns.amber": "Amber",
   "item.archeologic_caverns.amethyst_axe": "Amethyst Axe",
   "item.archeologic_caverns.dripstone_drill": "Dripstone Drill"
