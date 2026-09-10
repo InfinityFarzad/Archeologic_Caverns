@@ -9,6 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
+import org.architectum_workshop.archeologic_caverns.common.block.BrazierBlock;
 import org.architectum_workshop.archeologic_caverns.common.block.ConnectingPillarBlock;
 import org.architectum_workshop.archeologic_caverns.common.block.PotentSaltBlock;
 import org.architectum_workshop.archeologic_caverns.common.block.SaltPressurePlateBlock;
@@ -81,6 +82,9 @@ public interface ACBlocks {
     Block CALCITE_PILLAR = register("calcite_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE));
     Block DRIPSTONE_PILLAR = register("dripstone_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DRIPSTONE_BLOCK));
     Block DEEPSLATE_PILLAR = register("deepslate_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE));
+
+    Block BRAZIER = register("brazier", BrazierBlock::new, BlockBehaviour.Properties.of());
+    Block SOUL_BRAZIER = register("soul_brazier", BrazierBlock::new, BlockBehaviour.Properties.of());
 
     //Salt
 
