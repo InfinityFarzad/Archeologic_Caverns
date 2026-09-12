@@ -1,10 +1,10 @@
 {
   "variants": {
     "hanging=false": {
-      "model": "archeologic_caverns:block/deepslate_lantern"
+      "model": "archeologic_caverns:block/lantern/deepslate_lantern"
     },
     "hanging=true": {
-      "model": "archeologic_caverns:block/deepslate_lantern_hanging"
+      "model": "archeologic_caverns:block/lantern/deepslate_lantern_hanging"
     }
   }
 }

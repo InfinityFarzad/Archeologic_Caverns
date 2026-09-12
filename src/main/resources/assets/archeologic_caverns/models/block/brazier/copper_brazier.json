@@ -1,0 +1,7 @@
+{
+  "parant": "archeologic_caverns:block/brazier/base_braszier",
+  "textures": {
+    "flame": "archeologic_caverns:block/copper_flame",
+    "base": "archeologic_caverns:block/iron_brazier"
+  }
+}

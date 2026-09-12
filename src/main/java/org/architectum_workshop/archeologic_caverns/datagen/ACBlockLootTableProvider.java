@@ -29,6 +29,8 @@ public class ACBlockLootTableProvider extends FabricBlockLootSubProvider {
         add(ACBlocks.DRIPSTONE_BRICK_SLAB, createSlabItemTable(ACBlocks.DRIPSTONE_BRICK_SLAB));
         dropSelf(ACBlocks.DRIPSTONE_BRICK_STAIRS);
         dropSelf(ACBlocks.DRIPSTONE_BRICK_WALL);
+        dropSelf(ACBlocks.BRAZIER);
+        dropSelf(ACBlocks.SOUL_BRAZIER);
 
 /*
         dropSelf(ArcheologicCavernsBlocks.CALCITE_SHINGLES);

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "i": "minecraft:iron_nugget",
+    "t": "minecraft:soul_torch"
+  },
+  "pattern": [
+    "iti",
+    "i i"
+  ],
+  "result": {
+    "id": "archeologic_caverns:soul_brazier"
+  }
+}

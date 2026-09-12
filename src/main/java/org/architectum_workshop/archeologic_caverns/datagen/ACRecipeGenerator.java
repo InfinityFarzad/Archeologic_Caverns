@@ -212,6 +212,23 @@ public class ACRecipeGenerator extends FabricRecipeProvider {
                         createDoubleStonecutterRecipe(ACBlocks.SALT_BRICKS, ACBlocks.SALT_BRICK_SLAB);
 
                         pressurePlate(ACBlocks.SALT_PRESSURE_PLATE, ACBlocks.SALT_BLOCK);
+
+                        shaped(RecipeCategory.DECORATIONS, ACBlocks.BRAZIER)
+                                .define('i', Items.IRON_NUGGET)
+                                .define('t', Items.TORCH)
+                                .pattern("iti")
+                                .pattern("i i")
+                                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                                .save(output);
+
+                        shaped(RecipeCategory.DECORATIONS, ACBlocks.SOUL_BRAZIER)
+                                .define('i', Items.IRON_NUGGET)
+                                .define('t', Items.SOUL_TORCH)
+                                .pattern("iti")
+                                .pattern("i i")
+                                .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                                .save(output);
+
                     }
             public void createStonecutterRecipe(ItemLike base, ItemLike... results) {
                 for (ItemLike result : results) {

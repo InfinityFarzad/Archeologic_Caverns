@@ -112,6 +112,9 @@ public interface ACCreativeTabs {
 
                     output.accept(ACBlocks.AMBER_BLOCK);
                     output.accept(ACItems.AMBER);
+
+                    output.accept(ACBlocks.BRAZIER);
+                    output.accept(ACBlocks.SOUL_BRAZIER);
                 }
             })
             .icon(() -> new ItemStack(ACBlocks.CHISELED_DRIPSTONE))

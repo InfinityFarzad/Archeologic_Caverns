@@ -1,10 +1,10 @@
 {
   "variants": {
     "hanging=false": {
-      "model": "archeologic_caverns:block/salt_lantern"
+      "model": "archeologic_caverns:block/lantern/salt_lantern"
     },
     "hanging=true": {
-      "model": "archeologic_caverns:block/salt_lantern_hanging"
+      "model": "archeologic_caverns:block/lantern/salt_lantern_hanging"
     }
   }
 }

@@ -8,6 +8,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 import org.architectum_workshop.archeologic_caverns.common.block.BrazierBlock;
 import org.architectum_workshop.archeologic_caverns.common.block.ConnectingPillarBlock;
@@ -83,8 +84,8 @@ public interface ACBlocks {
     Block DRIPSTONE_PILLAR = register("dripstone_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DRIPSTONE_BLOCK));
     Block DEEPSLATE_PILLAR = register("deepslate_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE));
 
-    Block BRAZIER = register("brazier", BrazierBlock::new, BlockBehaviour.Properties.of());
-    Block SOUL_BRAZIER = register("soul_brazier", BrazierBlock::new, BlockBehaviour.Properties.of());
+    Block BRAZIER = register("brazier", BrazierBlock::new, BlockBehaviour.Properties.of().lightLevel(i -> i.getValue(BlockStateProperties.LIT) ? 15 : 0).strength(5).requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK).noOcclusion());
+    Block SOUL_BRAZIER = register("soul_brazier", BrazierBlock::new, BlockBehaviour.Properties.ofFullCopy(BRAZIER));
 
     //Salt
 

@@ -1,10 +1,10 @@
 {
   "variants": {
     "hanging=false": {
-      "model": "archeologic_caverns:block/calcite_lantern"
+      "model": "archeologic_caverns:block/lantern/calcite_lantern"
     },
     "hanging=true": {
-      "model": "archeologic_caverns:block/calcite_lantern_hanging"
+      "model": "archeologic_caverns:block/lantern/calcite_lantern_hanging"
     }
   }
 }

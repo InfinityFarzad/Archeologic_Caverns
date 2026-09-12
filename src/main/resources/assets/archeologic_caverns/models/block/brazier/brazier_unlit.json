@@ -1,0 +1,7 @@
+{
+  "parent": "archeologic_caverns:block/brazier/base_brazier_unlit",
+  "textures": {
+    "base": "archeologic_caverns:block/brazier/iron_brazier",
+    "particle": "archeologic_caverns:item/brazier/brazier"
+  }
+}

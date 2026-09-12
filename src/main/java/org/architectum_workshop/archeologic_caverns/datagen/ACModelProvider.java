@@ -4,9 +4,18 @@ import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.resources.model.sprite.Material;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 import org.architectum_workshop.archeologic_caverns.common.init.ACBlocks;
 import org.architectum_workshop.archeologic_caverns.common.init.ACItems;
+
+import java.util.Optional;
 
 public class ACModelProvider extends FabricModelProvider {
     public ACModelProvider(FabricPackOutput output) {
@@ -31,6 +40,7 @@ public class ACModelProvider extends FabricModelProvider {
         blockModelGenerators.family(ACBlocks.SALT_BRICKS).wall(ACBlocks.SALT_BRICK_WALL).slab(ACBlocks.SALT_BRICK_SLAB).stairs(ACBlocks.SALT_BRICK_STAIRS);
         blockModelGenerators.family(ACBlocks.POLISHED_SALT).wall(ACBlocks.POLISHED_SALT_WALL).slab(ACBlocks.POLISHED_SALT_SLAB).stairs(ACBlocks.POLISHED_SALT_STAIRS);
         blockModelGenerators.createTrivialCube(ACBlocks.POTENT_SALT);
+
     }
 
     @Override
@@ -42,4 +52,5 @@ public class ACModelProvider extends FabricModelProvider {
         itemModelGenerators.createFlatItemModel(ACItems.AMBER, ModelTemplates.FLAT_ITEM);
 
     }
+
 }

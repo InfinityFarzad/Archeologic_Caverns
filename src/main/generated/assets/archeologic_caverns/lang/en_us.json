@@ -1,5 +1,6 @@
 {
   "block.archeologic_caverns.amber_block": "Amber Block",
+  "block.archeologic_caverns.brazier": "Brazier",
   "block.archeologic_caverns.calcite_brick_slab": "Calcite Brick Slab",
   "block.archeologic_caverns.calcite_brick_stairs": "Calcite Brick Stairs",
   "block.archeologic_caverns.calcite_brick_wall": "Calcite Brick Wall",
@@ -47,6 +48,7 @@
   "block.archeologic_caverns.salt_slab": "Salt Slab",
   "block.archeologic_caverns.salt_stairs": "Salt Stairs",
   "block.archeologic_caverns.salt_wall": "Salt Wall",
+  "block.archeologic_caverns.soul_brazier": "Soul Brazier",
   "creative_tab.archeologic_caverns.cave_blocks": "Cave Blocks",
   "death.attack.inSalt": "%1$s had too much salt in the wounds",
   "item.archeologic_caverns.amber": "Amber",

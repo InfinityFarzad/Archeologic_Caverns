@@ -3,7 +3,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"4": "archeologic_caverns:block/calcite_lantern",
+		"4": "archeologic_caverns:block/lantern/calcite_lantern",
 		"particle": "archeologic_caverns:item/calcite_lantern"
 	},
 	"elements": [

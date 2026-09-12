@@ -124,6 +124,10 @@ public class ACBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                         ACBlocks.SALT_WALL,
                         ACBlocks.POTENT_SALT,
                         ACBlocks.SALT_PRESSURE_PLATE
+                )
+                .add(
+                        ACBlocks.SOUL_BRAZIER,
+                        ACBlocks.BRAZIER
                 );
         valueLookupBuilder(BlockTags.LANTERNS).add(ACBlocks.DEEPSLATE_LANTERN, ACBlocks.CALCITE_LANTERN, ACBlocks.DRIPSTONE_LANTERN, ACBlocks.SALT_LANTERN);
     }

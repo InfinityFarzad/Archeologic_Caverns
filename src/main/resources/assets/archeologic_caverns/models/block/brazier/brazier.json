@@ -1,0 +1,8 @@
+{
+  "parent": "archeologic_caverns:block/brazier/base_brazier",
+  "textures": {
+    "flame": "minecraft:block/campfire_fire",
+    "base": "archeologic_caverns:block/brazier/iron_brazier",
+    "particle": "archeologic_caverns:item/brazier/brazier"
+  }
+}

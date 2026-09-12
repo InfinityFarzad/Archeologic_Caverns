@@ -46,6 +46,8 @@
     "archeologic_caverns:salt_slab",
     "archeologic_caverns:salt_wall",
     "archeologic_caverns:potent_salt",
-    "archeologic_caverns:salt_pressure_plate"
+    "archeologic_caverns:salt_pressure_plate",
+    "archeologic_caverns:soul_brazier",
+    "archeologic_caverns:brazier"
   ]
 }
