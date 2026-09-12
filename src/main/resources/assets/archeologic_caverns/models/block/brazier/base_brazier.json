@@ -3,14 +3,14 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"flame": "minecraft:block/campfire_fire",
+		"flame": "block/campfire_fire",
 		"base": "archeologic_caverns:block/iron_brazier"
 	},
 	"elements": [
 		{
-			"from": [0, 6, 0],
-			"to": [0, 13, 16],
-			"rotation": {"angle": 0, "axis": "y", "origin": [1, 2, 2]},
+			"from": [0.08, 5.84, 0.08],
+			"to": [0.08, 12.77, 15.92],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1.07, 1.88, 2.06]},
 			"faces": {
 				"north": {"uv": [0, 0, 0, 1.75], "texture": "#base"},
 				"east": {"uv": [4, 7, 8, 8.75], "texture": "#base"},
@@ -21,9 +21,9 @@
 			}
 		},
 		{
-			"from": [16, 6, 0],
-			"to": [16, 13, 16],
-			"rotation": {"angle": 0, "axis": "y", "origin": [17, 2, 2]},
+			"from": [15.92, 5.84, 0.08],
+			"to": [15.92, 12.77, 15.92],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16.91, 1.88, 2.06]},
 			"faces": {
 				"north": {"uv": [0, 0, 0, 1.75], "texture": "#base"},
 				"east": {"uv": [4, 7, 8, 8.75], "texture": "#base"},
@@ -99,9 +99,9 @@
 			}
 		},
 		{
-			"from": [0, 13, 0],
-			"to": [16, 13, 16],
-			"rotation": {"angle": 0, "axis": "y", "origin": [16, 14, 2]},
+			"from": [0.08, 12.77, 0.08],
+			"to": [15.92, 12.77, 15.92],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15.92, 13.76, 2.06]},
 			"faces": {
 				"north": {"uv": [0, 0, 4, 0], "texture": "#base"},
 				"east": {"uv": [0, 0, 4, 0], "texture": "#base"},
@@ -112,9 +112,9 @@
 			}
 		},
 		{
-			"from": [0, 6, 0],
-			"to": [16, 6, 16],
-			"rotation": {"angle": 0, "axis": "y", "origin": [16, 7, 2]},
+			"from": [0.08, 5.84, 0.08],
+			"to": [15.92, 5.84, 15.92],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15.92, 6.83, 2.06]},
 			"faces": {
 				"north": {"uv": [0, 0, 4, 0], "texture": "#base"},
 				"east": {"uv": [0, 0, 4, 0], "texture": "#base"},
@@ -125,9 +125,9 @@
 			}
 		},
 		{
-			"from": [13, 6, -1],
-			"to": [13, 13, 15],
-			"rotation": {"x": 0, "y": -90, "z": 0, "origin": [14, 2, 1]},
+			"from": [12.95, 5.84, -0.91],
+			"to": [12.95, 12.77, 14.93],
+			"rotation": {"x": 0, "y": -90, "z": 0, "origin": [13.94, 1.88, 1.07]},
 			"faces": {
 				"north": {"uv": [0, 0, 0, 1.75], "texture": "#base"},
 				"east": {"uv": [4, 7, 8, 8.75], "texture": "#base"},
@@ -138,9 +138,9 @@
 			}
 		},
 		{
-			"from": [13, 6, 15],
-			"to": [13, 13, 31],
-			"rotation": {"x": 0, "y": -90, "z": 0, "origin": [14, 2, 17]},
+			"from": [12.95, 5.84, 14.93],
+			"to": [12.95, 12.77, 30.77],
+			"rotation": {"x": 0, "y": -90, "z": 0, "origin": [13.94, 1.88, 16.91]},
 			"faces": {
 				"north": {"uv": [0, 0, 0, 1.75], "texture": "#base"},
 				"east": {"uv": [4, 7, 8, 8.75], "texture": "#base"},
