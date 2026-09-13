@@ -115,6 +115,7 @@ public interface ACCreativeTabs {
 
                     output.accept(ACBlocks.BRAZIER);
                     output.accept(ACBlocks.SOUL_BRAZIER);
+                    output.accept(ACItems.ITEM_OF_TRUE_GAYNESS);
                 }
             })
             .icon(() -> new ItemStack(ACBlocks.CHISELED_DRIPSTONE))
