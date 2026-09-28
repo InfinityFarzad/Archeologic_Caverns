@@ -1,7 +1,10 @@
 package org.architectum_workshop.archeologic_caverns.common.item;
 
+import net.akws.chiseled_lib.common.item.component.ItemHighlightComponent;
+import net.akws.chiseled_lib.common.registries.ChiseledLibComponents;
 import net.fabricmc.fabric.api.client.message.v1.ClientSendMessageEvents;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextColor;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -15,10 +18,10 @@ import net.minecraft.world.level.Level;
 import org.jspecify.annotations.Nullable;
 
 public class ItemOfTrueGaynessItem extends Item {
+    public int color = 0;
     public ItemOfTrueGaynessItem(Properties properties) {
         super(properties);
     }
-    public int color = 0;
 
     @Override
     public void inventoryTick(ItemStack itemStack, ServerLevel level, Entity owner, @Nullable EquipmentSlot slot) {

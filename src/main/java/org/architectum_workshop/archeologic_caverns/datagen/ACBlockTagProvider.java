@@ -4,7 +4,9 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import org.architectum_workshop.archeologic_caverns.common.init.ACBlocks;
+import org.architectum_workshop.archeologic_caverns.common.init.ACTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -130,5 +132,6 @@ public class ACBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                         ACBlocks.BRAZIER
                 );
         valueLookupBuilder(BlockTags.LANTERNS).add(ACBlocks.DEEPSLATE_LANTERN, ACBlocks.CALCITE_LANTERN, ACBlocks.DRIPSTONE_LANTERN, ACBlocks.SALT_LANTERN);
+        valueLookupBuilder(ACTags.Blocks.SALT_REPLACEABLE).add(Blocks.SAND).add(Blocks.GRAVEL);
     }
 }

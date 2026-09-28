@@ -15,6 +15,8 @@ public class ACDynamicRegistries extends FabricDynamicRegistryProvider {
     @Override
     protected void configure(HolderLookup.Provider provider, Entries entries) {
         entries.addAll(provider.lookupOrThrow(Registries.DAMAGE_TYPE));
+        entries.addAll(provider.lookupOrThrow(Registries.PLACED_FEATURE));
+        entries.addAll(provider.lookupOrThrow(Registries.CONFIGURED_FEATURE));
     }
 
     @Override

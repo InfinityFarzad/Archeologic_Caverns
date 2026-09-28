@@ -2,16 +2,20 @@ package org.architectum_workshop.archeologic_caverns.common;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
 import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 
-import org.architectum_workshop.archeologic_caverns.common.init.ACBlocks;
-import org.architectum_workshop.archeologic_caverns.common.init.ACCreativeTabs;
-import org.architectum_workshop.archeologic_caverns.common.init.ACItems;
-import org.architectum_workshop.archeologic_caverns.common.init.ACTags;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.level.levelgen.GenerationStep;
+import org.architectum_workshop.archeologic_caverns.common.init.*;
+import org.architectum_workshop.archeologic_caverns.common.worldgen.feature.SaltClusterFeature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,6 +32,13 @@ public class ArcheologicCaverns implements ModInitializer {
 		ACCreativeTabs.init();
 		ACItems.init();
 		ACTags.init();
+		ACFeatures.init();
+
+		BiomeModifications.addFeature(
+				BiomeSelectors.foundInOverworld().and(BiomeSelectors.tag(BiomeTags.IS_OCEAN)),
+				GenerationStep.Decoration.TOP_LAYER_MODIFICATION,
+				ACPlacedFeatures.SALT_PLACED_FEATURE);
+
 
 		FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(modContainer -> ResourceLoader.registerBuiltinPack(id("copper_reforged"), modContainer, Component.literal("Copper Reforged"), PackActivationType.DEFAULT_ENABLED));
 	}

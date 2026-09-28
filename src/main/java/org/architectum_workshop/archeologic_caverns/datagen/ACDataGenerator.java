@@ -4,7 +4,9 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
+import org.architectum_workshop.archeologic_caverns.common.init.ACConfiguredFeatures;
 import org.architectum_workshop.archeologic_caverns.common.init.ACDamageTypes;
+import org.architectum_workshop.archeologic_caverns.common.init.ACPlacedFeatures;
 
 public class ACDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -23,5 +25,8 @@ public class ACDataGenerator implements DataGeneratorEntrypoint {
 	@Override
 	public void buildRegistry(RegistrySetBuilder registryBuilder) {
 		registryBuilder.add(Registries.DAMAGE_TYPE, ACDamageTypes::bootstrap);
+		registryBuilder.add(Registries.PLACED_FEATURE, ACPlacedFeatures::configure);
+		registryBuilder.add(Registries.CONFIGURED_FEATURE, ACConfiguredFeatures::bootstrap);
+
 	}
 }

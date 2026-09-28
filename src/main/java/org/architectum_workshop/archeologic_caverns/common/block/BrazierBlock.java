@@ -14,8 +14,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.ChiseledBookShelfBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -24,15 +22,14 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.architectum_workshop.archeologic_caverns.common.block.impl.LightableBlock;
-import org.architectum_workshop.archeologic_caverns.common.block.impl.ShovelExtinguishable;
+import org.architectum_workshop.archeologic_caverns.common.block.impl.ExtinguishableBlock;
 import org.jspecify.annotations.Nullable;
 import org.spongepowered.asm.mixin.injection.Desc;
 
-public class BrazierBlock extends Block implements SimpleWaterloggedBlock, ShovelExtinguishable, LightableBlock {
+public class BrazierBlock extends Block implements SimpleWaterloggedBlock, ExtinguishableBlock, LightableBlock {
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
@@ -117,7 +114,7 @@ public class BrazierBlock extends Block implements SimpleWaterloggedBlock, Shove
         return SHAPE;
     }
 
-    public void onExtinguish(Entity source ,BlockState state, BlockPos pos, LevelAccessor level) {
+    public void onExtinguish(@Nullable Entity source ,BlockState state, BlockPos pos, LevelAccessor level) {
         level.playSound(null, pos, SoundEvents.LAVA_EXTINGUISH, SoundSource.BLOCKS);
         level.gameEvent(source, GameEvent.BLOCK_CHANGE, pos);
         if (level.isClientSide()) {
@@ -145,8 +142,26 @@ public class BrazierBlock extends Block implements SimpleWaterloggedBlock, Shove
     @Override
     protected int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos, Direction direction) {
         // aka condition for activation of redstone or smt idk
-        boolean conditionthatisveryfunnyat5am = !level.isClientSide() && state.getValue(LIT);
-        return conditionthatisveryfunnyat5am ? 15 : 0;
+        boolean emmitRedstoneSignal = !level.isClientSide() && state.getValue(LIT);
+        return emmitRedstoneSignal ? 15 : 0;
+    }
+
+    @Override
+    public boolean placeLiquid(LevelAccessor level, BlockPos pos, BlockState state, FluidState fluidState) {
+        if (!state.getValue(WATERLOGGED) && fluidState.is(FluidTags.WATER)) {
+            if (state.getValue(LIT)) {
+                onExtinguish(null, state, pos, level);
+            }
+            level.setBlock(pos, state.setValue(WATERLOGGED, true).setValue(LIT, false), 3);
+            level.scheduleTick(pos, fluidState.getType(), fluidState.getType().getTickDelay(level));
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean canBeExtinguishedByShovel(BlockState state, BlockPos pos, LevelAccessor level) {
+        return true;
     }
 
     @Override

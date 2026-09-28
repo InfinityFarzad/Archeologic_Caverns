@@ -14,4 +14,5 @@ public interface LightableBlock {
     default boolean canLight(BlockState state, BlockPos pos, LevelAccessor level) {
         return state.hasProperty(BlockStateProperties.LIT) && !state.getValue(BlockStateProperties.LIT);
     }
+
 }
