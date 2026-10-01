@@ -31,12 +31,13 @@ public class SaltClusterFeature extends Feature<ProbabilityFeatureConfiguration>
         RandomSource random = context.random();
         WorldGenLevel level = context.level();
         BlockPos origin = context.origin();
-        int x = random.nextInt(8) - random.nextInt(8);
-        int z = random.nextInt(8) - random.nextInt(8);
-        int y = level.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, origin.getX() + x, origin.getZ() + z);
-        BlockPos pos = new BlockPos(origin.getX() + x, y, origin.getZ() + z);
-        if (level.getBlockState(pos).is(ACTags.Blocks.SALT_REPLACEABLE) && level.getBlockState(pos.above()).is(Blocks.WATER)) {
-            level.setBlock(pos, ACBlocks.SALT_BLOCK.defaultBlockState(), 2);
+        int x = random.nextInt(3) - random.nextInt(2);
+        int z = random.nextInt(3) - random.nextInt(2);
+        int y = level.getHeight(Heightmap.Types.OCEAN_FLOOR, origin.getX() + x, origin.getZ() + z);
+        BlockPos pos = new BlockPos(origin.getX() + x, y - 1, origin.getZ() + z);
+        if (level.getBlockState(pos).is(ACTags.Blocks.SALT_REPLACEABLE)) {
+            this.setBlock(level, pos, ACBlocks.SALT_BLOCK.defaultBlockState());
+
             placedAny = true;
         }
         return placedAny;
