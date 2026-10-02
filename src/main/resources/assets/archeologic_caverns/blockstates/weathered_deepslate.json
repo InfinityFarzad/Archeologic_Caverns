@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "connection_state=bottom": {
+      "model": "minecraft:block/deepslate"
+    },
+    "connection_state=top" : {
+      "model": "archeologic_caverns:block/weathered_deepslate"
+    },
+    "connection_state=middle" : {
+      "model": "minecraft:block/deepslate"
+    }
+  }
+}

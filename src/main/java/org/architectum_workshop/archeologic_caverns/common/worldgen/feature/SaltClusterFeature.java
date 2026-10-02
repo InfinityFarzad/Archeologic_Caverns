@@ -9,12 +9,14 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.TallSeagrassBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.ProbabilityFeatureConfiguration;
+import net.minecraft.world.phys.Vec3;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 import org.architectum_workshop.archeologic_caverns.common.init.ACBlocks;
 import org.architectum_workshop.archeologic_caverns.common.init.ACTags;
@@ -37,13 +39,17 @@ public class SaltClusterFeature extends Feature<ProbabilityFeatureConfiguration>
         BlockPos pos = new BlockPos(origin.getX() + x, y - 1, origin.getZ() + z);
         if (level.getBlockState(pos).is(ACTags.Blocks.SALT_REPLACEABLE)) {
             this.setBlock(level, pos, ACBlocks.SALT_BLOCK.defaultBlockState());
-
+            for (int i = 12; i > 0; i--) {
+                int randX = random.nextInt(2);
+                int randZ = random.nextInt(2);
+                BlockPos underPos = pos.offset(randX, -1, randZ);
+                // && (level.getBlockState(underPos.above()).hasProperty(BlockStateProperties.WATERLOGGED) && !level.getBlockState(underPos.above()).getValue(BlockStateProperties.WATERLOGGED))
+                if (!level.getBlockState(underPos.above()).is(Blocks.WATER)) {
+                    this.setBlock(level, underPos, ACBlocks.SALT_BLOCK.defaultBlockState());
+                }
+            }
             placedAny = true;
         }
         return placedAny;
-    }
-
-    public record SaltClusterConfig(int size) implements FeatureConfiguration {
-        public static final Codec<SaltClusterConfig> CODEC = RecordCodecBuilder.create(i -> i.group(Codec.INT.fieldOf("size").forGetter(SaltClusterConfig::size)).apply(i, SaltClusterConfig::new));
     }
 }

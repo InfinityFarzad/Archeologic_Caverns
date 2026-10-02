@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "minecraft:block/deepslate_top",
+    "side": "archeologic_caverns:block/weathered_deepslate_side",
+    "top": "archeologic_caverns:block/weathered_deepslate_top"
+  }
+}

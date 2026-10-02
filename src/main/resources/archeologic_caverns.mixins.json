@@ -11,5 +11,9 @@
   },
   "overwrites": {
     "requireAnnotations": true
-	}
+  },
+  "client": [
+    "client.emissive.ApplyEmissivenessMixin",
+    "client.emissive.ModifyItemRenderStateLightCoordMixin"
+  ]
 }

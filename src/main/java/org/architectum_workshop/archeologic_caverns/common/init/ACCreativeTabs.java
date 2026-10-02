@@ -18,105 +18,105 @@ public interface ACCreativeTabs {
 
     CreativeModeTab CAVE_BLOCKS_CREATIVE_TAB = FabricCreativeModeTab.builder()
             .title(Component.translatable("creative_tab.archeologic_caverns.cave_blocks"))
-            .displayItems(new CreativeModeTab.DisplayItemsGenerator() {
-                @Override
-                public void accept(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output output) {
-                    output.accept(ACBlocks.DRIPSTONE_BRICKS);
-                    output.accept(ACBlocks.DRIPSTONE_BRICK_STAIRS);
-                    output.accept(ACBlocks.DRIPSTONE_BRICK_SLAB);
-                    output.accept(ACBlocks.DRIPSTONE_BRICK_WALL);
+            .displayItems((parameters, output) -> {
+                output.accept(ACBlocks.DRIPSTONE_BRICKS);
+                output.accept(ACBlocks.DRIPSTONE_BRICK_STAIRS);
+                output.accept(ACBlocks.DRIPSTONE_BRICK_SLAB);
+                output.accept(ACBlocks.DRIPSTONE_BRICK_WALL);
 
-                    output.accept(ACBlocks.POLISHED_DRIPSTONE);
-                    output.accept(ACBlocks.POLISHED_DRIPSTONE_STAIRS);
-                    output.accept(ACBlocks.POLISHED_DRIPSTONE_SLAB);
-                    output.accept(ACBlocks.POLISHED_DRIPSTONE_WALL);
+                output.accept(ACBlocks.POLISHED_DRIPSTONE);
+                output.accept(ACBlocks.POLISHED_DRIPSTONE_STAIRS);
+                output.accept(ACBlocks.POLISHED_DRIPSTONE_SLAB);
+                output.accept(ACBlocks.POLISHED_DRIPSTONE_WALL);
 
-                    output.accept(ACBlocks.DRIPSTONE_TILES);
-                    output.accept(ACBlocks.DRIPSTONE_TILE_STAIRS);
-                    output.accept(ACBlocks.DRIPSTONE_TILE_SLAB);
-                    output.accept(ACBlocks.DRIPSTONE_TILE_WALL);
+                output.accept(ACBlocks.DRIPSTONE_TILES);
+                output.accept(ACBlocks.DRIPSTONE_TILE_STAIRS);
+                output.accept(ACBlocks.DRIPSTONE_TILE_SLAB);
+                output.accept(ACBlocks.DRIPSTONE_TILE_WALL);
 
-                    output.accept(ACBlocks.CHISELED_DRIPSTONE);
-                    output.accept(ACBlocks.DRIPSTONE_PILLAR);
-                    output.accept(ACBlocks.DRIPSTONE_LANTERN);
-                    output.accept(Blocks.DRIPSTONE_BLOCK);
-                    output.accept(Items.POINTED_DRIPSTONE);
+                output.accept(ACBlocks.CHISELED_DRIPSTONE);
+                output.accept(ACBlocks.DRIPSTONE_PILLAR);
+                output.accept(ACBlocks.DRIPSTONE_LANTERN);
+                output.accept(Blocks.DRIPSTONE_BLOCK);
+                output.accept(Items.POINTED_DRIPSTONE);
 
-                    output.accept(ACBlocks.CALCITE_BRICKS);
-                    output.accept(ACBlocks.CALCITE_BRICK_STAIRS);
-                    output.accept(ACBlocks.CALCITE_BRICK_SLAB);
-                    output.accept(ACBlocks.CALCITE_BRICK_WALL);
+                output.accept(ACBlocks.CALCITE_BRICKS);
+                output.accept(ACBlocks.CALCITE_BRICK_STAIRS);
+                output.accept(ACBlocks.CALCITE_BRICK_SLAB);
+                output.accept(ACBlocks.CALCITE_BRICK_WALL);
 
-                    output.accept(ACBlocks.POLISHED_CALCITE);
-                    output.accept(ACBlocks.POLISHED_CALCITE_STAIRS);
-                    output.accept(ACBlocks.POLISHED_CALCITE_SLAB);
-                    output.accept(ACBlocks.POLISHED_CALCITE_WALL);
+                output.accept(ACBlocks.POLISHED_CALCITE);
+                output.accept(ACBlocks.POLISHED_CALCITE_STAIRS);
+                output.accept(ACBlocks.POLISHED_CALCITE_SLAB);
+                output.accept(ACBlocks.POLISHED_CALCITE_WALL);
 
-                    output.accept(ACBlocks.CALCITE_TILES);
-                    output.accept(ACBlocks.CALCITE_TILE_STAIRS);
-                    output.accept(ACBlocks.CALCITE_TILE_SLAB);
-                    output.accept(ACBlocks.CALCITE_TILE_WALL);
+                output.accept(ACBlocks.CALCITE_TILES);
+                output.accept(ACBlocks.CALCITE_TILE_STAIRS);
+                output.accept(ACBlocks.CALCITE_TILE_SLAB);
+                output.accept(ACBlocks.CALCITE_TILE_WALL);
 
 /*                    output.accept(ArcheologicCavernsBlocks.CALCITE_SHINGLES);
-                    output.accept(ArcheologicCavernsBlocks.CALCITE_SHINGLE_STAIRS);
-                    output.accept(ArcheologicCavernsBlocks.CALCITE_SHINGLE_SLAB);*/
+                output.accept(ArcheologicCavernsBlocks.CALCITE_SHINGLE_STAIRS);
+                output.accept(ArcheologicCavernsBlocks.CALCITE_SHINGLE_SLAB);*/
 
-                    output.accept(ACBlocks.CHISELED_CALCITE);
-                    output.accept(ACBlocks.CALCITE_PILLAR);
-                    output.accept(ACBlocks.CALCITE_LANTERN);
-                    output.accept(Blocks.CALCITE);
+                output.accept(ACBlocks.CHISELED_CALCITE);
+                output.accept(ACBlocks.CALCITE_PILLAR);
+                output.accept(ACBlocks.CALCITE_LANTERN);
+                output.accept(Blocks.CALCITE);
 
-                    output.accept(Blocks.DEEPSLATE_BRICKS);
-                    output.accept(Blocks.DEEPSLATE_BRICK_STAIRS);
-                    output.accept(Blocks.DEEPSLATE_BRICK_SLAB);
-                    output.accept(Blocks.DEEPSLATE_BRICK_WALL);
+                output.accept(Blocks.DEEPSLATE_BRICKS);
+                output.accept(Blocks.DEEPSLATE_BRICK_STAIRS);
+                output.accept(Blocks.DEEPSLATE_BRICK_SLAB);
+                output.accept(Blocks.DEEPSLATE_BRICK_WALL);
 
-                    output.accept(Blocks.POLISHED_DEEPSLATE);
-                    output.accept(Blocks.POLISHED_DEEPSLATE_STAIRS);
-                    output.accept(Blocks.POLISHED_DEEPSLATE_SLAB);
-                    output.accept(Blocks.POLISHED_DEEPSLATE_WALL);
+                output.accept(Blocks.POLISHED_DEEPSLATE);
+                output.accept(Blocks.POLISHED_DEEPSLATE_STAIRS);
+                output.accept(Blocks.POLISHED_DEEPSLATE_SLAB);
+                output.accept(Blocks.POLISHED_DEEPSLATE_WALL);
 
-                    output.accept(Blocks.DEEPSLATE_TILES);
-                    output.accept(Blocks.DEEPSLATE_TILE_STAIRS);
-                    output.accept(Blocks.DEEPSLATE_TILE_SLAB);
-                    output.accept(Blocks.DEEPSLATE_TILE_WALL);
+                output.accept(Blocks.DEEPSLATE_TILES);
+                output.accept(Blocks.DEEPSLATE_TILE_STAIRS);
+                output.accept(Blocks.DEEPSLATE_TILE_SLAB);
+                output.accept(Blocks.DEEPSLATE_TILE_WALL);
 
-                    output.accept(Blocks.COBBLED_DEEPSLATE);
-                    output.accept(Blocks.COBBLED_DEEPSLATE_STAIRS);
-                    output.accept(Blocks.COBBLED_DEEPSLATE_SLAB);
-                    output.accept(Blocks.COBBLED_DEEPSLATE_WALL);
+                output.accept(Blocks.COBBLED_DEEPSLATE);
+                output.accept(Blocks.COBBLED_DEEPSLATE_STAIRS);
+                output.accept(Blocks.COBBLED_DEEPSLATE_SLAB);
+                output.accept(Blocks.COBBLED_DEEPSLATE_WALL);
 
-                    output.accept(Blocks.CHISELED_DEEPSLATE);
-                    output.accept(ACBlocks.DEEPSLATE_PILLAR);
-                    output.accept(ACBlocks.DEEPSLATE_LANTERN);
-                    output.accept(Blocks.DEEPSLATE);
+                output.accept(Blocks.CHISELED_DEEPSLATE);
+                output.accept(ACBlocks.DEEPSLATE_PILLAR);
+                output.accept(ACBlocks.DEEPSLATE_LANTERN);
+                output.accept(Blocks.DEEPSLATE);
 
-                    output.accept(ACBlocks.SALT_BLOCK);
-                    output.accept(ACBlocks.SALT_STAIRS);
-                    output.accept(ACBlocks.SALT_SLAB);
-                    output.accept(ACBlocks.SALT_WALL);
+                output.accept(ACBlocks.SALT_BLOCK);
+                output.accept(ACBlocks.SALT_STAIRS);
+                output.accept(ACBlocks.SALT_SLAB);
+                output.accept(ACBlocks.SALT_WALL);
 
-                    output.accept(ACBlocks.POLISHED_SALT);
-                    output.accept(ACBlocks.POLISHED_SALT_STAIRS);
-                    output.accept(ACBlocks.POLISHED_SALT_SLAB);
-                    output.accept(ACBlocks.POLISHED_SALT_WALL);
+                output.accept(ACBlocks.POLISHED_SALT);
+                output.accept(ACBlocks.POLISHED_SALT_STAIRS);
+                output.accept(ACBlocks.POLISHED_SALT_SLAB);
+                output.accept(ACBlocks.POLISHED_SALT_WALL);
 
-                    output.accept(ACBlocks.SALT_BRICKS);
-                    output.accept(ACBlocks.SALT_BRICK_STAIRS);
-                    output.accept(ACBlocks.SALT_BRICK_SLAB);
-                    output.accept(ACBlocks.SALT_BRICK_WALL);
-                    output.accept(ACBlocks.SALT_LANTERN);
+                output.accept(ACBlocks.SALT_BRICKS);
+                output.accept(ACBlocks.SALT_BRICK_STAIRS);
+                output.accept(ACBlocks.SALT_BRICK_SLAB);
+                output.accept(ACBlocks.SALT_BRICK_WALL);
+                output.accept(ACBlocks.SALT_LANTERN);
 
-                    output.accept(ACBlocks.SALT_PRESSURE_PLATE);
-                    output.accept(ACBlocks.POTENT_SALT);
+                output.accept(ACBlocks.SALT_PRESSURE_PLATE);
+                output.accept(ACBlocks.POTENT_SALT);
 
-                    output.accept(ACBlocks.AMBER_BLOCK);
-                    output.accept(ACItems.AMBER);
+                output.accept(ACBlocks.AMBER_BLOCK);
+                output.accept(ACItems.AMBER);
+                output.accept(ACItems.SHINEWICH);
+                output.accept(ACItems.CUPRIC_STEW);
+                output.accept(ACItems.PLATE_OF_NAILS);
 
-                    output.accept(ACBlocks.BRAZIER);
-                    output.accept(ACBlocks.SOUL_BRAZIER);
-                    output.accept(ACItems.ITEM_OF_TRUE_GAYNESS);
-                }
+                output.accept(ACBlocks.BRAZIER);
+                output.accept(ACBlocks.SOUL_BRAZIER);
+                output.accept(ACItems.ITEM_OF_TRUE_GAYNESS);
             })
             .icon(() -> new ItemStack(ACBlocks.CHISELED_DRIPSTONE))
             .build();

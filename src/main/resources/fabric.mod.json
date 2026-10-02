@@ -20,6 +20,9 @@
 		"main": [
 			"org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns"
 		],
+		"client": [
+			"org.architectum_workshop.archeologic_caverns.client.ArcheologicCavernsClient"
+		],
 		"fabric-datagen": [
 			"org.architectum_workshop.archeologic_caverns.datagen.ACDataGenerator"
 		]

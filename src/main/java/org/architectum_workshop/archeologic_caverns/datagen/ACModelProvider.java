@@ -51,6 +51,9 @@ public class ACModelProvider extends FabricModelProvider {
         itemModelGenerators.createFlatItemModel(ACBlocks.SALT_LANTERN.asItem(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.createFlatItemModel(ACItems.AMBER, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ACItems.ITEM_OF_TRUE_GAYNESS, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ACItems.SHINEWICH, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ACItems.CUPRIC_STEW, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(ACItems.PLATE_OF_NAILS, ModelTemplates.FLAT_ITEM);
     }
 
 }

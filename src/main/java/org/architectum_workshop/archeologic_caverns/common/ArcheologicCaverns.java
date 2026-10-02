@@ -33,10 +33,11 @@ public class ArcheologicCaverns implements ModInitializer {
 		ACItems.init();
 		ACTags.init();
 		ACFeatures.init();
+		ACComponents.init();
 
 		BiomeModifications.addFeature(
 				BiomeSelectors.foundInOverworld().and(BiomeSelectors.tag(BiomeTags.IS_OCEAN)),
-				GenerationStep.Decoration.TOP_LAYER_MODIFICATION,
+				GenerationStep.Decoration.RAW_GENERATION,
 				ACPlacedFeatures.SALT_PLACED_FEATURE);
 
 

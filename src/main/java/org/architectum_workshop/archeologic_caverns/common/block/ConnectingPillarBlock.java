@@ -40,9 +40,7 @@ public class ConnectingPillarBlock extends Block {
 
     private ConnectionState getConnectionState(BlockState state, BlockPos pos, LevelReader level) {
         BlockState aboveState = level.getBlockState(pos.above());
-        System.out.println(pos.above().toString() + "a");
         BlockState belowState = level.getBlockState(pos.below());
-        System.out.println(pos.below().toString() + "b");
         if (aboveState.is(state.getBlock())) {
             if (belowState.is(state.getBlock())) {
                 return ConnectionState.MIDDLE;

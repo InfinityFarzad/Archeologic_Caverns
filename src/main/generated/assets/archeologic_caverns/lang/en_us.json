@@ -49,10 +49,14 @@
   "block.archeologic_caverns.salt_stairs": "Salt Stairs",
   "block.archeologic_caverns.salt_wall": "Salt Wall",
   "block.archeologic_caverns.soul_brazier": "Soul Brazier",
+  "block.archeologic_caverns.weathered_deepslate": "Weathered Deepslate",
   "creative_tab.archeologic_caverns.cave_blocks": "Cave Blocks",
   "death.attack.inSalt": "%1$s had too much salt in the wounds",
   "item.archeologic_caverns.amber": "Amber",
   "item.archeologic_caverns.amethyst_axe": "Amethyst Axe",
+  "item.archeologic_caverns.cupric_stew": "Cupric Stew",
   "item.archeologic_caverns.dripstone_drill": "Dripstone Drill",
-  "item.archeologic_caverns.item_of_true_gayness": "Item Of True Gayness"
+  "item.archeologic_caverns.item_of_true_gayness": "Item Of True Gayness",
+  "item.archeologic_caverns.plate_of_nails": "Plate Of Nails",
+  "item.archeologic_caverns.shinewich": "Shinewich"
 }

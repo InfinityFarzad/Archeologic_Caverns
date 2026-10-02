@@ -87,6 +87,8 @@ public interface ACBlocks {
     Block BRAZIER = register("brazier", BrazierBlock::new, BlockBehaviour.Properties.of().lightLevel(i -> i.getValue(BlockStateProperties.LIT) ? 15 : 0).strength(5).requiresCorrectToolForDrops().sound(SoundType.NETHERITE_BLOCK).noOcclusion());
     Block SOUL_BRAZIER = register("soul_brazier", BrazierBlock::new, BlockBehaviour.Properties.ofFullCopy(BRAZIER));
 
+    Block WEATHERED_DEEPSLATE = register("weathered_deepslate", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(DEEPSLATE));
+
     //Salt
 
     Block SALT_BLOCK = register("salt_block", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).sound(SoundType.CALCITE));
