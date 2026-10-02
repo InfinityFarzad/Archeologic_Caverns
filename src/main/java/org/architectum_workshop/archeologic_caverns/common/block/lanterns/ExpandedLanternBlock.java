@@ -2,22 +2,22 @@ package org.architectum_workshop.archeologic_caverns.common.block.lanterns;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LanternBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.architectum_workshop.archeologic_caverns.common.util.ToShapeInterface;
 
-public class DeepslateLanternBlock extends LanternBlock {
-    private static final VoxelShape SHAPE_STANDING = Shapes.or(Block.column(6.0, 0.0, 12.0), Block.column(4.0, 12.0, 13.0));
-    private static final VoxelShape SHAPE_HANGING = SHAPE_STANDING.move(0.0, 0.0625, 0.0).optimize();
+public class ExpandedLanternBlock extends LanternBlock {
+    private final ToShapeInterface<BlockState> shape;
 
-    public DeepslateLanternBlock(Properties properties) {
+    public ExpandedLanternBlock(BlockBehaviour.Properties properties, ToShapeInterface<BlockState> shape) {
         super(properties);
+        this.shape = shape;
     }
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return state.getValue(HANGING) ? SHAPE_HANGING : SHAPE_STANDING;
+        return shape.toShape(state);
     }
 }

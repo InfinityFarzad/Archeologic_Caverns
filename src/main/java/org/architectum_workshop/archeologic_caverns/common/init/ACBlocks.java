@@ -9,15 +9,14 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 import org.architectum_workshop.archeologic_caverns.common.block.BrazierBlock;
 import org.architectum_workshop.archeologic_caverns.common.block.ConnectingPillarBlock;
 import org.architectum_workshop.archeologic_caverns.common.block.PotentSaltBlock;
 import org.architectum_workshop.archeologic_caverns.common.block.SaltPressurePlateBlock;
-import org.architectum_workshop.archeologic_caverns.common.block.lanterns.CalciteLanternBlock;
-import org.architectum_workshop.archeologic_caverns.common.block.lanterns.DeepslateLanternBlock;
-import org.architectum_workshop.archeologic_caverns.common.block.lanterns.DripstoneLanternBlock;
-import org.architectum_workshop.archeologic_caverns.common.block.lanterns.SaltLanternBlock;
+import org.architectum_workshop.archeologic_caverns.common.block.lanterns.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,10 +74,18 @@ public interface ACBlocks {
 
     Block CHISELED_CALCITE = register("chiseled_calcite", BlockBehaviour.Properties.ofFullCopy(CALCITE_BRICKS));
 
-    Block CALCITE_LANTERN = register("calcite_lantern", CalciteLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
-    Block DEEPSLATE_LANTERN = register("deepslate_lantern", DeepslateLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
-    Block DRIPSTONE_LANTERN = register("dripstone_lantern", DripstoneLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
-    Block SALT_LANTERN = register("salt_lantern", SaltLanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
+    VoxelShape CALCITE_LANTERN_SHAPE_STANDING = Shapes.or(Block.column(10.0, 0.0, 8.0), Block.column(6.0, 8.0, 10.0));
+    VoxelShape CALCITE_LANTERN_SHAPE_HANGING = CALCITE_LANTERN_SHAPE_STANDING.move(0.0, 0.0625, 0.0).optimize();
+    VoxelShape DEEPSLATE_LANTERN_SHAPE_STANDING = Shapes.or(Block.column(6.0, 0.0, 12.0), Block.column(4.0, 12.0, 13.0));
+    VoxelShape DEEPSLATE_LANTERN_SHAPE_HANGING = DEEPSLATE_LANTERN_SHAPE_STANDING.move(0.0, 0.0625, 0.0).optimize();
+    VoxelShape SALT_LANTERN_SHAPE = Shapes.or(Block.column(8.0, 0.0, 8.0), Block.column(10.0, 7.0, 11.0));
+    VoxelShape DRIPSTONE_LANTERN_SHAPE_STANDING = Shapes.or(Block.column(12.0, 0.0, 6.0), Block.column(6.0, 6.0, 8.0));
+    VoxelShape DRIPSTONE_LANTERN_SHAPE_HANGING = DRIPSTONE_LANTERN_SHAPE_STANDING.move(0.0, 0.1365, 0.0).optimize();
+
+    Block CALCITE_LANTERN = register("calcite_lantern", i -> new ExpandedLanternBlock(i, (state) -> state.getValue(BlockStateProperties.HANGING) ? CALCITE_LANTERN_SHAPE_HANGING : CALCITE_LANTERN_SHAPE_STANDING), BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
+    Block DEEPSLATE_LANTERN = register("deepslate_lantern", i -> new ExpandedLanternBlock(i, (state) -> state.getValue(BlockStateProperties.HANGING) ? DEEPSLATE_LANTERN_SHAPE_HANGING : DEEPSLATE_LANTERN_SHAPE_STANDING), BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
+    Block DRIPSTONE_LANTERN = register("dripstone_lantern", i -> new ExpandedLanternBlock(i, (state) -> state.getValue(BlockStateProperties.HANGING) ? DRIPSTONE_LANTERN_SHAPE_HANGING : DRIPSTONE_LANTERN_SHAPE_STANDING), BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
+    Block SALT_LANTERN = register("salt_lantern", i -> new ExpandedLanternBlock(i, (state) -> SALT_LANTERN_SHAPE), BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
 
     Block CALCITE_PILLAR = register("calcite_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE));
     Block DRIPSTONE_PILLAR = register("dripstone_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DRIPSTONE_BLOCK));
