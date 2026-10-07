@@ -18,7 +18,7 @@ import java.util.List;
 public interface ACPlacedFeatures {
 
     ResourceKey<PlacedFeature> SALT_PLACED_FEATURE = ResourceKey.create(Registries.PLACED_FEATURE, ArcheologicCaverns.id("salt_placed_feature"));
-    List<PlacementModifier> SALT_PLACED_FEATURE_MODIFIERS = List.of(InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, CountPlacement.of(4), BiomeFilter.biome());
+    List<PlacementModifier> SALT_PLACED_FEATURE_MODIFIERS = List.of(InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, CountPlacement.of(3), BiomeFilter.biome());
 
 
     static void configure(BootstrapContext<PlacedFeature> context) {

@@ -34,8 +34,8 @@ public interface ACItems {
     Item ITEM_OF_TRUE_GAYNESS = register("item_of_true_gayness", ItemOfTrueGaynessItem::new,  new Item.Properties().component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xb38df3, true)).component(ACComponents.EMISSIVE_COMPONENT, true));
 
     Item SHINEWICH = register("shinewich", Item::new, new Item.Properties().food(ACFoods.SHINEWICH, Consumable.builder().sound(Holder.direct(SoundEvents.SCULK_CATALYST_BREAK)).build()).component(ACComponents.EMISSIVE_COMPONENT, true));
-    Item PLATE_OF_NAILS = register("plate_of_nails", Item::new, new Item.Properties().food(ACFoods.NAILS, Consumable.builder().sound(Holder.direct(SoundEvents.CHAIN_HIT)).build()).usingConvertsTo(Items.BOWL));
-    Item CUPRIC_STEW = register("cupric_stew", Item::new, new Item.Properties().food(ACFoods.CUPRIC, Consumable.builder().sound(Holder.direct(SoundEvents.MOSS_PLACE)).build()).usingConvertsTo(Items.BOWL));
+    Item PLATE_OF_NAILS = register("plate_of_nails", Item::new, new Item.Properties().stacksTo(16).food(ACFoods.NAILS, Consumable.builder().sound(Holder.direct(SoundEvents.CHAIN_HIT)).build()).usingConvertsTo(Items.BOWL));
+    Item CUPRIC_STEW = register("cupric_stew", Item::new, new Item.Properties().stacksTo(16).food(ACFoods.CUPRIC, Consumable.builder().sound(Holder.direct(SoundEvents.MOSS_PLACE)).build()).usingConvertsTo(Items.BOWL));
 
     static <T extends Item> T register(String name, Function<Item.Properties, T> factory, Item.Properties itemProperties) {
         ResourceKey<Item> resourceKey = ResourceKey.create(Registries.ITEM, ArcheologicCaverns.id(name));

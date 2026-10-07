@@ -1,4 +1,4 @@
-package org.architectum_workshop.archeologic_caverns.common.block.lanterns;
+package org.architectum_workshop.archeologic_caverns.common.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;

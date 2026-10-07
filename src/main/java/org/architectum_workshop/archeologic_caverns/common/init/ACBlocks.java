@@ -12,11 +12,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
-import org.architectum_workshop.archeologic_caverns.common.block.BrazierBlock;
-import org.architectum_workshop.archeologic_caverns.common.block.ConnectingPillarBlock;
-import org.architectum_workshop.archeologic_caverns.common.block.PotentSaltBlock;
-import org.architectum_workshop.archeologic_caverns.common.block.SaltPressurePlateBlock;
-import org.architectum_workshop.archeologic_caverns.common.block.lanterns.*;
+import org.architectum_workshop.archeologic_caverns.common.block.*;
 
 import java.util.ArrayList;
 import java.util.List;
