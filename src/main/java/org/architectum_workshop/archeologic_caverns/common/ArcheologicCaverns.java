@@ -34,6 +34,7 @@ public class ArcheologicCaverns implements ModInitializer {
 		ACTags.init();
 		ACFeatures.init();
 		ACComponents.init();
+		ACSounds.init();
 
 		BiomeModifications.addFeature(
 				BiomeSelectors.foundInOverworld().and(BiomeSelectors.tag(BiomeTags.IS_OCEAN)),
@@ -42,5 +43,6 @@ public class ArcheologicCaverns implements ModInitializer {
 
 
 		FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(modContainer -> ResourceLoader.registerBuiltinPack(id("copper_reforged"), modContainer, Component.literal("Copper Reforged"), PackActivationType.DEFAULT_ENABLED));
+
 	}
 }

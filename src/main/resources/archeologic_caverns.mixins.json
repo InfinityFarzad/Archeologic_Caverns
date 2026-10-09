@@ -3,6 +3,7 @@
   "package": "org.architectum_workshop.archeologic_caverns.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
+    "CleaverLoottableModifier",
     "FlintAndStealMixin",
     "ShovelItemMixin"
   ],

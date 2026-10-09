@@ -31,6 +31,7 @@ public class ACLanguageProvider extends FabricLanguageProvider {
 
         translationBuilder.add(ACCreativeTabs.CAVE_BLOCKS_CREATIVE_TAB_KEY, "Cave Blocks");
         translationBuilder.add("death.attack.inSalt", "%1$s had too much salt in the wounds");
+        translationBuilder.add("item.archeologic_caverns.cleaver_bonus", " Increases Item Harvest ");
     }
 
     public void translate(TranslationBuilder translationBuilder, Block block) {
