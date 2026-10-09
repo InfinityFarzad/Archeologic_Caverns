@@ -12,10 +12,13 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.level.block.Block;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 import org.architectum_workshop.archeologic_caverns.common.item.AmethystGreataxeItem;
+import org.architectum_workshop.archeologic_caverns.common.item.CleaverItem;
 import org.architectum_workshop.archeologic_caverns.common.item.DripstoneDrillItem;
 import org.architectum_workshop.archeologic_caverns.common.item.ItemOfTrueGaynessItem;
 
@@ -29,9 +32,11 @@ public interface ACItems {
     List<Item> TRANSLATED_ITEMS = new ArrayList<>();
 
     Item AMETHYST_GREATAXE = register("amethyst_axe", properties -> new AmethystGreataxeItem(properties, 9,-3.2f), new Item.Properties().component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xFFb38ef3, true)));
+    Item CLEAVER = register("cleaver", CleaverItem::new, new Item.Properties().axe(ToolMaterial.IRON, 5, -3.0f).durability(1200).stacksTo(1).rarity(Rarity.RARE).enchantable(22).component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xd53c6a, true)));
     Item DRIPSTONE_DRILL = register("dripstone_drill", DripstoneDrillItem::new, new Item.Properties());
     Item AMBER = register("amber", Item::new, new Item.Properties().component(ACComponents.EMISSIVE_COMPONENT, true));
     Item ITEM_OF_TRUE_GAYNESS = register("item_of_true_gayness", ItemOfTrueGaynessItem::new,  new Item.Properties().component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xb38df3, true)).component(ACComponents.EMISSIVE_COMPONENT, true));
+
 
     Item SHINEWICH = register("shinewich", Item::new, new Item.Properties().food(ACFoods.SHINEWICH, Consumable.builder().sound(Holder.direct(SoundEvents.SCULK_CATALYST_BREAK)).build()).component(ACComponents.EMISSIVE_COMPONENT, true));
     Item PLATE_OF_NAILS = register("plate_of_nails", Item::new, new Item.Properties().stacksTo(16).food(ACFoods.NAILS, Consumable.builder().sound(Holder.direct(SoundEvents.CHAIN_HIT)).build()).usingConvertsTo(Items.BOWL));
