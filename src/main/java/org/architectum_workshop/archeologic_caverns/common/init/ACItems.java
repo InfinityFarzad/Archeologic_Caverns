@@ -32,7 +32,7 @@ public interface ACItems {
     List<Item> TRANSLATED_ITEMS = new ArrayList<>();
 
     Item AMETHYST_GREATAXE = register("amethyst_axe", properties -> new AmethystGreataxeItem(properties, 9,-3.2f), new Item.Properties().component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xFFb38ef3, true)));
-    Item CLEAVER = register("cleaver", i -> new CleaverItem(ToolMaterial.IRON, 5, -3.0f, i), new Item.Properties().durability(1200).stacksTo(1).rarity(Rarity.UNCOMMON).enchantable(22).component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xd53c6a, true)));
+    Item CLEAVER = register("cleaver", i -> new CleaverItem(ACToolMaterials.CLEAVER_STEEL, 3, -2.6f, i), new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON).enchantable(22).component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xd53c6a, true)));
     Item DRIPSTONE_DRILL = register("dripstone_drill", DripstoneDrillItem::new, new Item.Properties());
     Item AMBER = register("amber", Item::new, new Item.Properties().component(ACComponents.EMISSIVE_COMPONENT, true));
     Item ITEM_OF_TRUE_GAYNESS = register("item_of_true_gayness", ItemOfTrueGaynessItem::new,  new Item.Properties().component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xb38df3, true)).component(ACComponents.EMISSIVE_COMPONENT, true));

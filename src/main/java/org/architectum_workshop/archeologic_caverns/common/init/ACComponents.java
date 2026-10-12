@@ -14,5 +14,11 @@ public interface ACComponents {
             DataComponentType.<Boolean>builder().persistent(Codec.BOOL).networkSynchronized(ByteBufCodecs.BOOL).build()
     );
 
+    DataComponentType<Integer> CLEAVER_CHARGE = Registry.register(
+            BuiltInRegistries.DATA_COMPONENT_TYPE,
+            ArcheologicCaverns.id("cleaver_bleed"),
+            DataComponentType.<Integer>builder().persistent(Codec.INT).networkSynchronized(ByteBufCodecs.INT).build()
+    );
+
     static void init() {}
 }

@@ -1,0 +1,15 @@
+{
+  "passes": [
+    {
+      "vertex_shader": "minecraft:core/screenquad",
+      "fragment_shader": "archeologic_caverns:post/bleeding",
+      "inputs": [
+        {
+          "target": "minecraft:main",
+          "sampler_name": "In"
+        }
+      ],
+      "output": "minecraft:main"
+    }
+  ]
+}

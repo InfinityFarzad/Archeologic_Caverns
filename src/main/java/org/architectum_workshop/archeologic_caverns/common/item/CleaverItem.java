@@ -1,13 +1,73 @@
 package org.architectum_workshop.archeologic_caverns.common.item;
 
+import net.akws.chiseled_lib.common.interfaces.item.CustomAttackItem;
+import net.akws.chiseled_lib.common.util.TimerUtil;
+import net.minecraft.commands.arguments.OperationArgument;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.resources.Identifier;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
+import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
+import org.architectum_workshop.archeologic_caverns.common.init.ACAttachments;
+import org.jspecify.annotations.Nullable;
 
-public class CleaverItem extends AxeItem {
+import java.util.concurrent.atomic.AtomicReference;
+
+public class CleaverItem extends AxeItem implements CustomAttackItem {
+
+    public static final int DAMAGE_INCREASE_CAP = 4;
+    public static final Identifier PLAYER_COMBO_ID = ArcheologicCaverns.id("cleaver_combo_timer");
+    private final float dmg;
 
     public CleaverItem(ToolMaterial material, float attackDamageBaseline, float attackSpeedBaseline, Properties properties) {
-        super(material, attackDamageBaseline, attackSpeedBaseline, properties);
+        super(material, attackDamageBaseline, attackSpeedBaseline, properties.durability(1200));
+        this.dmg = attackDamageBaseline + 1 + material.attackDamageBonus();
     }
 
+    private float iLoveWuckle(float max, float value) {
+        return Math.abs(Math.clamp(value,0,max) / max);
+    }
+
+    private void modifyDamage(float damage, Player player, ItemStack stack) {
+        int f = player.getAttachedOrSet(ACAttachments.PLAYER_COMBO_COUNTER, 0);
+        ItemAttributeModifiers modifiers = stack.getOrDefault(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder().build());
+        stack.set(DataComponents.ATTRIBUTE_MODIFIERS, modifiers.withModifierAdded(Attributes.ATTACK_DAMAGE, new AttributeModifier(ArcheologicCaverns.id("extra_cleaver_damage"), Math.floor(damage * iLoveWuckle(9, f) * 10) / 10, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND));
+    }
+
+
+
+    @Override
+    public void onFullAttack(LivingEntity attacker, LivingEntity target, ItemStack stack) {
+        if (attacker instanceof Player player) {
+            int currentCombo = player.getAttachedOrSet(ACAttachments.PLAYER_COMBO_COUNTER, 0);
+            player.setAttached(ACAttachments.PLAYER_COMBO_COUNTER, Math.min(currentCombo + 1, 12));
+            if (!player.level().isClientSide()) {
+                TimerUtil.addTimerToPlayer(player, PLAYER_COMBO_ID, Math.clamp((20 * 2) * (1 - Math.abs(currentCombo / 12)), 10, 40));
+            }
+        }
+    }
+
+    @Override
+    public void inventoryTick(ItemStack itemStack, ServerLevel level, Entity owner, @Nullable EquipmentSlot slot) {
+        super.inventoryTick(itemStack, level, owner, slot);
+        if (owner instanceof Player living) {
+            modifyDamage(3, living, itemStack);
+        }
+    }
+
+    @Override
+    public boolean canDoSweepingAttack(ItemStack stack, boolean cooldownPassed, boolean criticalHit, boolean knockbackAttack) {
+        return false;
+    }
 }

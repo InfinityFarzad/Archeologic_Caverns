@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "archeologic_caverns:item/cleaver_blood"
+  }
+}

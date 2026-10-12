@@ -10,6 +10,7 @@ public interface ACTags {
 
     interface Items {
         TagKey<Item> AMETHYST_TOOL_REPAIRABLE = register("amethyst_tool_repairable");
+        TagKey<Item> CLEAVER_STEEL = register("cleaver_steel");
 
         static TagKey<Item> register(String name) {
             return TagKey.create(Registries.ITEM, ArcheologicCaverns.id(name));

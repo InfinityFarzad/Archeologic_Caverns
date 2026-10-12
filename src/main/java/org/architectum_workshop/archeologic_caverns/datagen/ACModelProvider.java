@@ -54,7 +54,7 @@ public class ACModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ACItems.SHINEWICH, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ACItems.CUPRIC_STEW, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ACItems.PLATE_OF_NAILS, ModelTemplates.FLAT_ITEM);
-        itemModelGenerators.generateFlatItem(ACItems.CLEAVER, ModelTemplates.FLAT_HANDHELD_ITEM);
+        //itemModelGenerators.generateFlatItem(ACItems.CLEAVER, ModelTemplates.FLAT_HANDHELD_ITEM);
     }
 
 }
