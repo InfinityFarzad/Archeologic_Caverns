@@ -41,6 +41,7 @@ public class PotentSaltBlock extends Block {
     public static boolean isDamaged(LivingEntity entity) {
         return entity.getHealth() < entity.getMaxHealth();
     }
+
     public static float damageDegree(LivingEntity entity) {
         return (entity.getMaxHealth() - entity.getHealth()) * 0.5f;
     }

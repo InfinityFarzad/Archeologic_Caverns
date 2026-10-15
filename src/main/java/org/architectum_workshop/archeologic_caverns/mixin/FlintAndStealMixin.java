@@ -24,7 +24,7 @@ public class FlintAndStealMixin {
         BlockState state = level.getBlockState(pos);
 
         if (state.getBlock() instanceof LightableBlock lightable && lightable.canLight(state, pos, level)) {
-            Player player =  context.getPlayer();
+            Player player = context.getPlayer();
             if (player != null) {
                 context.getItemInHand().hurtAndBreak(1, player, context.getHand().asEquipmentSlot());
             }

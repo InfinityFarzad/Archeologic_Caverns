@@ -14,6 +14,7 @@
     "requireAnnotations": true
   },
   "client": [
+    "client.CleaverComboOverlayMixin",
     "client.PostEffectsAccessMixin",
     "client.emissive.ApplyEmissivenessMixin",
     "client.emissive.ModifyItemRenderStateLightCoordMixin"

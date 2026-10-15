@@ -13,11 +13,25 @@ import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 
 public interface ACCreativeTabs {
 
-    ResourceKey<CreativeModeTab> CAVE_BLOCKS_CREATIVE_TAB_KEY = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), ArcheologicCaverns.id("cave_blocks"));
+    ResourceKey<CreativeModeTab> ITEM_CREATIVE_TAB_KEY = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), ArcheologicCaverns.id("ac_blocks"));
+    ResourceKey<CreativeModeTab> BLOCKS_CREATIVE_TAB_KEY = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), ArcheologicCaverns.id("ac_items"));
 
 
-    CreativeModeTab CAVE_BLOCKS_CREATIVE_TAB = FabricCreativeModeTab.builder()
-            .title(Component.translatable("creative_tab.archeologic_caverns.cave_blocks"))
+    CreativeModeTab ITEM_CREATIVE_TAB = FabricCreativeModeTab.builder()
+            .title(Component.translatable("creative_tab.archeologic_caverns.items_tab"))
+            .displayItems((parameters, output) -> {
+                output.accept(ACItems.ITEM_OF_TRUE_GAYNESS);
+                output.accept(ACItems.CLEAVER);
+                output.accept(ACItems.AMBER);
+                output.accept(ACItems.SHINEWICH);
+                output.accept(ACItems.CUPRIC_STEW);
+                output.accept(ACItems.PLATE_OF_NAILS);
+            })
+            .icon(() -> new ItemStack(ACItems.AMBER))
+            .build();
+
+    CreativeModeTab BLOCKS_CREATIVE_TAB = FabricCreativeModeTab.builder()
+            .title(Component.translatable("creative_tab.archeologic_caverns.blocks_tab"))
             .displayItems((parameters, output) -> {
                 output.accept(ACBlocks.DRIPSTONE_BRICKS);
                 output.accept(ACBlocks.DRIPSTONE_BRICK_STAIRS);
@@ -54,10 +68,6 @@ public interface ACCreativeTabs {
                 output.accept(ACBlocks.CALCITE_TILE_STAIRS);
                 output.accept(ACBlocks.CALCITE_TILE_SLAB);
                 output.accept(ACBlocks.CALCITE_TILE_WALL);
-
-/*                    output.accept(ArcheologicCavernsBlocks.CALCITE_SHINGLES);
-                output.accept(ArcheologicCavernsBlocks.CALCITE_SHINGLE_STAIRS);
-                output.accept(ArcheologicCavernsBlocks.CALCITE_SHINGLE_SLAB);*/
 
                 output.accept(ACBlocks.CHISELED_CALCITE);
                 output.accept(ACBlocks.CALCITE_PILLAR);
@@ -109,22 +119,18 @@ public interface ACCreativeTabs {
                 output.accept(ACBlocks.POTENT_SALT);
 
                 output.accept(ACBlocks.AMBER_BLOCK);
-                output.accept(ACItems.AMBER);
-                output.accept(ACItems.SHINEWICH);
-                output.accept(ACItems.CUPRIC_STEW);
-                output.accept(ACItems.PLATE_OF_NAILS);
+
 
                 output.accept(ACBlocks.BRAZIER);
                 output.accept(ACBlocks.SOUL_BRAZIER);
-                output.accept(ACItems.ITEM_OF_TRUE_GAYNESS);
-                output.accept(ACItems.CLEAVER);
+
             })
             .icon(() -> new ItemStack(ACBlocks.CHISELED_DRIPSTONE))
             .build();
 
     static void init() {
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, CAVE_BLOCKS_CREATIVE_TAB_KEY, CAVE_BLOCKS_CREATIVE_TAB);
-        ArcheologicCaverns.LOGGER.info("Registering Creative Tabs for Archeologic Caverns");
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, BLOCKS_CREATIVE_TAB_KEY, BLOCKS_CREATIVE_TAB);
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ITEM_CREATIVE_TAB_KEY, ITEM_CREATIVE_TAB);
     }
 
 }

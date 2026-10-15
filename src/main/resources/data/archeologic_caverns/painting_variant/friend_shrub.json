@@ -1,0 +1,13 @@
+{
+  "asset_id": "archeologic_caverns:friend_shrub",
+  "author": {
+    "color": "gray",
+    "translate": "painting.archeologic_caverns.friend_shrub.author"
+  },
+  "title": {
+    "color": "yellow",
+    "translate": "painting.archeologic_caverns.friend_shrub.title"
+  },
+  "height": 4,
+  "width": 4
+}

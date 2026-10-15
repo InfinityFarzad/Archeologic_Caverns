@@ -24,8 +24,8 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.architectum_workshop.archeologic_caverns.common.block.impl.LightableBlock;
 import org.architectum_workshop.archeologic_caverns.common.block.impl.ExtinguishableBlock;
+import org.architectum_workshop.archeologic_caverns.common.block.impl.LightableBlock;
 import org.jspecify.annotations.Nullable;
 import org.spongepowered.asm.mixin.injection.Desc;
 
@@ -55,11 +55,11 @@ public class BrazierBlock extends Block implements SimpleWaterloggedBlock, Extin
 
         if (state.getValue(LIT)) {
             if (random.nextInt(10) == 0) {
-                level.playLocalSound((double)pos.getX() + 0.5, (double)pos.getY() + 0.5, (double)pos.getZ() + 0.5, SoundEvents.CAMPFIRE_CRACKLE, SoundSource.BLOCKS, 0.5f + random.nextFloat(), random.nextFloat() * 0.7f + 0.6f, false);
+                level.playLocalSound((double) pos.getX() + 0.5, (double) pos.getY() + 0.5, (double) pos.getZ() + 0.5, SoundEvents.CAMPFIRE_CRACKLE, SoundSource.BLOCKS, 0.5f + random.nextFloat(), random.nextFloat() * 0.7f + 0.6f, false);
             }
             if (random.nextInt(5) == 0) {
                 for (int i = 0; i < random.nextInt(1) + 1; ++i) {
-                    level.addParticle(ParticleTypes.LAVA, (double)pos.getX() + 0.5, (double)pos.getY() + 0.5, (double)pos.getZ() + 0.5, random.nextFloat() / 2.0f, 5.0E-5, random.nextFloat() / 2.0f);
+                    level.addParticle(ParticleTypes.LAVA, (double) pos.getX() + 0.5, (double) pos.getY() + 0.5, (double) pos.getZ() + 0.5, random.nextFloat() / 2.0f, 5.0E-5, random.nextFloat() / 2.0f);
                 }
             }
         }
@@ -114,7 +114,7 @@ public class BrazierBlock extends Block implements SimpleWaterloggedBlock, Extin
         return SHAPE;
     }
 
-    public void onExtinguish(@Nullable Entity source ,BlockState state, BlockPos pos, LevelAccessor level) {
+    public void onExtinguish(@Nullable Entity source, BlockState state, BlockPos pos, LevelAccessor level) {
         level.playSound(null, pos, SoundEvents.LAVA_EXTINGUISH, SoundSource.BLOCKS);
         level.gameEvent(source, GameEvent.BLOCK_CHANGE, pos);
         if (level.isClientSide()) {

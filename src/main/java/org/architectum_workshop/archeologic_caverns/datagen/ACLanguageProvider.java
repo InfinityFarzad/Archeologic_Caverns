@@ -3,15 +3,13 @@ package org.architectum_workshop.archeologic_caverns.datagen;
 import joptsimple.internal.Strings;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 import org.architectum_workshop.archeologic_caverns.common.init.ACBlocks;
 import org.architectum_workshop.archeologic_caverns.common.init.ACCreativeTabs;
-import org.architectum_workshop.archeologic_caverns.common.init.ACDamageTypes;
 import org.architectum_workshop.archeologic_caverns.common.init.ACItems;
 
 import java.util.Arrays;
@@ -29,7 +27,11 @@ public class ACLanguageProvider extends FabricLanguageProvider {
         ACBlocks.TRANSLATED_BLOCKS.forEach(translatedBlock -> translate(translationBuilder, translatedBlock));
         ACItems.TRANSLATED_ITEMS.forEach(translatedBlock -> translate(translationBuilder, translatedBlock));
 
-        translationBuilder.add(ACCreativeTabs.CAVE_BLOCKS_CREATIVE_TAB_KEY, "Cave Blocks");
+        translationBuilder.add("painting.archeologic_caverns.friend_shrub.author", "mongocat");
+        translationBuilder.add("painting.archeologic_caverns.friend_shrub.title", "Friend Shrub");
+
+        translationBuilder.add(ACCreativeTabs.BLOCKS_CREATIVE_TAB_KEY, "Cavern Items");
+        translationBuilder.add(ACCreativeTabs.ITEM_CREATIVE_TAB_KEY, "Cavern Blocks");
         translationBuilder.add("death.attack.inSalt", "%1$s had too much salt in the wounds");
         translationBuilder.add("item.archeologic_caverns.cleaver_bonus", " Increases Item Harvest ");
     }

@@ -4,18 +4,10 @@ import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
-import net.minecraft.client.data.models.MultiVariant;
-import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
-import net.minecraft.client.data.models.model.*;
-import net.minecraft.client.resources.model.sprite.Material;
-import net.minecraft.resources.Identifier;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
+import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TexturedModel;
 import org.architectum_workshop.archeologic_caverns.common.init.ACBlocks;
 import org.architectum_workshop.archeologic_caverns.common.init.ACItems;
-
-import java.util.Optional;
 
 public class ACModelProvider extends FabricModelProvider {
     public ACModelProvider(FabricPackOutput output) {
@@ -31,7 +23,6 @@ public class ACModelProvider extends FabricModelProvider {
         blockModelGenerators.family(ACBlocks.POLISHED_CALCITE).slab(ACBlocks.POLISHED_CALCITE_SLAB).stairs(ACBlocks.POLISHED_CALCITE_STAIRS).wall(ACBlocks.POLISHED_CALCITE_WALL);
         blockModelGenerators.family(ACBlocks.CALCITE_BRICKS).wall(ACBlocks.CALCITE_BRICK_WALL).slab(ACBlocks.CALCITE_BRICK_SLAB).stairs(ACBlocks.CALCITE_BRICK_STAIRS);
         blockModelGenerators.family(ACBlocks.CALCITE_TILES).wall(ACBlocks.CALCITE_TILE_WALL).slab(ACBlocks.CALCITE_TILE_SLAB).stairs(ACBlocks.CALCITE_TILE_STAIRS);
-        //blockModelGenerators.family(ArcheologicCavernsBlocks.CALCITE_SHINGLES).slab(ArcheologicCavernsBlocks.CALCITE_SHINGLE_SLAB).stairs(ArcheologicCavernsBlocks.CALCITE_SHINGLE_STAIRS);
 
         blockModelGenerators.createTrivialBlock(ACBlocks.CHISELED_DRIPSTONE, TexturedModel.COLUMN);
         blockModelGenerators.createTrivialBlock(ACBlocks.CHISELED_CALCITE, TexturedModel.COLUMN);
@@ -54,7 +45,6 @@ public class ACModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(ACItems.SHINEWICH, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ACItems.CUPRIC_STEW, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(ACItems.PLATE_OF_NAILS, ModelTemplates.FLAT_ITEM);
-        //itemModelGenerators.generateFlatItem(ACItems.CLEAVER, ModelTemplates.FLAT_HANDHELD_ITEM);
     }
 
 }

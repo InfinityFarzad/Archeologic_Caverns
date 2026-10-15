@@ -1,22 +1,16 @@
 package org.architectum_workshop.archeologic_caverns.common.worldgen.feature;
 
 import com.mojang.serialization.Codec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.TallSeagrassBlock;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.ProbabilityFeatureConfiguration;
-import net.minecraft.world.phys.Vec3;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 import org.architectum_workshop.archeologic_caverns.common.init.ACBlocks;
 import org.architectum_workshop.archeologic_caverns.common.init.ACTags;
@@ -25,6 +19,7 @@ public class SaltClusterFeature extends Feature<ProbabilityFeatureConfiguration>
     public SaltClusterFeature(Codec<ProbabilityFeatureConfiguration> codec) {
         super(codec);
     }
+
     public static final Identifier SALT_FEATURE_ID = ArcheologicCaverns.id("salt_cluster_feature");
 
     @Override

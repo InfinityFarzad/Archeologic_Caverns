@@ -16,6 +16,7 @@ public class ExpandedLanternBlock extends LanternBlock {
         super(properties);
         this.shape = shape;
     }
+
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return shape.toShape(state);

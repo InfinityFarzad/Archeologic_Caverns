@@ -10,7 +10,7 @@ import org.architectum_workshop.archeologic_caverns.common.init.ACTags;
 
 public class AmethystGreataxeItem extends AxeItem implements CustomEffectsItem, CustomAttackItem {
     public AmethystGreataxeItem(Properties properties, float attackDamage, float attackSpeed) {
-        super(new ToolMaterial(BlockTags.INCORRECT_FOR_COPPER_TOOL, 520,1561, 0.0f, 15, ACTags.Items.AMETHYST_TOOL_REPAIRABLE), attackDamage, attackSpeed, properties);
+        super(new ToolMaterial(BlockTags.INCORRECT_FOR_COPPER_TOOL, 520, 1561, 0.0f, 15, ACTags.Items.AMETHYST_TOOL_REPAIRABLE), attackDamage, attackSpeed, properties);
     }
 
     @Override

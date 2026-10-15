@@ -51,7 +51,8 @@
   "block.archeologic_caverns.salt_wall": "Salt Wall",
   "block.archeologic_caverns.soul_brazier": "Soul Brazier",
   "block.archeologic_caverns.weathered_deepslate": "Weathered Deepslate",
-  "creative_tab.archeologic_caverns.cave_blocks": "Cave Blocks",
+  "creative_tab.archeologic_caverns.blocks_tab": "Cavern Items",
+  "creative_tab.archeologic_caverns.items_tab": "Cavern Blocks",
   "death.attack.inSalt": "%1$s had too much salt in the wounds",
   "item.archeologic_caverns.amber": "Amber",
   "item.archeologic_caverns.amethyst_axe": "Amethyst Axe",
@@ -61,5 +62,7 @@
   "item.archeologic_caverns.dripstone_drill": "Dripstone Drill",
   "item.archeologic_caverns.item_of_true_gayness": "Item Of True Gayness",
   "item.archeologic_caverns.plate_of_nails": "Plate Of Nails",
-  "item.archeologic_caverns.shinewich": "Shinewich"
+  "item.archeologic_caverns.shinewich": "Shinewich",
+  "painting.archeologic_caverns.friend_shrub.author": "mongocat",
+  "painting.archeologic_caverns.friend_shrub.title": "friend_shrub"
 }

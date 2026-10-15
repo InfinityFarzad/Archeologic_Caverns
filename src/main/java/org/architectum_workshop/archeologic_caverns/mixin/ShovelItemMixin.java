@@ -37,7 +37,7 @@ public class ShovelItemMixin {
                         context.getItemInHand().hurtAndBreak(1, player, context.getHand().asEquipmentSlot());
                     }
                 }
-                block.onExtinguish(player,state, pos, level);
+                block.onExtinguish(player, state, pos, level);
                 cir.setReturnValue(InteractionResult.SUCCESS);
             }
         }

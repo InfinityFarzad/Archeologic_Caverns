@@ -33,8 +33,8 @@ public class ConnectingPillarBlock extends Block {
         Direction clickedFace = context.getClickedFace();
         BlockPos pos = context.getClickedPos();
         FluidState replacedFluidState = context.getLevel().getFluidState(pos);
-        BlockState state = (BlockState)((BlockState)((BlockState)this.defaultBlockState().setValue(CONNECTION_STATE, getConnectionState(context.getLevel().getBlockState(pos), pos, context.getLevel()))));
-        return (BlockState)state.setValue(CONNECTION_STATE, getConnectionState(state, pos, context.getLevel()));
+        BlockState state = this.defaultBlockState().setValue(CONNECTION_STATE, getConnectionState(context.getLevel().getBlockState(pos), pos, context.getLevel()));
+        return state.setValue(CONNECTION_STATE, getConnectionState(state, pos, context.getLevel()));
     }
 
 
@@ -55,7 +55,7 @@ public class ConnectingPillarBlock extends Block {
         builder.add(CONNECTION_STATE);
     }
 
-    public static enum ConnectionState implements StringRepresentable {
+    public enum ConnectionState implements StringRepresentable {
         TOP("top"),
         MIDDLE("middle"),
         BOTTOM("bottom");

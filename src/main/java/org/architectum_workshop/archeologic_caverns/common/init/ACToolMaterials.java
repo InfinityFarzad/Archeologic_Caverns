@@ -2,7 +2,6 @@ package org.architectum_workshop.archeologic_caverns.common.init;
 
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ToolMaterial;
 
 public interface ACToolMaterials {

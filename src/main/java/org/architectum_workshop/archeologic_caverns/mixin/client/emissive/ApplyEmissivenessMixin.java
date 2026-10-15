@@ -18,6 +18,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ApplyEmissivenessMixin {
     @Inject(method = "update", at = @At("HEAD"))
     private void archeologic_caverns$applyEmissive(ItemStackRenderState output, ItemStack item, ItemModelResolver resolver, ItemDisplayContext displayContext, ClientLevel level, ItemOwner owner, int seed, CallbackInfo ci) {
-        ((ItemStackRenderStateInterface)output).setEmissive(item.getOrDefault(ACComponents.EMISSIVE_COMPONENT, false));
+        ((ItemStackRenderStateInterface) output).setEmissive(item.getOrDefault(ACComponents.EMISSIVE_COMPONENT, false));
     }
 }

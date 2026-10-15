@@ -9,24 +9,24 @@ import org.architectum_workshop.archeologic_caverns.common.init.ACDamageTypes;
 import org.architectum_workshop.archeologic_caverns.common.init.ACPlacedFeatures;
 
 public class ACDataGenerator implements DataGeneratorEntrypoint {
-	@Override
-	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
-		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
-		pack.addProvider(ACModelProvider::new);
-		pack.addProvider(ACBlockTagProvider::new);
-		pack.addProvider(ACRecipeGenerator::new);
-		pack.addProvider(ACBlockLootTableProvider::new);
-		pack.addProvider(ACItemTagProvider::new);
+    @Override
+    public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
+        FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
+        pack.addProvider(ACModelProvider::new);
+        pack.addProvider(ACBlockTagProvider::new);
+        pack.addProvider(ACRecipeGenerator::new);
+        pack.addProvider(ACBlockLootTableProvider::new);
+        pack.addProvider(ACItemTagProvider::new);
 
-		pack.addProvider(ACDynamicRegistries::new);
-		pack.addProvider(ACLanguageProvider::new);
-	}
+        pack.addProvider(ACDynamicRegistries::new);
+        pack.addProvider(ACLanguageProvider::new);
+    }
 
-	@Override
-	public void buildRegistry(RegistrySetBuilder registryBuilder) {
-		registryBuilder.add(Registries.DAMAGE_TYPE, ACDamageTypes::bootstrap);
-		registryBuilder.add(Registries.PLACED_FEATURE, ACPlacedFeatures::configure);
-		registryBuilder.add(Registries.CONFIGURED_FEATURE, ACConfiguredFeatures::bootstrap);
+    @Override
+    public void buildRegistry(RegistrySetBuilder registryBuilder) {
+        registryBuilder.add(Registries.DAMAGE_TYPE, ACDamageTypes::bootstrap);
+        registryBuilder.add(Registries.PLACED_FEATURE, ACPlacedFeatures::configure);
+        registryBuilder.add(Registries.CONFIGURED_FEATURE, ACConfiguredFeatures::bootstrap);
 
-	}
+    }
 }

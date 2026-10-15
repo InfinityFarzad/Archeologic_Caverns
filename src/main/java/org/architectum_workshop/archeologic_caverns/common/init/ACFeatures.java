@@ -13,7 +13,7 @@ public interface ACFeatures {
 
 
     static <C extends FeatureConfiguration, F extends Feature<C>> F register(String name, F feature) {
-        return (F) Registry.register(BuiltInRegistries.FEATURE, ArcheologicCaverns.id(name), feature);
+        return Registry.register(BuiltInRegistries.FEATURE, ArcheologicCaverns.id(name), feature);
     }
 
     static void init() {}

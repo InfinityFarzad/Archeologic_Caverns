@@ -18,7 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
-import static net.minecraft.world.level.block.Blocks.*;
+import static net.minecraft.world.level.block.Blocks.DEEPSLATE;
+import static net.minecraft.world.level.block.Blocks.GLASS;
 
 public interface ACBlocks {
 
@@ -61,12 +62,6 @@ public interface ACBlocks {
     Block CALCITE_TILE_STAIRS = createStairsBlock("calcite_tile_stairs", CALCITE_TILES);
     Block CALCITE_TILE_SLAB = createSlabBlock("calcite_tile_slab", CALCITE_TILES);
     Block CALCITE_TILE_WALL = register("calcite_tile_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(CALCITE_TILES), true);
-
-/*
-    Block CALCITE_SHINGLES = register("calcite_shingles", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE), true);
-    Block CALCITE_SHINGLE_STAIRS = createStairsBlock("calcite_shingle_stairs", CALCITE_SHINGLES);
-    Block CALCITE_SHINGLE_SLAB = createSlabBlock("calcite_shingle_slab", CALCITE_SHINGLES);
-*/
 
     Block CHISELED_CALCITE = register("chiseled_calcite", BlockBehaviour.Properties.ofFullCopy(CALCITE_BRICKS));
 
