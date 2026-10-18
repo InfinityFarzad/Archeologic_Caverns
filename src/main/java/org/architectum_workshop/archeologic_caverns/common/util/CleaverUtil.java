@@ -39,7 +39,7 @@ public class CleaverUtil {
     public static void modifyDamage(float damage, Player player, ItemStack stack) {
         int f = player.getAttachedOrSet(ACAttachments.PLAYER_COMBO_COUNTER, 0);
         ItemAttributeModifiers modifiers = stack.getOrDefault(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder().build());
-        stack.set(DataComponents.ATTRIBUTE_MODIFIERS, modifiers.withModifierAdded(Attributes.ATTACK_DAMAGE, new AttributeModifier(ArcheologicCaverns.id("extra_cleaver_damage"), Math.floor(damage * (CleaverUtil.calculateModifier(9, f)) * 10) / 10, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND));
+        stack.set(DataComponents.ATTRIBUTE_MODIFIERS, modifiers.withModifierAdded(Attributes.ATTACK_DAMAGE, new AttributeModifier(ArcheologicCaverns.id("extra_cleaver_damage"), Math.floor(damage * (CleaverUtil.calculateModifier(8, f)) * 10) / 10, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND));
     }
 
 }

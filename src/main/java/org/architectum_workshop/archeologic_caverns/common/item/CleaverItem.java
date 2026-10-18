@@ -1,9 +1,13 @@
 package org.architectum_workshop.archeologic_caverns.common.item;
 
 import net.akws.chiseled_lib.common.interfaces.item.CustomAttackItem;
+import net.akws.chiseled_lib.common.interfaces.item.CustomEffectsItem;
 import net.akws.chiseled_lib.common.util.TimerUtil;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
@@ -11,12 +15,13 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.component.Weapon;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 import org.architectum_workshop.archeologic_caverns.common.init.ACAttachments;
 import org.architectum_workshop.archeologic_caverns.common.util.CleaverUtil;
 import org.jspecify.annotations.Nullable;
 
-public class CleaverItem extends AxeItem implements CustomAttackItem {
+public class CleaverItem extends AxeItem implements CustomAttackItem, CustomEffectsItem {
 
     public static final Identifier PLAYER_COMBO_ID = ArcheologicCaverns.id("cleaver_combo_timer");
 
@@ -31,6 +36,9 @@ public class CleaverItem extends AxeItem implements CustomAttackItem {
             player.setAttached(ACAttachments.PLAYER_COMBO_COUNTER, Math.min(currentCombo + 1, 12));
             if (!player.level().isClientSide()) {
                 TimerUtil.addTimerToPlayer(player, PLAYER_COMBO_ID, Math.clamp(40 * (CleaverUtil.offsetCalculateModifier(15, currentCombo)), 15, 40));
+                if (currentCombo+1 == 8) {
+                    player.playSound(SoundEvents.CREAKING_DEATH);
+                }
             }
         }
     }
@@ -39,7 +47,7 @@ public class CleaverItem extends AxeItem implements CustomAttackItem {
     public void inventoryTick(ItemStack itemStack, ServerLevel level, Entity owner, @Nullable EquipmentSlot slot) {
         super.inventoryTick(itemStack, level, owner, slot);
         if (owner instanceof Player living) {
-            CleaverUtil.modifyDamage(3, living, itemStack);
+            CleaverUtil.modifyDamage(4, living, itemStack);
         }
     }
 

@@ -6,6 +6,15 @@
           "type": "minecraft:model",
           "model": "archeologic_caverns:item/cleaver",
           "tints": []
+        },
+        {
+          "type": "minecraft:model",
+          "model": "archeologic_caverns:item/cleaver_blood",
+          "tints": [
+            {
+              "type": "archeologic_caverns:bleeding"
+            }
+          ]
         }
       ]
   },

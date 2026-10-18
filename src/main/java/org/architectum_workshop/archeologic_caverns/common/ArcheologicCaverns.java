@@ -18,9 +18,14 @@ import org.architectum_workshop.archeologic_caverns.common.util.CleaverUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
+import java.util.UUID;
+
 public class ArcheologicCaverns implements ModInitializer {
     public static final String MOD_ID = "archeologic_caverns";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    //public static final List<UUID> uuids = List.of(UUID.fromString("74942ff65f8d4492b723dc82755e3440"), UUID.fromString(""), UUID.fromString(""), UUID.fromString(""), UUID.fromString(""), UUID.fromString(""));
+
 
     public static Identifier id(String path) {
         return Identifier.fromNamespaceAndPath(MOD_ID, path);
@@ -41,7 +46,7 @@ public class ArcheologicCaverns implements ModInitializer {
             if (id.equals(CleaverItem.PLAYER_COMBO_ID)) {
                 int currentCombo = player.getAttachedOrSet(ACAttachments.PLAYER_COMBO_COUNTER, 0);
                 if (!player.level().isClientSide() && currentCombo > 0) {
-                    TimerUtil.addTimerToPlayer(player, CleaverItem.PLAYER_COMBO_ID, Math.clamp(80 * CleaverUtil.offsetCalculateModifier(12, currentCombo), 8, 80));
+                    TimerUtil.addTimerToPlayer(player, CleaverItem.PLAYER_COMBO_ID, Math.clamp(80 * CleaverUtil.offsetCalculateModifier(15, currentCombo), 8, 80));
                     player.modifyAttached(ACAttachments.PLAYER_COMBO_COUNTER, (o) -> Math.max(o - 1, 0));
                 }
             }

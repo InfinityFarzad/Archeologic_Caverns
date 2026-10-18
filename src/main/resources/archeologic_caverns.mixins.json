@@ -5,6 +5,8 @@
   "mixins": [
     "CleaverLoottableModifier",
     "FlintAndStealMixin",
+    "OverworldBiomeBuilderMixin",
+    "PlayerEntityCritModificationMixin",
     "ShovelItemMixin"
   ],
   "injectors": {

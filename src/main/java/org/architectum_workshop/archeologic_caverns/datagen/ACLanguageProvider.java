@@ -30,10 +30,11 @@ public class ACLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("painting.archeologic_caverns.friend_shrub.author", "mongocat");
         translationBuilder.add("painting.archeologic_caverns.friend_shrub.title", "Friend Shrub");
 
-        translationBuilder.add(ACCreativeTabs.BLOCKS_CREATIVE_TAB_KEY, "Cavern Items");
-        translationBuilder.add(ACCreativeTabs.ITEM_CREATIVE_TAB_KEY, "Cavern Blocks");
+        translationBuilder.add(ACCreativeTabs.BLOCKS_CREATIVE_TAB_KEY, "Cavern Blocks");
+        translationBuilder.add(ACCreativeTabs.ITEM_CREATIVE_TAB_KEY, "Cavern Items");
         translationBuilder.add("death.attack.inSalt", "%1$s had too much salt in the wounds");
-        translationBuilder.add("item.archeologic_caverns.cleaver_bonus", " Increases Item Harvest ");
+        translationBuilder.add("item.archeologic_caverns.cleaver_bonus", " -Increases Item Harvest");
+        translationBuilder.add("item.archeologic_caverns.cleaver_bonus_1", " -Damage Increases when holding a combo");
     }
 
     public void translate(TranslationBuilder translationBuilder, Block block) {
