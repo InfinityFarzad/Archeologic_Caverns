@@ -107,7 +107,7 @@ public interface ACBlocks {
     Block POTENT_SALT = register("potent_salt", PotentSaltBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).sound(SoundType.CALCITE));
 
     Block SALT_PRESSURE_PLATE = register("salt_pressure_plate", SaltPressurePlateBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_PRESSURE_PLATE).sound(SoundType.CALCITE));
-    Block ALTER = register("alter", SculkAlterBlock::new, BlockBehaviour.Properties.of());
+    Block ALTAR = register("altar", SculkAltarBlock::new, BlockBehaviour.Properties.of());
     // October 8, 2026 - 6:08 PM, "are you working on the goon cave mod? -juko_lul"
 
     /* registry methods */
