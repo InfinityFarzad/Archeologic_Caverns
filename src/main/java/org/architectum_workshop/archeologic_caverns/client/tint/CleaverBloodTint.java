@@ -18,7 +18,7 @@ public record CleaverBloodTint() implements ItemTintSource {
     @Override
     public int calculate(ItemStack itemStack, @Nullable ClientLevel clientLevel, @Nullable LivingEntity livingEntity) {
         if (clientLevel != null && livingEntity instanceof Player player && player.hasAttached(ACAttachments.PLAYER_COMBO_COUNTER)) {
-            int f = player.getAttachedOrElse(ACAttachments.PLAYER_COMBO_COUNTER,0);
+            int f = CleaverUtil.getCombo(player);
             return ARGB.linearLerp(CleaverUtil.calculateModifier(5,f), -1, ARGB.color(255,0,0));
         }
 

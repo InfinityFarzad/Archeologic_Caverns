@@ -32,10 +32,11 @@ public class CleaverItem extends AxeItem implements CustomAttackItem, CustomEffe
     @Override
     public void onFullAttack(LivingEntity attacker, LivingEntity target, ItemStack stack) {
         if (attacker instanceof Player player) {
-            int currentCombo = player.getAttachedOrSet(ACAttachments.PLAYER_COMBO_COUNTER, 0);
+            int currentCombo = CleaverUtil.getCombo(player);
+
             player.setAttached(ACAttachments.PLAYER_COMBO_COUNTER, Math.min(currentCombo + 1, 12));
-            if (!player.level().isClientSide()) {
-                TimerUtil.addTimerToPlayer(player, PLAYER_COMBO_ID, Math.clamp(40 * (CleaverUtil.offsetCalculateModifier(15, currentCombo)), 15, 40));
+            if (!player.level().isClientSide() && !target.isInvulnerable()) {
+                TimerUtil.addTimerToPlayer(player, PLAYER_COMBO_ID, CleaverUtil.calculateTimer(player, stack));
                 if (currentCombo+1 == 8) {
                     player.playSound(SoundEvents.CREAKING_DEATH);
                 }
@@ -47,7 +48,7 @@ public class CleaverItem extends AxeItem implements CustomAttackItem, CustomEffe
     public void inventoryTick(ItemStack itemStack, ServerLevel level, Entity owner, @Nullable EquipmentSlot slot) {
         super.inventoryTick(itemStack, level, owner, slot);
         if (owner instanceof Player living) {
-            CleaverUtil.modifyDamage(4, living, itemStack);
+            CleaverUtil.modifyDamage(3, living, itemStack);
         }
     }
 

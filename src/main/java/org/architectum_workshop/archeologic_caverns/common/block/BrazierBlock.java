@@ -34,10 +34,17 @@ public class BrazierBlock extends Block implements SimpleWaterloggedBlock, Extin
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
     private static final VoxelShape SHAPE = Block.column(16.0, 0.0, 13.0);
-
+    private final boolean part;
 
     public BrazierBlock(Properties properties) {
         super(properties);
+        part = true;
+        this.registerDefaultState(this.getStateDefinition().any().setValue(LIT, true).setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
+    }
+
+    public BrazierBlock(Properties properties, boolean hasParticles) {
+        super(properties);
+        part=hasParticles;
         this.registerDefaultState(this.getStateDefinition().any().setValue(LIT, true).setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
     }
 
@@ -57,7 +64,7 @@ public class BrazierBlock extends Block implements SimpleWaterloggedBlock, Extin
             if (random.nextInt(10) == 0) {
                 level.playLocalSound((double) pos.getX() + 0.5, (double) pos.getY() + 0.5, (double) pos.getZ() + 0.5, SoundEvents.CAMPFIRE_CRACKLE, SoundSource.BLOCKS, 0.5f + random.nextFloat(), random.nextFloat() * 0.7f + 0.6f, false);
             }
-            if (random.nextInt(5) == 0) {
+            if (random.nextInt(5) == 0 && part) {
                 for (int i = 0; i < random.nextInt(1) + 1; ++i) {
                     level.addParticle(ParticleTypes.LAVA, (double) pos.getX() + 0.5, (double) pos.getY() + 0.5, (double) pos.getZ() + 0.5, random.nextFloat() / 2.0f, 5.0E-5, random.nextFloat() / 2.0f);
                 }

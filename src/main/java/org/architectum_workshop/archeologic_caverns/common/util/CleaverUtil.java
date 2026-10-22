@@ -28,7 +28,7 @@ public class CleaverUtil {
         Minecraft minecraft = Minecraft.getInstance();
         Player player = minecraft.player;
         if (player != null) {
-            int comboCount = player.getAttachedOrElse(ACAttachments.PLAYER_COMBO_COUNTER, 0);
+            int comboCount = getCombo(player);
             float modifier = calculateModifier(9, comboCount);
             if (modifier > 0) {
                 graphics.blit(RenderPipelines.VIGNETTE, Identifier.withDefaultNamespace("textures/misc/vignette.png"), 0, 0, 0.0f, 0.0f, graphics.guiWidth(), graphics.guiHeight(), graphics.guiWidth(), graphics.guiHeight(), ARGB.colorFromFloat(1, 0, modifier * 10, modifier * 10));
@@ -37,9 +37,18 @@ public class CleaverUtil {
     }
 
     public static void modifyDamage(float damage, Player player, ItemStack stack) {
-        int f = player.getAttachedOrSet(ACAttachments.PLAYER_COMBO_COUNTER, 0);
+        int f = getCombo(player);
         ItemAttributeModifiers modifiers = stack.getOrDefault(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder().build());
-        stack.set(DataComponents.ATTRIBUTE_MODIFIERS, modifiers.withModifierAdded(Attributes.ATTACK_DAMAGE, new AttributeModifier(ArcheologicCaverns.id("extra_cleaver_damage"), Math.floor(damage * (CleaverUtil.calculateModifier(8, f)) * 10) / 10, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND));
+        stack.set(DataComponents.ATTRIBUTE_MODIFIERS, modifiers.withModifierAdded(Attributes.ATTACK_DAMAGE, new AttributeModifier(ArcheologicCaverns.id("extra_cleaver_damage"), Math.floor(damage * (CleaverUtil.calculateModifier(7, f)) * 10) / 10, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND));
+    }
+
+    public static int getCombo(Player player) {
+        return player.getAttachedOrElse(ACAttachments.PLAYER_COMBO_COUNTER, 0);
+    }
+
+    public static float calculateTimer(Player player, ItemStack stack) {
+        int currentCombo = getCombo(player);
+        return Math.clamp(80 * CleaverUtil.offsetCalculateModifier(15, currentCombo), 5, 80);
     }
 
 }

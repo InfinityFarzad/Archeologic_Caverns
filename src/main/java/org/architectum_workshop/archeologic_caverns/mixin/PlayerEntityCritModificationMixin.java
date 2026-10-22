@@ -6,6 +6,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import org.architectum_workshop.archeologic_caverns.common.init.ACAttachments;
 import org.architectum_workshop.archeologic_caverns.common.item.CleaverItem;
+import org.architectum_workshop.archeologic_caverns.common.util.CleaverUtil;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -41,7 +42,7 @@ public abstract class PlayerEntityCritModificationMixin {
 
     @Unique
     private boolean archeologic_caverns$isCleaverCrit(Player player) {
-        return player.getWeaponItem().getItem() instanceof CleaverItem && player.getAttachedOrElse(ACAttachments.PLAYER_COMBO_COUNTER,0) >= 9;
+        return player.getWeaponItem().getItem() instanceof CleaverItem && CleaverUtil.getCombo(player) >= 8;
     }
 
 }
