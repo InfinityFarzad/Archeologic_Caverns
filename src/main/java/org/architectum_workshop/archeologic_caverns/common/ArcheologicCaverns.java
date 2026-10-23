@@ -15,8 +15,11 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import org.architectum_workshop.archeologic_caverns.common.init.*;
 import org.architectum_workshop.archeologic_caverns.common.item.CleaverItem;
 import org.architectum_workshop.archeologic_caverns.common.util.CleaverUtil;
+import org.architectum_workshop.archeologic_caverns.common.worldgen.CaveRegions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import terrablender.api.Regions;
+import terrablender.api.TerraBlenderApi;
 
 import java.util.List;
 import java.util.UUID;
@@ -42,6 +45,8 @@ public class ArcheologicCaverns implements ModInitializer {
         ACAttachments.init();
         ACSounds.init();
         ACToolMaterials.init();
+        ACBiomes.init();
+
         TimerTimeoutEvent.EVENT.register((player, id) -> {
             if (id.equals(CleaverItem.PLAYER_COMBO_ID)) {
                 int currentCombo = player.getAttachedOrSet(ACAttachments.PLAYER_COMBO_COUNTER, 0);

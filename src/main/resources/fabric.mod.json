@@ -25,6 +25,9 @@
 		],
 		"fabric-datagen": [
 			"org.architectum_workshop.archeologic_caverns.datagen.ACDataGenerator"
+		],
+		"terrablender": [
+			"org.architectum_workshop.archeologic_caverns.common.worldgen.ACTerraBlenderInit"
 		]
 	},
 	"accessWidener": "archeologic_caverns.classtweaker",
@@ -35,6 +38,8 @@
 		"fabricloader": ">=0.19.5",
 		"minecraft": "~26.1",
 		"java": ">=25",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"chiseled_lib": "*",
+		"terrablender": "*"
 	}
 }

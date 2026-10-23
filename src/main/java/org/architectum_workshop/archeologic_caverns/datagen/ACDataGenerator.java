@@ -20,6 +20,7 @@ public class ACDataGenerator implements DataGeneratorEntrypoint {
 
         pack.addProvider(ACDynamicRegistries::new);
         pack.addProvider(ACLanguageProvider::new);
+        pack.addProvider(ACBiomeTags::new);
     }
 
     @Override
