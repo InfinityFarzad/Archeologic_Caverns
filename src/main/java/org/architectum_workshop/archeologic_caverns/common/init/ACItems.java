@@ -32,7 +32,7 @@ public interface ACItems {
     Item DRIPSTONE_DRILL = register("dripstone_drill", DripstoneDrillItem::new, new Item.Properties());
     Item AMBER = register("amber", Item::new, new Item.Properties().component(ACComponents.EMISSIVE_COMPONENT, true));
     Item ITEM_OF_TRUE_GAYNESS = register("item_of_true_gayness", ItemOfTrueGaynessItem::new, new Item.Properties().component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xb38df3, true)).component(ACComponents.EMISSIVE_COMPONENT, true));
-
+    Item AMBER_HOOK = register("amber_hook", Item::new, new Item.Properties().stacksTo(1).component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xff9132, true)));
 
     Item SHINEWICH = register("shinewich", Item::new, new Item.Properties().food(ACFoods.SHINEWICH, Consumable.builder().sound(Holder.direct(SoundEvents.SCULK_CATALYST_BREAK)).build()).component(ACComponents.EMISSIVE_COMPONENT, true));
     Item PLATE_OF_NAILS = register("plate_of_nails", Item::new, new Item.Properties().stacksTo(16).food(ACFoods.NAILS, Consumable.builder().sound(Holder.direct(SoundEvents.CHAIN_HIT)).build()).usingConvertsTo(Items.BOWL));

@@ -5,6 +5,7 @@ import net.akws.chiseled_lib.common.util.TimerUtil;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
 import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
@@ -12,6 +13,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import org.architectum_workshop.archeologic_caverns.client.init.ACParticles;
 import org.architectum_workshop.archeologic_caverns.common.init.*;
 import org.architectum_workshop.archeologic_caverns.common.item.CleaverItem;
 import org.architectum_workshop.archeologic_caverns.common.util.CleaverUtil;
@@ -46,6 +48,7 @@ public class ArcheologicCaverns implements ModInitializer {
         ACSounds.init();
         ACToolMaterials.init();
         ACBiomes.init();
+        ACParticles.init();
 
         TimerTimeoutEvent.EVENT.register((player, id) -> {
             if (id.equals(CleaverItem.PLAYER_COMBO_ID)) {
@@ -63,6 +66,6 @@ public class ArcheologicCaverns implements ModInitializer {
 
 
         FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(modContainer -> ResourceLoader.registerBuiltinPack(id("copper_reforged"), modContainer, Component.literal("Copper Reforged"), PackActivationType.DEFAULT_ENABLED));
-
     }
+
 }

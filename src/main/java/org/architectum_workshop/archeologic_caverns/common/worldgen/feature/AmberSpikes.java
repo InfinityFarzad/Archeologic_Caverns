@@ -8,4 +8,6 @@ public class AmberSpikes extends DripstoneClusterFeature {
     public AmberSpikes(Codec<DripstoneClusterConfiguration> codec) {
         super(codec);
     }
+
+
 }
