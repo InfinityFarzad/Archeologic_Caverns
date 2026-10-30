@@ -64,6 +64,12 @@ public class ArcheologicCaverns implements ModInitializer {
                 GenerationStep.Decoration.RAW_GENERATION,
                 ACPlacedFeatures.SALT_PLACED_FEATURE);
 
+        BiomeModifications.addFeature(
+                BiomeSelectors.foundInOverworld().and(BiomeSelectors.includeByKey(ACBiomes.AMBER_CAVES)),
+                GenerationStep.Decoration.RAW_GENERATION,
+                ACPlacedFeatures.AMBER_COLUMN_PLACED_FEATURE
+        );
+
 
         FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(modContainer -> ResourceLoader.registerBuiltinPack(id("copper_reforged"), modContainer, Component.literal("Copper Reforged"), PackActivationType.DEFAULT_ENABLED));
     }

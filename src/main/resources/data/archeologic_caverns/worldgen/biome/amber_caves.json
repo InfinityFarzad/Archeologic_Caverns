@@ -1,6 +1,7 @@
 {
   "attributes": {
-    "minecraft:visual/sky_color": "#7ba4ff"
+    "minecraft:visual/sky_color": "#f1b85e",
+    "minecraft:visual/ambient_light_color": "#f1b85e"
   },
   "carvers": [
     "minecraft:cave",
@@ -103,7 +104,7 @@
         "weight": 100
       },
       {
-        "type": "minecraft:zombie",
+        "type": "minecraft:husk",
         "maxCount": 4,
         "minCount": 4,
         "weight": 95
@@ -115,17 +116,11 @@
         "weight": 5
       },
       {
-        "type": "minecraft:skeleton",
+        "type": "minecraft:bogged",
         "maxCount": 4,
         "minCount": 4,
         "weight": 100
-      },
-      {
-        "type": "minecraft:creeper",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
+      }
       {
         "type": "minecraft:slime",
         "maxCount": 4,
