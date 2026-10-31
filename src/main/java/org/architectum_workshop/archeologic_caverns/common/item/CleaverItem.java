@@ -4,6 +4,7 @@ import net.akws.chiseled_lib.common.interfaces.item.CustomAttackItem;
 import net.akws.chiseled_lib.common.interfaces.item.CustomEffectsItem;
 import net.akws.chiseled_lib.common.util.TimerUtil;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -16,6 +17,7 @@ import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.component.Weapon;
+import org.architectum_workshop.archeologic_caverns.client.init.ACParticles;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 import org.architectum_workshop.archeologic_caverns.common.init.ACAttachments;
 import org.architectum_workshop.archeologic_caverns.common.util.CleaverUtil;
@@ -55,5 +57,10 @@ public class CleaverItem extends AxeItem implements CustomAttackItem, CustomEffe
     @Override
     public boolean canDoSweepingAttack(ItemStack stack, boolean cooldownPassed, boolean criticalHit, boolean knockbackAttack) {
         return false;
+    }
+
+    @Override
+    public ParticleOptions critParticles(ItemStack stack) {
+        return ACParticles.BLEEDING_PARTICLE;
     }
 }

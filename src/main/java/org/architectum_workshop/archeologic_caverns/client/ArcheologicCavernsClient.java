@@ -3,12 +3,15 @@ package org.architectum_workshop.archeologic_caverns.client;
 import net.fabricmc.api.ClientModInitializer;
 
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.minecraft.ChatFormatting;
 
 import net.minecraft.client.color.item.ItemTintSources;
 import net.minecraft.network.chat.Component;
 
 import net.minecraft.world.item.component.MapItemColor;
+import org.architectum_workshop.archeologic_caverns.client.init.ACParticles;
+import org.architectum_workshop.archeologic_caverns.client.particle.BloodParticle;
 import org.architectum_workshop.archeologic_caverns.client.tint.CleaverBloodTint;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 import org.architectum_workshop.archeologic_caverns.common.item.CleaverItem;
@@ -25,5 +28,6 @@ public class ArcheologicCavernsClient implements ClientModInitializer {
             }
         });
         ItemTintSources.ID_MAPPER.put(ArcheologicCaverns.id("bleeding"), CleaverBloodTint.CODEC);
+        ParticleProviderRegistry.getInstance().register(ACParticles.BLEEDING_PARTICLE, BloodParticle.Provider::new);
     }
 }

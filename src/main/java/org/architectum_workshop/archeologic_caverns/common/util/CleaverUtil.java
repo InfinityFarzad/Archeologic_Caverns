@@ -31,7 +31,7 @@ public class CleaverUtil {
             int comboCount = getCombo(player);
             float modifier = calculateModifier(9, comboCount);
             if (modifier > 0) {
-                graphics.blit(RenderPipelines.VIGNETTE, Identifier.withDefaultNamespace("textures/misc/vignette.png"), 0, 0, 0.0f, 0.0f, graphics.guiWidth(), graphics.guiHeight(), graphics.guiWidth(), graphics.guiHeight(), ARGB.colorFromFloat(1, 0, modifier * 10, modifier * 10));
+                graphics.blit(RenderPipelines.VIGNETTE, ArcheologicCaverns.id("textures/misc/bleedylalala.png"), 0, 0, 0.0f, 0.0f, graphics.guiWidth(), graphics.guiHeight(), graphics.guiWidth(), graphics.guiHeight(), ARGB.colorFromFloat(1, 0, modifier * 10, modifier * 10));
             }
         }
     }

@@ -44,7 +44,7 @@ public interface ACBlocks {
 
 
     Block CHISELED_DRIPSTONE = register("chiseled_dripstone", Block::new, BlockBehaviour.Properties.ofFullCopy(DRIPSTONE_BRICKS), true);
-    Block AMBER_BLOCK = register("amber_block", Block::new, BlockBehaviour.Properties.ofFullCopy(GLASS).lightLevel((state) -> 8), true);
+    Block AMBER_BLOCK = register("amber_block", Block::new, BlockBehaviour.Properties.ofFullCopy(GLASS).lightLevel((state) -> 12), true);
 
     // Calcite
 
