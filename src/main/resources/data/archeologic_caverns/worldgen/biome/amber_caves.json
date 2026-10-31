@@ -1,7 +1,7 @@
 {
   "attributes": {
     "minecraft:visual/sky_color": "#f1b85e",
-    "minecraft:visual/ambient_light_color": "#f1b85e"
+    "minecraft:visual/ambient_light_color": "#362915"
   },
   "carvers": [
     "minecraft:cave",
@@ -68,8 +68,10 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:cave_vines",
-      "minecraft:classic_vines_cave_feature"
+      "minecraft:patch_dead_bush_2",
+      "minecraft:brown_mushroom_normal",
+      "minecraft:red_mushroom_normal",
+      "minecraft:cave_vines"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -120,7 +122,7 @@
         "maxCount": 4,
         "minCount": 4,
         "weight": 100
-      }
+      },
       {
         "type": "minecraft:slime",
         "maxCount": 4,
