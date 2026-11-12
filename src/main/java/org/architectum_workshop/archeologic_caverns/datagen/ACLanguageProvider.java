@@ -34,7 +34,8 @@ public class ACLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add("death.attack.inSalt", "%1$s had too much salt in the wounds");
         translationBuilder.add("item.archeologic_caverns.cleaver_bonus", " -Increases Item Harvest");
         translationBuilder.add("tooltip.archeologic_caverns.cleaver_drop_bonus", "+300% Item Drops");
-        translationBuilder.add("tooltip.archeologic_caverns.cleaver_explain", "after every hit you absorb more blood which allows for more damage");
+        translationBuilder.add("tooltip.archeologic_caverns.cleaver_explain", " Attacking enemies absorbs blood that can be utilized for more damage");
+        translationBuilder.add("tooltip.archeologic_caverns.artifact_explain", "  Hold [ %s ] for info");
     }
 
     public void translate(TranslationBuilder translationBuilder, Block block) {

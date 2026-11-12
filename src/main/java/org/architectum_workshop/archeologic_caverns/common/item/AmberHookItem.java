@@ -16,11 +16,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import org.architectum_workshop.archeologic_caverns.common.item.impl.ArtifactTooltipImpl;
 import org.architectum_workshop.archeologic_caverns.common.util.AmberHookUtil;
 import org.architectum_workshop.archeologic_caverns.common.util.datatype.ClimbPos;
 import org.jspecify.annotations.Nullable;
 
-public class AmberHookItem extends Item {
+public class AmberHookItem extends Item implements ArtifactTooltipImpl {
     public AmberHookItem(Properties properties) {
         super(properties);
     }
@@ -34,6 +35,12 @@ public class AmberHookItem extends Item {
             AmberHookUtil.storeHookPos(player, hand, climbPos);
 
             player.startUsingItem(hand);
+            ClimbPos pos = AmberHookUtil.getCurrentHookPos(player, InteractionHand.MAIN_HAND);
+            Vec3 to = player.position().vectorTo(pos.hangPos()).normalize();
+
+            double distance = player.position().distanceTo(pos.hangPos());
+            double f = distance / 3f;
+            player.setDeltaMovement(to.scale(f));
             return InteractionResult.CONSUME;
         }
 
@@ -55,21 +62,21 @@ public class AmberHookItem extends Item {
         if (owner instanceof ServerPlayer player) {
             if (AmberHookUtil.isUsingAmberHook(player)) {
                 ClimbPos pos = AmberHookUtil.getCurrentHookPos(player, InteractionHand.MAIN_HAND);
-                Vec3 to = player.position().vectorTo(pos.hangPos()).normalize();
+                Vec3 movementFinal;
 
-                double distance = player.position().distanceTo(pos.hangPos());
-                double f = distance / 3f;
-                Vec3 wa;
+                if (player.getLastClientInput().forward()) {
+                    Vec3 g =player.position().vectorTo(player.position().add(player.getViewVector(1.0f)));
+                    Vec3 h = g.scale(g.distanceTo(pos.hangPos()));
+                    Vec3 newMovs = new Vec3(Math.clamp(h.x, -0.5, 0.5), Math.clamp(h.y, -0.5, 0.5), Math.clamp(h.z, -0.5, 0.5));
 
-
-                if (distance > 0.8) {
-                     wa = to.multiply(f,f,f);
+                    movementFinal = player.getDeltaMovement().lerp(newMovs, player.getDeltaMovement().distanceTo(newMovs));
                 } else {
-                     wa = Vec3.ZERO;
+                    movementFinal = player.getDeltaMovement().lerp(Vec3.ZERO, player.getDeltaMovement().distanceTo(Vec3.ZERO));
                 }
+
                 player.needsSync=true;
-                player.setDeltaMovement(wa);
-                player.connection.send(new ClientboundSetEntityMotionPacket(player.getId(), wa));
+                player.setDeltaMovement(new Vec3(Math.clamp(movementFinal.x, -1, 1), Math.clamp(movementFinal.y, -1, 1), Math.clamp(movementFinal.z, -1, 1)));
+                player.connection.send(new ClientboundSetEntityMotionPacket(player.getId(), movementFinal));
 
             }
         }

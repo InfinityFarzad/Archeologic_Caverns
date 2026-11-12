@@ -10,9 +10,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.architectum_workshop.archeologic_caverns.common.item.impl.ArtifactTooltipImpl;
 import org.jspecify.annotations.Nullable;
 
-public class ItemOfTrueGaynessItem extends Item {
+public class ItemOfTrueGaynessItem extends Item implements ArtifactTooltipImpl {
     public int color = 0;
 
     public ItemOfTrueGaynessItem(Properties properties) {

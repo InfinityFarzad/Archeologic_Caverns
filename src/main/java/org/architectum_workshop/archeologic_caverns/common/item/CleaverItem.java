@@ -3,7 +3,9 @@ package org.architectum_workshop.archeologic_caverns.common.item;
 import net.akws.chiseled_lib.common.interfaces.item.CustomAttackItem;
 import net.akws.chiseled_lib.common.interfaces.item.CustomEffectsItem;
 import net.akws.chiseled_lib.common.util.TimerUtil;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -18,10 +20,11 @@ import net.minecraft.world.item.ToolMaterial;
 import org.architectum_workshop.archeologic_caverns.client.init.ACParticles;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 import org.architectum_workshop.archeologic_caverns.common.init.ACAttachments;
+import org.architectum_workshop.archeologic_caverns.common.item.impl.ArtifactTooltipImpl;
 import org.architectum_workshop.archeologic_caverns.common.util.CleaverUtil;
 import org.jspecify.annotations.Nullable;
 
-public class CleaverItem extends AxeItem implements CustomAttackItem, CustomEffectsItem {
+public class CleaverItem extends AxeItem implements CustomAttackItem, CustomEffectsItem, ArtifactTooltipImpl {
 
     public static final Identifier PLAYER_COMBO_ID = ArcheologicCaverns.id("cleaver_combo_timer");
 
@@ -59,5 +62,10 @@ public class CleaverItem extends AxeItem implements CustomAttackItem, CustomEffe
     @Override
     public ParticleOptions critParticles(ItemStack stack) {
         return ACParticles.BLEEDING_PARTICLE;
+    }
+
+    @Override
+    public Component getArtifactTooltip(ItemStack stack, Player player) {
+        return Component.translatable("tooltip.archeologic_caverns.cleaver_explain").withStyle(ChatFormatting.GRAY);
     }
 }

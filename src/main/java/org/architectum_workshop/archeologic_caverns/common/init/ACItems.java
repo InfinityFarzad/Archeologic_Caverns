@@ -13,6 +13,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.component.UseEffects;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 import org.architectum_workshop.archeologic_caverns.common.item.*;
 
@@ -28,7 +29,7 @@ public interface ACItems {
     Item CLEAVER = register("cleaver", i -> new CleaverItem(ACToolMaterials.CLEAVER_STEEL, 3, -2.4f, i), new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON).enchantable(22).component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xd53c6a, true)).component(DataComponents.WEAPON, null));
     Item DRIPSTONE_DRILL = register("dripstone_drill", DripstoneDrillItem::new, new Item.Properties().component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xa08d71, true)).rarity(Rarity.UNCOMMON).stacksTo(1));
     Item ITEM_OF_TRUE_GAYNESS = register("item_of_true_gayness", ItemOfTrueGaynessItem::new, new Item.Properties().rarity(Rarity.UNCOMMON).component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xb38df3, true)).component(ACComponents.EMISSIVE_COMPONENT, true));
-    Item AMBER_HOOK = register("amber_hook", AmberHookItem::new, new Item.Properties().stacksTo(1).component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xff9132, true)).rarity(Rarity.UNCOMMON));
+    Item AMBER_HOOK = register("amber_hook", AmberHookItem::new, new Item.Properties().stacksTo(1).component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xff9132, true)).component(DataComponents.USE_EFFECTS, new UseEffects(true, false, 20.0f)).rarity(Rarity.UNCOMMON));
     Item AMBER = register("amber", Item::new, new Item.Properties().component(ACComponents.EMISSIVE_COMPONENT, true));
 
     Item SHINEWICH = register("shinewich", Item::new, new Item.Properties().food(ACFoods.SHINEWICH, Consumable.builder().sound(Holder.direct(SoundEvents.SCULK_CATALYST_BREAK)).build()).component(ACComponents.EMISSIVE_COMPONENT, true));
