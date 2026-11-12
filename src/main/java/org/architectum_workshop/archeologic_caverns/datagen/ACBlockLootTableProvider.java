@@ -28,12 +28,6 @@ public class ACBlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(ACBlocks.BRAZIER);
         dropSelf(ACBlocks.SOUL_BRAZIER);
 
-/*
-        dropSelf(ArcheologicCavernsBlocks.CALCITE_SHINGLES);
-        dropSelf(ArcheologicCavernsBlocks.CALCITE_SHINGLE_STAIRS);
-        add(ArcheologicCavernsBlocks.CALCITE_SHINGLE_SLAB, createSlabItemTable(ArcheologicCavernsBlocks.CALCITE_SHINGLE_SLAB));
-*/
-
         dropSelf(ACBlocks.POLISHED_CALCITE);
         dropSelf(ACBlocks.POLISHED_CALCITE_WALL);
         dropSelf(ACBlocks.POLISHED_CALCITE_STAIRS);

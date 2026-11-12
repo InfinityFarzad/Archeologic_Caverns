@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.architectum_workshop.archeologic_caverns.common.util.ToShapeInterface;
+import org.architectum_workshop.archeologic_caverns.common.util.functionalI.ToShapeInterface;
 
 public class ExpandedLanternBlock extends LanternBlock {
     private final ToShapeInterface<BlockState> shape;

@@ -19,20 +19,24 @@ public interface ACCreativeTabs {
 
     CreativeModeTab ITEM_CREATIVE_TAB = FabricCreativeModeTab.builder()
             .title(Component.translatable("creative_tab.archeologic_caverns.items_tab"))
-            .displayItems((parameters, output) -> {
+            .displayItems((_, output) -> {
                 output.accept(ACItems.ITEM_OF_TRUE_GAYNESS);
+                output.accept(ACItems.DRIPSTONE_DRILL);
+                output.accept(ACItems.AMETHYST_GREATAXE);
                 output.accept(ACItems.CLEAVER);
+                output.accept(ACItems.AMBER_HOOK);
                 output.accept(ACItems.AMBER);
                 output.accept(ACItems.SHINEWICH);
                 output.accept(ACItems.CUPRIC_STEW);
                 output.accept(ACItems.PLATE_OF_NAILS);
+
             })
             .icon(() -> new ItemStack(ACItems.AMBER))
             .build();
 
     CreativeModeTab BLOCKS_CREATIVE_TAB = FabricCreativeModeTab.builder()
             .title(Component.translatable("creative_tab.archeologic_caverns.blocks_tab"))
-            .displayItems((parameters, output) -> {
+            .displayItems((_, output) -> {
                 output.accept(ACBlocks.DRIPSTONE_BRICKS);
                 output.accept(ACBlocks.DRIPSTONE_BRICK_STAIRS);
                 output.accept(ACBlocks.DRIPSTONE_BRICK_SLAB);

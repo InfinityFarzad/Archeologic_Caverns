@@ -1,4 +1,4 @@
-package org.architectum_workshop.archeologic_caverns.common.util;
+package org.architectum_workshop.archeologic_caverns.common.util.functionalI;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 

@@ -1,4 +1,4 @@
-package org.architectum_workshop.archeologic_caverns.mixin;
+package org.architectum_workshop.archeologic_caverns.mixin.util;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;

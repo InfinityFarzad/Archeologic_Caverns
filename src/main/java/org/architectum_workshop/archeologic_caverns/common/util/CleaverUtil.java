@@ -4,7 +4,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.resources.Identifier;
 import net.minecraft.util.ARGB;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -46,7 +45,7 @@ public class CleaverUtil {
         return player.getAttachedOrElse(ACAttachments.PLAYER_COMBO_COUNTER, 0);
     }
 
-    public static float calculateTimer(Player player, ItemStack stack) {
+    public static float calculateTimer(Player player) {
         int currentCombo = getCombo(player);
         return Math.clamp(80 * CleaverUtil.offsetCalculateModifier(15, currentCombo), 5, 80);
     }

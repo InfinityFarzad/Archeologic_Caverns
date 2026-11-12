@@ -44,7 +44,7 @@ public interface ACBlocks {
 
 
     Block CHISELED_DRIPSTONE = register("chiseled_dripstone", Block::new, BlockBehaviour.Properties.ofFullCopy(DRIPSTONE_BRICKS), true);
-    Block AMBER_BLOCK = register("amber_block", Block::new, BlockBehaviour.Properties.ofFullCopy(GLASS).lightLevel((state) -> 12), true);
+    Block AMBER_BLOCK = register("amber_block", Block::new, BlockBehaviour.Properties.ofFullCopy(GLASS).lightLevel((_) -> 12), true);
 
     // Calcite
 
@@ -76,7 +76,7 @@ public interface ACBlocks {
     Block CALCITE_LANTERN = register("calcite_lantern", i -> new ExpandedLanternBlock(i, (state) -> state.getValue(BlockStateProperties.HANGING) ? CALCITE_LANTERN_SHAPE_HANGING : CALCITE_LANTERN_SHAPE_STANDING), BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
     Block DEEPSLATE_LANTERN = register("deepslate_lantern", i -> new ExpandedLanternBlock(i, (state) -> state.getValue(BlockStateProperties.HANGING) ? DEEPSLATE_LANTERN_SHAPE_HANGING : DEEPSLATE_LANTERN_SHAPE_STANDING), BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
     Block DRIPSTONE_LANTERN = register("dripstone_lantern", i -> new ExpandedLanternBlock(i, (state) -> state.getValue(BlockStateProperties.HANGING) ? DRIPSTONE_LANTERN_SHAPE_HANGING : DRIPSTONE_LANTERN_SHAPE_STANDING), BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
-    Block SALT_LANTERN = register("salt_lantern", i -> new ExpandedLanternBlock(i, (state) -> SALT_LANTERN_SHAPE), BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
+    Block SALT_LANTERN = register("salt_lantern", i -> new ExpandedLanternBlock(i, (_) -> SALT_LANTERN_SHAPE), BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN));
 
     Block CALCITE_PILLAR = register("calcite_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE));
     Block DRIPSTONE_PILLAR = register("dripstone_pillar", ConnectingPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DRIPSTONE_BLOCK));

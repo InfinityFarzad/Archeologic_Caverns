@@ -1,4 +1,4 @@
-package org.architectum_workshop.archeologic_caverns.mixin.client;
+package org.architectum_workshop.archeologic_caverns.mixin.cleaver.client;
 
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.gui.Gui;

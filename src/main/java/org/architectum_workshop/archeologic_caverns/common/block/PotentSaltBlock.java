@@ -19,8 +19,8 @@ public class PotentSaltBlock extends Block {
     @Override
     public void fallOn(Level level, BlockState state, BlockPos pos, Entity entity, double fallDistance) {
         super.fallOn(level, state, pos, entity, fallDistance);
-        if (entity instanceof LivingEntity livingEntity && isDamaged(livingEntity)) {
-            livingEntity.hurt(damageSource(entity), damageDegree(livingEntity));
+        if (entity instanceof LivingEntity livingEntity && isDamaged(livingEntity) && level instanceof ServerLevel serverLevel) {
+            livingEntity.hurtServer(serverLevel, damageSource(entity), damageDegree(livingEntity));
         }
     }
 

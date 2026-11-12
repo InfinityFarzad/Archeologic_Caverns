@@ -2,7 +2,6 @@ package org.architectum_workshop.archeologic_caverns.common.worldgen;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.Registry;
-import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Climate;
@@ -35,7 +34,6 @@ public class CaveRegions extends Region {
                 .weirdness(ParameterUtils.Weirdness.MID_SLICE_NORMAL_ASCENDING, ParameterUtils.Weirdness.MID_SLICE_NORMAL_DESCENDING)
                 .build().forEach(point -> builder.add(point, ACBiomes.AMBER_CAVES));
 
-        // Add our points to the mapper
         builder.build().forEach(mapper);
 
     }

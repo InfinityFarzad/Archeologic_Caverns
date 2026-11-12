@@ -1,0 +1,14 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "minecraft:using_item",
+    "on_true": {
+      "type": "minecraft:model",
+      "model": "archeologic_caverns:item/dripstone_drill"
+    },
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "archeologic_caverns:item/dripstone_drill_still"
+    }
+  }
+}

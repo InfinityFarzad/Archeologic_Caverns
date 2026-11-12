@@ -1,4 +1,4 @@
-package org.architectum_workshop.archeologic_caverns.mixin;
+package org.architectum_workshop.archeologic_caverns.mixin.util;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -26,7 +26,7 @@ public class ShovelItemMixin {
             BlockState state = level.getBlockState(pos);
             Player player = context.getPlayer();
 
-            if (state.getBlock() instanceof ExtinguishableBlock block && block.isLit(state, pos, level)) {
+            if (state.getBlock() instanceof ExtinguishableBlock block && block.isLit(state, pos, level) && block.canBeExtinguishedByShovel(state, pos, level)) {
                 BlockState newState = state.setValue(BlockStateProperties.LIT, false);
                 if (!level.isClientSide()) {
                     level.setBlock(pos, newState, 11);

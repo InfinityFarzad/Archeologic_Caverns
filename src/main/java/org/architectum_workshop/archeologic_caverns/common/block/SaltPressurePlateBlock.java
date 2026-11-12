@@ -22,21 +22,20 @@ public class SaltPressurePlateBlock extends PressurePlateBlock {
         this.registerDefaultState(this.stateDefinition.any().setValue(POWERED, false).setValue(OUTPUT, 0));
     }
 
-
     protected int getSignalStrength(final Level level, final BlockPos pos) {
         List<LivingEntity> livingEntity = level.getEntitiesOfClass(LivingEntity.class, TOUCH_AABB.move(pos));
         livingEntity.sort(Comparator.comparingDouble(entity -> entity.distanceToSqr(pos.getBottomCenter())));
         if (livingEntity.isEmpty()) {
             return 0;
         }
-        double maxHealthCombao = 0;
-        double healthCombao = 0;
+        double maxHealthCombo = 0;
+        double healthCombo = 0;
         for (LivingEntity entity : livingEntity) {
-            maxHealthCombao += entity.getMaxHealth();
-            healthCombao += entity.getHealth();
+            maxHealthCombo += entity.getMaxHealth();
+            healthCombo += entity.getHealth();
         }
 
-        double ratio = healthCombao / maxHealthCombao;
+        double ratio = healthCombo / maxHealthCombo;
         return Mth.floor(15.0 * ratio);
     }
 

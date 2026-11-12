@@ -23,7 +23,7 @@ import org.jspecify.annotations.Nullable;
 
 import java.util.Optional;
 
-// none of this code is mine, it was taken from minecrafts code base and modified, shame me all you want, I just couldn't figure it out, i will replace it later on
+// none of this code is mine, it was taken from Minecraft's code base and modified, shame me all you want, I just couldn't figure it out, I will replace it later on
 
 
 public class LargeColumnFeature extends Feature<LargeColumnFeatureConfig> {
@@ -42,10 +42,9 @@ public class LargeColumnFeature extends Feature<LargeColumnFeatureConfig> {
             return false;
         }
         Optional<Column> column = Column.scan(level, origin, config.floorToCeilingSearchRange, DripstoneUtils::isEmptyOrWater, DripstoneUtils::isDripstoneBaseOrLava);
-        if (column.isEmpty() || !(column.get() instanceof Column.Range)) {
+        if (column.isEmpty() || !(column.get() instanceof Column.Range columnRange)) {
             return false;
         }
-        Column.Range columnRange = (Column.Range)column.get();
         if (columnRange.height() < 4) {
             return false;
         }
@@ -87,20 +86,6 @@ public class LargeColumnFeature extends Feature<LargeColumnFeatureConfig> {
 
         private int getHeight() {
             return this.getHeightAtRadius(0.0f);
-        }
-
-        private int getMinY() {
-            if (this.pointingUp) {
-                return this.root.getY();
-            }
-            return this.root.getY() - this.getHeight();
-        }
-
-        private int getMaxY() {
-            if (!this.pointingUp) {
-                return this.root.getY();
-            }
-            return this.root.getY() + this.getHeight();
         }
 
         private boolean moveBackUntilBaseIsInsideStoneAndShrinkRadiusIfNecessary(WorldGenLevel level, WindOffsetter wind) {
@@ -197,7 +182,6 @@ public class LargeColumnFeature extends Feature<LargeColumnFeatureConfig> {
         if (xzDistanceFromCenter < bluntness) {
             xzDistanceFromCenter = bluntness;
         }
-        double cutoff = 0.384;
         double r = xzDistanceFromCenter / dripstoneRadius * 0.384;
         double part1 = 0.75 * Math.pow(r, 1.3333333333333333);
         double part2 = Math.pow(r, 0.6666666666666666);
@@ -211,12 +195,10 @@ public class LargeColumnFeature extends Feature<LargeColumnFeatureConfig> {
         if (isEmptyOrWaterOrLava(level, center)) {
             return false;
         }
-        float arcLength = 6.0f;
         float angleIncrement = 6.0f / (float)xzRadius;
         for (float angle = 0.0f; angle < (float)Math.PI * 2; angle += angleIncrement) {
-            int dz;
             int dx = (int)(Mth.cos(angle) * (float)xzRadius);
-            if (!isEmptyOrWaterOrLava(level, center.offset(dx, 0, dz = (int)(Mth.sin(angle) * (float)xzRadius)))) continue;
+            if (!isEmptyOrWaterOrLava(level, center.offset(dx, 0, (int)(Mth.sin(angle) * (float)xzRadius)))) continue;
             return false;
         }
         return true;

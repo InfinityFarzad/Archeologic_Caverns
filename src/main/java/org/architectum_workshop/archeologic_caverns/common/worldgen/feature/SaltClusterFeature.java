@@ -2,7 +2,6 @@ package org.architectum_workshop.archeologic_caverns.common.worldgen.feature;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.Identifier;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
@@ -11,7 +10,6 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.ProbabilityFeatureConfiguration;
-import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 import org.architectum_workshop.archeologic_caverns.common.init.ACBlocks;
 import org.architectum_workshop.archeologic_caverns.common.init.ACTags;
 
@@ -19,8 +17,6 @@ public class SaltClusterFeature extends Feature<ProbabilityFeatureConfiguration>
     public SaltClusterFeature(Codec<ProbabilityFeatureConfiguration> codec) {
         super(codec);
     }
-
-    public static final Identifier SALT_FEATURE_ID = ArcheologicCaverns.id("salt_cluster_feature");
 
     @Override
     public boolean place(FeaturePlaceContext<ProbabilityFeatureConfiguration> context) {
@@ -38,7 +34,6 @@ public class SaltClusterFeature extends Feature<ProbabilityFeatureConfiguration>
                 int randX = random.nextInt(2);
                 int randZ = random.nextInt(2);
                 BlockPos underPos = pos.offset(randX, -1, randZ);
-                // && (level.getBlockState(underPos.above()).hasProperty(BlockStateProperties.WATERLOGGED) && !level.getBlockState(underPos.above()).getValue(BlockStateProperties.WATERLOGGED))
                 if (!level.getBlockState(underPos.above()).is(Blocks.WATER)) {
                     this.setBlock(level, underPos, ACBlocks.SALT_BLOCK.defaultBlockState());
                 }

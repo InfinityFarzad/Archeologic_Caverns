@@ -5,26 +5,22 @@ import net.akws.chiseled_lib.common.util.TimerUtil;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
+import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
 import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.item.component.Weapon;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import org.architectum_workshop.archeologic_caverns.client.init.ACParticles;
 import org.architectum_workshop.archeologic_caverns.common.init.*;
 import org.architectum_workshop.archeologic_caverns.common.item.CleaverItem;
 import org.architectum_workshop.archeologic_caverns.common.util.CleaverUtil;
-import org.architectum_workshop.archeologic_caverns.common.worldgen.CaveRegions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import terrablender.api.Regions;
-import terrablender.api.TerraBlenderApi;
-
-import java.util.List;
-import java.util.UUID;
 
 public class ArcheologicCaverns implements ModInitializer {
     public static final String MOD_ID = "archeologic_caverns";
@@ -70,7 +66,7 @@ public class ArcheologicCaverns implements ModInitializer {
                 ACPlacedFeatures.AMBER_COLUMN_PLACED_FEATURE
         );
 
-
+        DefaultItemComponentEvents.MODIFY.register((context) -> context.modify(ACItems.CLEAVER, i -> i.set(DataComponents.WEAPON, new Weapon(2, 1.8f))));
         FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(modContainer -> ResourceLoader.registerBuiltinPack(id("copper_reforged"), modContainer, Component.literal("Copper Reforged"), PackActivationType.DEFAULT_ENABLED));
     }
 

@@ -1,4 +1,4 @@
-package org.architectum_workshop.archeologic_caverns.mixin;
+package org.architectum_workshop.archeologic_caverns.mixin.cleaver;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(EnchantedCountIncreaseFunction.class)
-public abstract class CleaverLoottableModifier {
+public abstract class CleaverItemDropBonusMixin {
 
     @Shadow
     protected abstract boolean hasLimit();

@@ -11,6 +11,7 @@ public interface LightableBlock {
     default void light(Player player, BlockState state, BlockPos pos, LevelAccessor level) {
     }
 
+    @SuppressWarnings("unused")
     default boolean canLight(BlockState state, BlockPos pos, LevelAccessor level) {
         return state.hasProperty(BlockStateProperties.LIT) && !state.getValue(BlockStateProperties.LIT);
     }

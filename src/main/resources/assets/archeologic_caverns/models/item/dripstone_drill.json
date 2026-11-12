@@ -1,0 +1,27 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "archeologic_caverns:item/dripstone_drill"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-89.75, 88.31, 42.07],
+			"translation": [0, -1.5, -4]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-89.75, 88.31, -42.07],
+			"translation": [0, -1.5, -4]
+		},
+		"firstperson_righthand": {
+			"rotation": [-116.25, -90, 0],
+			"translation": [1.13, 3.2, 1.13],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-116.25, 90, 0],
+			"translation": [1.13, 3.2, 1.13],
+			"scale": [0.68, 0.68, 0.68]
+		}
+	}
+}

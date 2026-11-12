@@ -14,10 +14,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.component.Consumable;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
-import org.architectum_workshop.archeologic_caverns.common.item.AmethystGreataxeItem;
-import org.architectum_workshop.archeologic_caverns.common.item.CleaverItem;
-import org.architectum_workshop.archeologic_caverns.common.item.DripstoneDrillItem;
-import org.architectum_workshop.archeologic_caverns.common.item.ItemOfTrueGaynessItem;
+import org.architectum_workshop.archeologic_caverns.common.item.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,12 +24,12 @@ public interface ACItems {
 
     List<Item> TRANSLATED_ITEMS = new ArrayList<>();
 
-    Item AMETHYST_GREATAXE = register("amethyst_axe", properties -> new AmethystGreataxeItem(properties, 9, -3.2f), new Item.Properties().component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xFFb38ef3, true)));
+    Item AMETHYST_GREATAXE = register("amethyst_axe", properties -> new AmethystGreataxeItem(properties, 9, -3.2f), new Item.Properties().rarity(Rarity.UNCOMMON).component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xFFb38ef3, true)));
     Item CLEAVER = register("cleaver", i -> new CleaverItem(ACToolMaterials.CLEAVER_STEEL, 3, -2.4f, i), new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON).enchantable(22).component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xd53c6a, true)).component(DataComponents.WEAPON, null));
-    Item DRIPSTONE_DRILL = register("dripstone_drill", DripstoneDrillItem::new, new Item.Properties());
+    Item DRIPSTONE_DRILL = register("dripstone_drill", DripstoneDrillItem::new, new Item.Properties().component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xa08d71, true)).rarity(Rarity.UNCOMMON).stacksTo(1));
+    Item ITEM_OF_TRUE_GAYNESS = register("item_of_true_gayness", ItemOfTrueGaynessItem::new, new Item.Properties().rarity(Rarity.UNCOMMON).component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xb38df3, true)).component(ACComponents.EMISSIVE_COMPONENT, true));
+    Item AMBER_HOOK = register("amber_hook", AmberHookItem::new, new Item.Properties().stacksTo(1).component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xff9132, true)).rarity(Rarity.UNCOMMON));
     Item AMBER = register("amber", Item::new, new Item.Properties().component(ACComponents.EMISSIVE_COMPONENT, true));
-    Item ITEM_OF_TRUE_GAYNESS = register("item_of_true_gayness", ItemOfTrueGaynessItem::new, new Item.Properties().component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xb38df3, true)).component(ACComponents.EMISSIVE_COMPONENT, true));
-    Item AMBER_HOOK = register("amber_hook", Item::new, new Item.Properties().stacksTo(1).component(ChiseledLibComponents.ITEM_HIGHLIGHT, new ItemHighlightComponent(0xff9132, true)));
 
     Item SHINEWICH = register("shinewich", Item::new, new Item.Properties().food(ACFoods.SHINEWICH, Consumable.builder().sound(Holder.direct(SoundEvents.SCULK_CATALYST_BREAK)).build()).component(ACComponents.EMISSIVE_COMPONENT, true));
     Item PLATE_OF_NAILS = register("plate_of_nails", Item::new, new Item.Properties().stacksTo(16).food(ACFoods.NAILS, Consumable.builder().sound(Holder.direct(SoundEvents.CHAIN_HIT)).build()).usingConvertsTo(Items.BOWL));

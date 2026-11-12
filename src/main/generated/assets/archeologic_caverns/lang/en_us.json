@@ -59,12 +59,13 @@
   "item.archeologic_caverns.amethyst_axe": "Amethyst Axe",
   "item.archeologic_caverns.cleaver": "Cleaver",
   "item.archeologic_caverns.cleaver_bonus": " -Increases Item Harvest",
-  "item.archeologic_caverns.cleaver_bonus_1": " -Damage Increases when holding a combo",
   "item.archeologic_caverns.cupric_stew": "Cupric Stew",
   "item.archeologic_caverns.dripstone_drill": "Dripstone Drill",
   "item.archeologic_caverns.item_of_true_gayness": "Item Of True Gayness",
   "item.archeologic_caverns.plate_of_nails": "Plate Of Nails",
   "item.archeologic_caverns.shinewich": "Shinewich",
   "painting.archeologic_caverns.friend_shrub.author": "mongocat",
-  "painting.archeologic_caverns.friend_shrub.title": "Friend Shrub"
+  "painting.archeologic_caverns.friend_shrub.title": "Friend Shrub",
+  "tooltip.archeologic_caverns.cleaver_drop_bonus": "+300% Item Drops",
+  "tooltip.archeologic_caverns.cleaver_explain": "after every hit you absorb more blood which allows for more damage"
 }

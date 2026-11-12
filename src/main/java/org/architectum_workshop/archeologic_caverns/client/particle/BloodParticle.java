@@ -4,11 +4,11 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.particle.*;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.client.particle.ParticleProvider;
+import net.minecraft.client.particle.SingleQuadParticle;
+import net.minecraft.client.particle.SpriteSet;
 import net.minecraft.client.renderer.state.level.QuadParticleRenderState;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.core.particles.DustParticleOptions;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.ARGB;
 import net.minecraft.util.Mth;
@@ -20,7 +20,8 @@ public class BloodParticle extends SingleQuadParticle {
 
 
     private final SpriteSet sprites;
-    private boolean dir;
+    private final boolean dir;
+    private final float onGroundRot;
 
     protected BloodParticle(ClientLevel level, double x, double y, double z, SpriteSet sprites) {
         super(level, x, y, z, sprites.first());
@@ -38,6 +39,7 @@ public class BloodParticle extends SingleQuadParticle {
         this.rCol = 0.8f;
         this.gCol = 0.8f;
         this.bCol = 0.2f;
+        this.onGroundRot = (float) (this.random.nextGaussian());
     }
 
     @Override
@@ -55,12 +57,13 @@ public class BloodParticle extends SingleQuadParticle {
         } else {
             this.quadSize = 0.8f;
         }
+        this.setSpriteFromAge(sprites);
     }
 
     @Override
     protected void extractRotatedQuad(QuadParticleRenderState particleTypeRenderState, Camera camera, Quaternionf rotation, float partialTickTime) {
         if (onGround) {
-            super.extractRotatedQuad(particleTypeRenderState, camera, new Quaternionf().rotateX((float) Math.toRadians(-90.1f)), partialTickTime);
+            super.extractRotatedQuad(particleTypeRenderState, camera, new Quaternionf().rotateX((float) Math.toRadians(-90.f)).rotateZ(this.onGroundRot), partialTickTime);
         } else {
             super.extractRotatedQuad(particleTypeRenderState, camera, rotation, partialTickTime);
         }

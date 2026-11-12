@@ -1,4 +1,4 @@
-package org.architectum_workshop.archeologic_caverns.mixin.client;
+package org.architectum_workshop.archeologic_caverns.mixin.util.client.shader;
 
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.resources.Identifier;

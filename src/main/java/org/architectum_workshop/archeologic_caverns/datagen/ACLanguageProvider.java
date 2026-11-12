@@ -7,7 +7,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 import org.architectum_workshop.archeologic_caverns.common.init.ACBlocks;
 import org.architectum_workshop.archeologic_caverns.common.init.ACCreativeTabs;
 import org.architectum_workshop.archeologic_caverns.common.init.ACItems;
@@ -34,7 +33,8 @@ public class ACLanguageProvider extends FabricLanguageProvider {
         translationBuilder.add(ACCreativeTabs.ITEM_CREATIVE_TAB_KEY, "Cavern Items");
         translationBuilder.add("death.attack.inSalt", "%1$s had too much salt in the wounds");
         translationBuilder.add("item.archeologic_caverns.cleaver_bonus", " -Increases Item Harvest");
-        translationBuilder.add("item.archeologic_caverns.cleaver_bonus_1", " -Damage Increases when holding a combo");
+        translationBuilder.add("tooltip.archeologic_caverns.cleaver_drop_bonus", "+300% Item Drops");
+        translationBuilder.add("tooltip.archeologic_caverns.cleaver_explain", "after every hit you absorb more blood which allows for more damage");
     }
 
     public void translate(TranslationBuilder translationBuilder, Block block) {

@@ -1,4 +1,4 @@
-package org.architectum_workshop.archeologic_caverns.mixin.client.emissive;
+package org.architectum_workshop.archeologic_caverns.mixin.util.client.emissive;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(ItemStackRenderState.class)
-public class ModifyItemRenderStateLightCoordMixin implements ItemStackRenderStateInterface {
+public class ModifyItemRenderStateLightCordMixin implements ItemStackRenderStateInterface {
     @Unique
     private boolean archeologic_caverns$isEmissive = false;
 
@@ -26,7 +26,7 @@ public class ModifyItemRenderStateLightCoordMixin implements ItemStackRenderStat
     }
 
     @Override
-    public void setEmissive(boolean value) {
+    public void archeologic_caverns$setEmissive(boolean value) {
         archeologic_caverns$isEmissive = value;
     }
 }

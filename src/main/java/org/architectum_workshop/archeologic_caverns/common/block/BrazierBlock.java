@@ -148,7 +148,7 @@ public class BrazierBlock extends Block implements SimpleWaterloggedBlock, Extin
 
     @Override
     protected int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos, Direction direction) {
-        // aka condition for activation of redstone or smt idk
+        // aka condition for activation of redstone or smt IDK
         boolean emmitRedstoneSignal = !level.isClientSide() && state.getValue(LIT);
         return emmitRedstoneSignal ? 15 : 0;
     }

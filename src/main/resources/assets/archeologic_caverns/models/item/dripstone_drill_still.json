@@ -1,0 +1,7 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "archeologic_caverns:item/dripstone_drill",
+	"textures": {
+		"layer0": "archeologic_caverns:item/dripstone_drill_still"
+	}
+}
