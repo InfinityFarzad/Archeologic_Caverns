@@ -3,11 +3,9 @@ package org.architectum_workshop.archeologic_caverns.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
@@ -27,7 +25,6 @@ public class ACRecipeGenerator extends FabricRecipeProvider {
         return new RecipeProvider(registries, output) {
                     @Override
                     public void buildRecipes() {
-                        HolderLookup.RegistryLookup<Item> itemLookup = registries.lookupOrThrow(Registries.ITEM);
                         shaped(RecipeCategory.BUILDING_BLOCKS, ACBlocks.DRIPSTONE_BRICKS, 4)
                                 .define('#', ACBlocks.POLISHED_DRIPSTONE)
                                 .pattern("##")
@@ -146,13 +143,6 @@ public class ACRecipeGenerator extends FabricRecipeProvider {
                                 .save(output);
 
 
-                        /*                        shaped(RecipeCategory.BUILDING_BLOCKS, ArcheologicCavernsBlocks.CALCITE_SHINGLES, 4)
-                                .define('#', ArcheologicCavernsBlocks.CALCITE_TILES)
-                                .pattern("##")
-                                .pattern("##")
-                                .unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE))
-                                .save(output);*/
-
                         // stairs
                         stairBuilder(ACBlocks.POLISHED_DRIPSTONE_STAIRS, Ingredient.of(ACBlocks.POLISHED_DRIPSTONE)).unlockedBy(getHasName(Items.DRIPSTONE_BLOCK), has(Items.POINTED_DRIPSTONE)).save(output);
                         stairBuilder(ACBlocks.DRIPSTONE_BRICK_STAIRS, Ingredient.of(ACBlocks.DRIPSTONE_BRICKS)).unlockedBy(getHasName(Items.DRIPSTONE_BLOCK), has(Items.POINTED_DRIPSTONE)).save(output);
@@ -165,8 +155,6 @@ public class ACRecipeGenerator extends FabricRecipeProvider {
                         stairBuilder(ACBlocks.POLISHED_CALCITE_STAIRS, Ingredient.of(ACBlocks.POLISHED_CALCITE)).unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE)).save(output);
                         stairBuilder(ACBlocks.CALCITE_BRICK_STAIRS, Ingredient.of(ACBlocks.CALCITE_BRICKS)).unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE)).save(output);
                         stairBuilder(ACBlocks.CALCITE_TILE_STAIRS, Ingredient.of(ACBlocks.CALCITE_TILES)).unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE)).save(output);
-                        //stairBuilder(ArcheologicCavernsBlocks.CALCITE_SHINGLE_STAIRS, Ingredient.of(ArcheologicCavernsBlocks.CALCITE_SHINGLES)).unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE)).save(output);
-
 
                         // slabs
                         slabBuilder(RecipeCategory.BUILDING_BLOCKS, ACBlocks.POLISHED_DRIPSTONE_SLAB, Ingredient.of(ACBlocks.POLISHED_DRIPSTONE)).unlockedBy(getHasName(Items.DRIPSTONE_BLOCK), has(Items.POINTED_DRIPSTONE)).save(output);
@@ -180,7 +168,6 @@ public class ACRecipeGenerator extends FabricRecipeProvider {
                         slabBuilder(RecipeCategory.BUILDING_BLOCKS, ACBlocks.SALT_SLAB, Ingredient.of(ACBlocks.SALT_BLOCK)).unlockedBy(getHasName(ACBlocks.SALT_BLOCK), has(ACBlocks.SALT_BLOCK)).save(output);
                         slabBuilder(RecipeCategory.BUILDING_BLOCKS, ACBlocks.POLISHED_SALT_SLAB, Ingredient.of(ACBlocks.POLISHED_SALT)).unlockedBy(getHasName(ACBlocks.SALT_BLOCK), has(ACBlocks.SALT_BLOCK)).save(output);
                         slabBuilder(RecipeCategory.BUILDING_BLOCKS, ACBlocks.SALT_BRICK_SLAB, Ingredient.of(ACBlocks.SALT_BRICKS)).unlockedBy(getHasName(ACBlocks.SALT_BLOCK), has(ACBlocks.SALT_BLOCK)).save(output);
-                        //slabBuilder(RecipeCategory.BUILDING_BLOCKS, ArcheologicCavernsBlocks.CALCITE_SHINGLE_SLAB, Ingredient.of(ArcheologicCavernsBlocks.CALCITE_SHINGLES)).unlockedBy(getHasName(Items.CALCITE), has(Items.CALCITE)).save(output);
 
                         // walls
                         wallBuilder(RecipeCategory.BUILDING_BLOCKS, ACBlocks.POLISHED_DRIPSTONE_WALL, Ingredient.of(ACBlocks.POLISHED_DRIPSTONE)).unlockedBy(getHasName(Items.DRIPSTONE_BLOCK), has(Items.POINTED_DRIPSTONE)).save(output);

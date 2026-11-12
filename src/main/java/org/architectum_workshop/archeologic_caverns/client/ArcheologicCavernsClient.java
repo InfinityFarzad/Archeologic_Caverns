@@ -6,12 +6,9 @@ import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.item.ItemTintSources;
-import net.minecraft.commands.arguments.NbtPathArgument;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.util.ARGB;
-import net.minecraft.util.CompilableString;
 import org.architectum_workshop.archeologic_caverns.client.init.ACParticles;
 import org.architectum_workshop.archeologic_caverns.client.particle.BloodParticle;
 import org.architectum_workshop.archeologic_caverns.client.tint.CleaverBloodTint;
@@ -19,14 +16,12 @@ import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
 import org.architectum_workshop.archeologic_caverns.common.item.CleaverItem;
 import org.architectum_workshop.archeologic_caverns.common.item.impl.ArtifactTooltipImpl;
 
-import javax.swing.text.Style;
 import java.util.List;
-import java.util.function.Function;
 
 public class ArcheologicCavernsClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        ItemTooltipCallback.EVENT.register((stack, _, f, list) -> {
+        ItemTooltipCallback.EVENT.register((stack, _, _, list) -> {
             if (stack.getItem() instanceof CleaverItem) {
                 list.add((int) ((long) list.size() -2), Component.translatable("tooltip.archeologic_caverns.cleaver_drop_bonus").withStyle(ChatFormatting.BLUE));
             }
@@ -45,6 +40,7 @@ public class ArcheologicCavernsClient implements ClientModInitializer {
         ParticleProviderRegistry.getInstance().register(ACParticles.BLEEDING_PARTICLE, BloodParticle.Provider::new);
     }
 
+    @SuppressWarnings("SameParameterValue")
     private MutableComponent gradient(String text, List<Integer> colours) {
         List<Character> charList = text.chars()
                 .mapToObj(c -> (char) c)
@@ -54,7 +50,7 @@ public class ArcheologicCavernsClient implements ClientModInitializer {
         int lastColour = colours.getFirst();
 
         for (int index = 0; index  < charList.size(); index++) {
-            int color = 0;
+            int color;
             Character character = charList.get(index);
 
             if (charList.size() == colours.size()) {
