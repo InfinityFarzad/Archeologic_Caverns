@@ -5,6 +5,7 @@ import net.akws.chiseled_lib.common.ChiseledLib;
 import net.akws.chiseled_lib.common.interfaces.item.CustomAttackItem;
 import net.akws.chiseled_lib.common.interfaces.item.CustomEffectsItem;
 import net.akws.chiseled_lib.common.interfaces.mixin_interface.TimerInterface;
+import net.akws.chiseled_lib.common.system.timer.Timer;
 import net.akws.chiseled_lib.common.util.TimerUtil;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
@@ -31,6 +32,8 @@ import org.architectum_workshop.archeologic_caverns.common.init.ACTags;
 import org.architectum_workshop.archeologic_caverns.common.item.impl.ArtifactTooltipImpl;
 import org.jspecify.annotations.Nullable;
 
+import java.util.List;
+
 public class AmethystGreataxeItem extends AxeItem implements ArtifactTooltipImpl, CustomEffectsItem, CustomAttackItem {
     public static final Identifier TIMER_ID = ArcheologicCaverns.id("axe_repair_timer");
 
@@ -51,11 +54,14 @@ public class AmethystGreataxeItem extends AxeItem implements ArtifactTooltipImpl
             stack.set(ACComponents.GREATAXE_SHATTERED, 0.f);
             stack.set(ACComponents.GREATAXE_CHARGE, true);
             player.getCooldowns().addCooldown(stack, 15);
+            player.playSound(SoundEvents.AMETHYST_BLOCK_PLACE);
+
         } else {
             stack.set(ACComponents.GREATAXE_SHATTERED, stack.get(ACComponents.GREATAXE_SHATTERED) - 10.f);
+            player.playSound(SoundEvents.AMETHYST_CLUSTER_HIT);
+            player.swing(hand);
         }
 
-        player.playSound(SoundEvents.AMETHYST_BLOCK_PLACE);
         return super.use(level, player, hand);
     }
 
@@ -71,5 +77,16 @@ public class AmethystGreataxeItem extends AxeItem implements ArtifactTooltipImpl
         } else {
             itemStack.set(ACComponents.GREATAXE_CHARGE, false);
         }
+
+        if (owner instanceof Player player) {
+            TimerUtil.addTimerToPlayer(player, new Timer(TIMER_ID, 20));
+            System.out.println(TimerUtil.getTimerTimeLeft(player, TIMER_ID));
+        }
+
+    }
+
+    @Override
+    public List<Integer> getArtifactColour() {
+        return List.of(0xfecbe6, 0xb38ef3);
     }
 }

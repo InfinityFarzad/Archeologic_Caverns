@@ -29,8 +29,9 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-	implementation "maven.modrinth:chiseled-lib:${project.chiseled_lib_version}"
+	// idmplementation "maven.modrinth:chiseled-lib:${project.chiseled_lib_version}"
 	implementation "com.github.glitchfiend:TerraBlender-fabric:${minecraft_version}-${terrablender_version}"
+	implementation(project(":ChiseledLib"))
 }
 
 processResources {

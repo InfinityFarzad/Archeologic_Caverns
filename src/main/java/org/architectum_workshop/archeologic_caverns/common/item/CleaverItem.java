@@ -24,6 +24,8 @@ import org.architectum_workshop.archeologic_caverns.common.item.impl.ArtifactToo
 import org.architectum_workshop.archeologic_caverns.common.util.CleaverUtil;
 import org.jspecify.annotations.Nullable;
 
+import java.util.List;
+
 public class CleaverItem extends AxeItem implements CustomAttackItem, CustomEffectsItem, ArtifactTooltipImpl {
 
     public static final Identifier PLAYER_COMBO_ID = ArcheologicCaverns.id("cleaver_combo_timer");
@@ -36,9 +38,9 @@ public class CleaverItem extends AxeItem implements CustomAttackItem, CustomEffe
         if (attacker instanceof Player player) {
             int currentCombo = CleaverUtil.getCombo(player);
 
-            player.setAttached(ACAttachments.PLAYER_COMBO_COUNTER, Math.min(currentCombo + 1, 12));
-            if (!player.level().isClientSide() && !target.isInvulnerable()) {
-                TimerUtil.addTimerToPlayer(player, PLAYER_COMBO_ID, CleaverUtil.calculateTimer(player));
+            if (!player.level().isClientSide() && !target.isInvulnerableToBase(player.damageSources().playerAttack(player))) {
+                player.setAttached(ACAttachments.PLAYER_COMBO_COUNTER, Math.min(currentCombo + 1, 12));
+                TimerUtil.addTimerToPlayer(player, PLAYER_COMBO_ID, (int) CleaverUtil.calculateTimer(player));
                 if (currentCombo+1 == 8) {
                     player.playSound(SoundEvents.CREAKING_DEATH);
                 }
@@ -67,5 +69,10 @@ public class CleaverItem extends AxeItem implements CustomAttackItem, CustomEffe
     @Override
     public Component getArtifactTooltip(ItemStack stack, Player player) {
         return Component.translatable("tooltip.archeologic_caverns.cleaver_explain").withStyle(ChatFormatting.GRAY);
+    }
+
+    @Override
+    public List<Integer> getArtifactColour() {
+        return List.of(0x963548, 0x5d1c31);
     }
 }

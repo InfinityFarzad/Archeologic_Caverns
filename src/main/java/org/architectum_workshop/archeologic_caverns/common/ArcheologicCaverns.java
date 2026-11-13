@@ -56,7 +56,7 @@ public class ArcheologicCaverns implements ModInitializer {
             if (id.equals(CleaverItem.PLAYER_COMBO_ID)) {
                 int currentCombo = player.getAttachedOrSet(ACAttachments.PLAYER_COMBO_COUNTER, 0);
                 if (!player.level().isClientSide() && currentCombo > 0) {
-                    TimerUtil.addTimerToPlayer(player, CleaverItem.PLAYER_COMBO_ID, Math.clamp(80 * CleaverUtil.offsetCalculateModifier(15, currentCombo), 8, 80));
+                    TimerUtil.addTimerToPlayer(player, CleaverItem.PLAYER_COMBO_ID, (int) Math.clamp(80 * CleaverUtil.offsetCalculateModifier(15, currentCombo), 8, 80));
                     player.modifyAttached(ACAttachments.PLAYER_COMBO_COUNTER, (o) -> Math.max(o - 1, 0));
                 }
             }
