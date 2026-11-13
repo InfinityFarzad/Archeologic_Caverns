@@ -28,5 +28,6 @@ public interface ACAttachments {
                     builder -> builder.syncWith(ClimbPos.STREAM_CODEC, AttachmentSyncPredicate.all())
             );
 
+
     static void init() {}
 }

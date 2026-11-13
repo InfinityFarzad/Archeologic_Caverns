@@ -1,5 +1,7 @@
 package org.architectum_workshop.archeologic_caverns.common.block;
 
+import net.akws.chiseled_lib.common.interfaces.block.ExtinguishableBlock;
+import net.akws.chiseled_lib.common.interfaces.block.LightableBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -24,8 +26,6 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.architectum_workshop.archeologic_caverns.common.block.impl.ExtinguishableBlock;
-import org.architectum_workshop.archeologic_caverns.common.block.impl.LightableBlock;
 import org.jspecify.annotations.Nullable;
 import org.spongepowered.asm.mixin.injection.Desc;
 

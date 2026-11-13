@@ -1,5 +1,6 @@
 package org.architectum_workshop.archeologic_caverns.common.item;
 
+import net.akws.chiseled_lib.client.camera.screenshake.ScreenShakeHelper;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -24,6 +25,12 @@ public class DripstoneDrillItem extends Item implements ArtifactTooltipImpl {
     @Override
     public int getUseDuration(ItemStack itemStack, LivingEntity user) {
         return 200;
+    }
+
+    @Override
+    public void onUseTick(Level level, LivingEntity livingEntity, ItemStack itemStack, int ticksRemaining) {
+        super.onUseTick(level, livingEntity, itemStack, ticksRemaining);
+        ScreenShakeHelper.createLocalScreenshake(2,livingEntity.position() , 2.5f, 1, level);
     }
 
     @Override

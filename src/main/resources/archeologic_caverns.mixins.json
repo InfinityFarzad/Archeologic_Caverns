@@ -3,12 +3,10 @@
   "package": "org.architectum_workshop.archeologic_caverns.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-    "cleaver.CleaverItemDropBonusMixin",
-    "util.FlintAndStealMixin",
-    "amber_hook.movement.GravityCancellationMixin",
     "amber_hook.movement.AmberHookJumpPermissionMixin",
-    "cleaver.PlayerEntityCritModificationMixin",
-    "util.ShovelItemMixin"
+    "amber_hook.movement.GravityCancellationMixin",
+    "cleaver.CleaverItemDropBonusMixin",
+    "cleaver.PlayerEntityCritModificationMixin"
   ],
   "injectors": {
     "defaultRequire": 1
@@ -17,9 +15,6 @@
     "requireAnnotations": true
   },
   "client": [
-    "cleaver.client.CleaverComboOverlayMixin",
-    "util.client.shader.PostEffectsAccessMixin",
-    "util.client.emissive.ItemModelBrightnessModificationMixin",
-    "util.client.emissive.ModifyItemRenderStateLightCordMixin"
+    "cleaver.client.CleaverComboOverlayMixin"
   ]
 }

@@ -55,7 +55,7 @@ public class CleaverItem extends AxeItem implements CustomAttackItem, CustomEffe
     }
 
     @Override
-    public boolean canDoSweepingAttack(ItemStack stack, boolean cooldownPassed, boolean criticalHit, boolean knockbackAttack) {
+    public boolean canDoSweepingAttack(LivingEntity living, ItemStack stack, boolean cooldownPassed, boolean criticalHit, boolean knockbackAttack) {
         return false;
     }
 

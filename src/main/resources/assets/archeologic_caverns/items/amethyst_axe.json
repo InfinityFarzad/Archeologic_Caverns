@@ -17,8 +17,45 @@
       }
     ],
     "fallback": {
-      "type": "minecraft:model",
-      "model": "archeologic_caverns:item/amethyst_axe_handheld"
+      "type": "minecraft:range_dispatch",
+      "property": "archeologic_caverns:greataxe_stage",
+      "entries": [
+        {
+          "threshold": 0.0,
+          "model": {
+            "type": "minecraft:model",
+            "model": "archeologic_caverns:item/amethyst_axe/amethyst_axe_handheld_0"
+          }
+        },
+        {
+          "threshold": 1.0,
+          "model": {
+            "type": "minecraft:model",
+            "model": "archeologic_caverns:item/amethyst_axe/amethyst_axe_handheld_1"
+          }
+        },
+        {
+          "threshold": 2.0,
+          "model": {
+            "type": "minecraft:model",
+            "model": "archeologic_caverns:item/amethyst_axe/amethyst_axe_handheld_2"
+          }
+        },
+        {
+          "threshold": 3.0,
+          "model": {
+            "type": "minecraft:model",
+            "model": "archeologic_caverns:item/amethyst_axe/amethyst_axe_handheld_3"
+          }
+        },
+        {
+          "threshold": 4.0,
+          "model": {
+            "type": "minecraft:model",
+            "model": "archeologic_caverns:item/amethyst_axe/amethyst_axe_handheld_4"
+          }
+        }
+      ]
     }
   }
 }

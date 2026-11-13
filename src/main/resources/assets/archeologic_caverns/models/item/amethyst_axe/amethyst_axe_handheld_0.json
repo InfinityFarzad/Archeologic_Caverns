@@ -1,0 +1,6 @@
+{
+	"parent": "archeologic_caverns:item/amethyst_axe/amethyst_axe_handheld_4",
+	"textures": {
+		"layer0": "archeologic_caverns:item/amethyst_axe/amethyst_greataxe_handheld_stage_0"
+	}
+}
