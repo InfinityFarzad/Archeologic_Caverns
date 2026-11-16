@@ -5,6 +5,7 @@
   "mixins": [
     "amber_hook.movement.AmberHookJumpPermissionMixin",
     "amber_hook.movement.GravityCancellationMixin",
+    "amethyst_axe.ProjectileMixin",
     "cleaver.CleaverItemDropBonusMixin",
     "cleaver.PlayerEntityCritModificationMixin"
   ],

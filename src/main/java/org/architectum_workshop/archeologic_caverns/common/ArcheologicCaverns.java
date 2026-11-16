@@ -43,6 +43,7 @@ public class ArcheologicCaverns implements ModInitializer {
         ACBlocks.init();
         ACCreativeTabs.init();
         ACItems.init();
+        ACEntities.init();
         ACTags.init();
         ACFeatures.init();
         ACComponents.init();

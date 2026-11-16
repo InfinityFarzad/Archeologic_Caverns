@@ -20,14 +20,18 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.arrow.AbstractArrow;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.phys.Vec3;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
+import org.architectum_workshop.archeologic_caverns.common.entity.AxeShardEntity;
 import org.architectum_workshop.archeologic_caverns.common.init.ACAttachments;
 import org.architectum_workshop.archeologic_caverns.common.init.ACComponents;
+import org.architectum_workshop.archeologic_caverns.common.init.ACEntities;
 import org.architectum_workshop.archeologic_caverns.common.init.ACTags;
 import org.architectum_workshop.archeologic_caverns.common.item.impl.ArtifactTooltipImpl;
 import org.jspecify.annotations.Nullable;
@@ -60,6 +64,13 @@ public class AmethystGreataxeItem extends AxeItem implements ArtifactTooltipImpl
             stack.set(ACComponents.GREATAXE_SHATTERED, stack.get(ACComponents.GREATAXE_SHATTERED) - 10.f);
             player.playSound(SoundEvents.AMETHYST_CLUSTER_HIT);
             player.swing(hand);
+
+            if (level instanceof ServerLevel serverLevel) {
+                for (int i = 0; i < 3; i++) {
+                    AbstractArrow.spawnProjectileFromRotation(AxeShardEntity::new, serverLevel, stack.copy(), player, 0, 4, 2);
+                }
+            }
+
         }
 
         return super.use(level, player, hand);
@@ -73,16 +84,17 @@ public class AmethystGreataxeItem extends AxeItem implements ArtifactTooltipImpl
         if (i != 40.f && itemStack.getOrDefault(ACComponents.GREATAXE_CHARGE, false)) {
             itemStack.set(ACComponents.GREATAXE_SHATTERED, Math.clamp(i + 8, 0, 40));
             level.playSound(null, owner.getX(), owner.getY(), owner.getZ(), SoundEvents.AMETHYST_BLOCK_PLACE, SoundSource.PLAYERS);
-            level.sendParticles(new BlockParticleOption(ParticleTypes.BLOCK_CRUMBLE, Blocks.AMETHYST_BLOCK.defaultBlockState()), owner.getX(), owner.getY(), owner.getZ(), 2, 2, 2, 2, 2);
+            Vec3 g = AmethystGreataxeItem.getParticleDir(owner);
+            level.sendParticles(new BlockParticleOption(ParticleTypes.BLOCK, Blocks.AMETHYST_BLOCK.defaultBlockState()), owner.getX(), owner.getY(), owner.getZ(), 2, g.x * 8, 2.5, g.z * 8, 1);
         } else {
             itemStack.set(ACComponents.GREATAXE_CHARGE, false);
         }
 
-        if (owner instanceof Player player) {
-            TimerUtil.addTimerToPlayer(player, new Timer(TIMER_ID, 20));
-            System.out.println(TimerUtil.getTimerTimeLeft(player, TIMER_ID));
-        }
+    }
 
+    private static Vec3 getParticleDir(Entity living) {
+        var random = living.getRandom();
+        return new Vec3(random.nextGaussian()/20.0 * (random.nextBoolean() ? 1 : -1), random.nextGaussian()/20.0 * (random.nextBoolean() ? 1 : -1), random.nextGaussian()/20.0 * (random.nextBoolean() ? 1 : -1));
     }
 
     @Override

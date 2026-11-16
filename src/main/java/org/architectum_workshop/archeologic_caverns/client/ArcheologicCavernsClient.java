@@ -4,18 +4,22 @@ import net.akws.chiseled_lib.client.util.RenderUtil;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
+import net.fabricmc.fabric.impl.client.rendering.EntityRendererRegistryImpl;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.item.ItemTintSources;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.item.properties.numeric.RangeSelectItemModelProperties;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.util.ARGB;
 import org.architectum_workshop.archeologic_caverns.client.init.ACParticles;
 import org.architectum_workshop.archeologic_caverns.client.particle.BloodParticle;
+import org.architectum_workshop.archeologic_caverns.client.render.entity.AxeShardEntityRenderer;
 import org.architectum_workshop.archeologic_caverns.client.render.item.AmethystGreataxeModelProperty;
 import org.architectum_workshop.archeologic_caverns.client.tint.CleaverBloodTint;
 import org.architectum_workshop.archeologic_caverns.common.ArcheologicCaverns;
+import org.architectum_workshop.archeologic_caverns.common.init.ACEntities;
 import org.architectum_workshop.archeologic_caverns.common.item.CleaverItem;
 import org.architectum_workshop.archeologic_caverns.common.item.impl.ArtifactTooltipImpl;
 
@@ -40,6 +44,8 @@ public class ArcheologicCavernsClient implements ClientModInitializer {
 
             }
         });
+
+        EntityRenderers.register(ACEntities.AXE_SHARD, AxeShardEntityRenderer::new);
 
         RangeSelectItemModelProperties.ID_MAPPER.put(ArcheologicCaverns.id("greataxe_stage"), AmethystGreataxeModelProperty.MAP_CODEC);
         ItemTintSources.ID_MAPPER.put(ArcheologicCaverns.id("bleeding"), CleaverBloodTint.CODEC);
